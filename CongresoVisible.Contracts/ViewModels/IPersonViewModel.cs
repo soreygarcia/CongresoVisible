@@ -1,15 +1,15 @@
-﻿using CongresoVisible.Contracts.Services;
+﻿using CongresoVisible.Contracts.Common;
+using CongresoVisible.Contracts.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using CongresoVisible.Contracts.ViewModels.Common;
 
 namespace CongresoVisible.Contracts.ViewModels
 {
-    public interface IPersonViewModel : IBindableServiceLocator, INavigateViewModel
+    public interface IPersonViewModel : IServiceLocator, INavigateViewModel
     {
         string Url { get; set; }
         string Name { get; set; }

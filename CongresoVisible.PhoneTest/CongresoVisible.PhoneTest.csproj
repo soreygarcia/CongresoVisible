@@ -135,6 +135,10 @@
       <Project>{73B42119-B167-4C28-BE5B-F9FFAD45E14A}</Project>
       <Name>CongresoVisible.FakeServices</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CongresoVisible.Models\CongresoVisible.Models.csproj">
+      <Project>{C243C284-B80D-42DA-BD48-AC88F060B3B5}</Project>
+      <Name>CongresoVisible.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CongresoVisible.ViewModels\CongresoVisible.ViewModels.csproj">
       <Project>{CF477CAF-84F8-40FB-B971-C413E0B0F57B}</Project>
       <Name>CongresoVisible.ViewModels</Name>

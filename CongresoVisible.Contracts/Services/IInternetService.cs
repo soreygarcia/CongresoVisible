@@ -10,5 +10,7 @@ namespace CongresoVisible.Contracts.Services
     {
         event EventHandler InternetAvailabilityChanged;
         bool IsNetworkAvailable { get; }
+
+        void Initialize();
     }
 }

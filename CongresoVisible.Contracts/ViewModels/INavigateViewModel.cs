@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CongresoVisible.Contracts.ViewModels.Common
+namespace CongresoVisible.Contracts.ViewModels
 {
     public interface INavigateViewModel
     {

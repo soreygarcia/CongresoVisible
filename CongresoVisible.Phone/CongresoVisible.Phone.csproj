@@ -136,10 +136,10 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="SampleData\MainViewModelDataSource\MainViewModelDataSource.xaml">
+    <DesignTimeOnly Include="SampleData\MainViewModelDataSource\MainViewModelDataSource.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
-    </Page>
+    </DesignTimeOnly>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -176,15 +176,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <DesignTimeOnly Include="SampleData\MainViewModelDataSource\MainViewModelDataSource.xsd" />
-    <Resource Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\elianaca.jpg" />
-    <Resource Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\hernandgr.jpg" />
-    <Resource Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\image01.png" />
-    <Resource Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\image02.png" />
-    <Resource Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\image03.png" />
-    <Resource Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\image04.png" />
-    <Resource Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\image05.png" />
-    <Resource Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\khriztianmoreno.jpg" />
-    <Resource Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\soreygarcia.jpg" />
+    <DesignTimeOnly Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\elianaca.jpg" />
+    <DesignTimeOnly Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\hernandgr.jpg" />
+    <DesignTimeOnly Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\image01.png" />
+    <DesignTimeOnly Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\image02.png" />
+    <DesignTimeOnly Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\image03.png" />
+    <DesignTimeOnly Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\image04.png" />
+    <DesignTimeOnly Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\image05.png" />
+    <DesignTimeOnly Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\khriztianmoreno.jpg" />
+    <DesignTimeOnly Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\soreygarcia.jpg" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">

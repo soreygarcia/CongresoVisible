@@ -9,7 +9,9 @@ namespace CongresoVisible.Contracts.Services
     public interface ISettingsService
     {
         string GetSettingsValue(string key);
-        void SetSettingsValue(string key, object value);
+
+        string GetIsolatedSettingsValue(string key);
+        void SetIsolatedSettingsValue(string key, object value);
 
         object GetStateValue(string key);
         void SetStateValue(string key, object value);

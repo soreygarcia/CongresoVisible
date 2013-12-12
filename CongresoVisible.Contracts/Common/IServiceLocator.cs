@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CongresoVisible.Contracts.Services.Common
+namespace CongresoVisible.Contracts.Common
 {
-    public interface IContextLocator 
+    public interface IServiceLocator
     {
-        T GetContext<T>();
         T GetService<T>();
     }
 }

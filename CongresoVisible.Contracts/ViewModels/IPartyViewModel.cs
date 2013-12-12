@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
-using CongresoVisible.Contracts.ViewModels.Common;
 using System.Windows.Input;
+using CongresoVisible.Contracts.Common;
 
 namespace CongresoVisible.Contracts.ViewModels
 {
-    public interface IPartyViewModel : IBindableServiceLocator, INavigateViewModel
+    public interface IPartyViewModel : IServiceLocator, INavigateViewModel
     {
         int Id { get; set; }
         string Name { get; set; }

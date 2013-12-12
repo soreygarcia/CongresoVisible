@@ -1,6 +1,6 @@
 ﻿using CongresoVisible.Contracts.Services;
 using CongresoVisible.Contracts.ViewModels;
-using CongresoVisible.Contracts.ViewModels.Common;
+using CongresoVisible.ViewModels.Helpers;
 using Infrastructure.Common;
 using System;
 using System.Collections.Generic;
@@ -131,7 +131,7 @@ namespace CongresoVisible.ViewModels
         {
             if (NetworkMonitor.IsNetworkAvailable)
             {
-
+                jsonService.GetPeople(string.Empty);
             }
         }
 
@@ -158,13 +158,19 @@ namespace CongresoVisible.ViewModels
         {
             get { return this.getPartiesCommand; }
         }
-        public void GetParties()
+        public async void GetParties()
         {
             if (NetworkMonitor.IsNetworkAvailable)
             {
-
+                var result = await jsonService.GetParties();
+                ViewModelHelper.SetParties(this, result);
             }
         }
         #endregion GetParties
+
+        public void Initialize()
+        {
+            this.GetParties();
+        }
     }
 }

@@ -1,5 +1,6 @@
-﻿using CongresoVisible.Contracts.Services.Common;
+﻿using CongresoVisible.Contracts.Common;
 using CongresoVisible.Contracts.ViewModels;
+using CongresoVisible.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace CongresoVisible.Contracts.Services
 {
-    public interface IJsonService : IContextLocator
+    public interface IJsonService : IServiceLocator
     {
-        void GetPeople(string filter);
-        void GetPerson(int id);
-        void GetParties();
-        void GetFilters();
+        Task<PeopleContainer> GetPeople(string filter);
+        Task<Person> GetPerson(int id);
+        Task<PartiesContainer> GetParties();
+        Task<FiltersContainer> GetFilters();
     }
 }
 

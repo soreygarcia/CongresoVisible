@@ -69,16 +69,16 @@
     <SampleData:PeopleItem />
   </SampleData:MainViewModelDataSource.People>
   <SampleData:MainViewModelDataSource.Parties>
-    <SampleData:PartiesItem />
-    <SampleData:PartiesItem />
-    <SampleData:PartiesItem />
-    <SampleData:PartiesItem />
-    <SampleData:PartiesItem />
-    <SampleData:PartiesItem />
-    <SampleData:PartiesItem />
-    <SampleData:PartiesItem />
-    <SampleData:PartiesItem />
-    <SampleData:PartiesItem />
+    <SampleData:PartiesItem Name="Aliquam cras class" />
+    <SampleData:PartiesItem Name="Integer duis" />
+    <SampleData:PartiesItem Name="Quisque nam sed" />
+    <SampleData:PartiesItem Name="Maecenas dis" />
+    <SampleData:PartiesItem Name="Aenean vivamus" />
+    <SampleData:PartiesItem Name="Mauris nunc" />
+    <SampleData:PartiesItem Name="Praesent nullam est" />
+    <SampleData:PartiesItem Name="Accumsan bibendum" />
+    <SampleData:PartiesItem Name="Hac curae dictumst leo" />
+    <SampleData:PartiesItem Name="Amet donec" />
   </SampleData:MainViewModelDataSource.Parties>
   <SampleData:MainViewModelDataSource.Filters>
     <SampleData:FiltersItem />

@@ -1,4 +1,5 @@
 ﻿using CongresoVisible.Contracts.Services;
+using CongresoVisible.Phone.Resources;
 using Microsoft.Phone.Shell;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace CongresoVisible.Phone.Infrastructure
 {
     public class SettingsService : ISettingsService
     {
-        public string GetSettingsValue(string key)
+        public string GetIsolatedSettingsValue(string key)
         {
             if (IsolatedStorageSettings.ApplicationSettings.Contains(key))
             {
@@ -21,7 +22,7 @@ namespace CongresoVisible.Phone.Infrastructure
             return string.Empty;
         }
 
-        public void SetSettingsValue(string key, object value)
+        public void SetIsolatedSettingsValue(string key, object value)
         {
             IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
             if (!settings.Contains(key))
@@ -48,6 +49,12 @@ namespace CongresoVisible.Phone.Infrastructure
         public void SetStateValue(string key, object value)
         {
             PhoneApplicationService.Current.State[key] = value;
+        }
+
+
+        public string GetSettingsValue(string key)
+        {
+            return AppResources.ResourceManager.GetString(key);
         }
     }
 }

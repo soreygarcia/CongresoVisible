@@ -1,5 +1,6 @@
 ﻿using CongresoVisible.Contracts.ViewModels;
 using CongresoVisible.Models;
+using CongresoVisible.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CongresoVisible.Services.Helpers
+namespace CongresoVisible.ViewModels.Helpers
 {
     class ViewModelHelper
     {
@@ -23,7 +24,15 @@ namespace CongresoVisible.Services.Helpers
 
         internal static void SetParties(IMainViewModel context, PartiesContainer result)
         {
-            throw new NotImplementedException();
+            ObservableCollection<IPartyViewModel> parties = new ObservableCollection<IPartyViewModel>();
+            foreach(var item in result.results)
+            {
+                parties.Add(new PartyViewModel() { 
+                    Name = item.name
+                });
+            }
+
+            context.Parties = parties;
         }
     }
 }

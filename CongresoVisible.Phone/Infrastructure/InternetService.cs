@@ -37,5 +37,10 @@ namespace CongresoVisible.Phone.Infrastructure
         {
             get { return isNetworkAvailable; }
         }
+
+        public void Initialize()
+        {
+            NetworkInformation_NetworkStatusChanged(this);
+        }
     }
 }

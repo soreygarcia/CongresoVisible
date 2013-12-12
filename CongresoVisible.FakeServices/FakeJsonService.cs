@@ -1,4 +1,5 @@
 ﻿using CongresoVisible.Contracts.Services;
+using CongresoVisible.Models;
 using Infrastructure.Common;
 using System;
 using System.Collections.Generic;
@@ -12,24 +13,25 @@ namespace CongresoVisible.FakeServices
     {
         public Action Callback { get; set; }
 
-        public void GetFilters()
+
+        public Task<PeopleContainer> GetPeople(string filter)
         {
-            Callback();
+            throw new NotImplementedException();
         }
 
-        public void GetPeople(string filter)
+        public Task<Person> GetPerson(int id)
         {
-            Callback();
+            throw new NotImplementedException();
         }
 
-        public void GetPerson(int id)
+        public Task<PartiesContainer> GetParties()
         {
-            Callback();
+            throw new NotImplementedException();
         }
 
-        public void GetParties()
+        public Task<FiltersContainer> GetFilters()
         {
-            Callback();
-        } 
+            throw new NotImplementedException();
+        }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using CongresoVisible.Contracts.Services;
 using CongresoVisible.Contracts.ViewModels;
-using CongresoVisible.Contracts.ViewModels.Common;
 using CongresoVisible.Services;
 using CongresoVisible.ViewModels;
 using Infrastructure.Common;
@@ -18,15 +17,18 @@ namespace CongresoVisible.Phone.Infrastructure
         {
             ServiceLocator.Instance.Register<ISocialService>(new SocialService());
             ServiceLocator.Instance.Register<IJsonService>(new JsonService());
+            ServiceLocator.Instance.Register<ISettingsService>(new SettingsService());
 
             INavigationService navigator = new NavigatorService();
             ServiceLocator.Instance.Register<INavigationService>(navigator);
 
             IInternetService internetService = new InternetService();
+            internetService.Initialize();
             ServiceLocator.Instance.Register<IInternetService>(internetService);
 
-            ServiceLocator.Instance.Register<IMainViewModel>(
-                new MainViewModel() { Navigator = navigator, NetworkMonitor = internetService });
+            var mainViewModel = new MainViewModel() { Navigator = navigator, NetworkMonitor = internetService };
+
+            ServiceLocator.Instance.Register<IMainViewModel>(mainViewModel);
             
             ServiceLocator.Instance.Register<IAboutViewModel>(new AboutViewModel() { Navigator = navigator });
         }

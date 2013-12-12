@@ -1,4 +1,5 @@
 ﻿using CongresoVisible.Contracts.Services;
+using CongresoVisible.Contracts.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace CongresoVisible.Phone.Infrastructure
 
         }
 
-        public void SavePerson(Contracts.ViewModels.IPersonViewModel person)
+        public void SavePerson(IPersonViewModel person)
         {
 
         }

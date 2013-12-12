@@ -16,6 +16,12 @@ namespace CongresoVisible.Phone.Pages
         public MainPage()
         {
             InitializeComponent();
+            this.Loaded += MainPage_Loaded;
+        }
+
+        void MainPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            (this.DataContext as MainViewModel).Initialize();
         }
 
         private void btnAbout_Click(object sender, System.EventArgs e)

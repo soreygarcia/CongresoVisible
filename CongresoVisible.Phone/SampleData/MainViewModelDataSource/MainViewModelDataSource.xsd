@@ -45,7 +45,9 @@
       <xs:element maxOccurs="unbounded" name="PartiesItem" type="tns:PartiesItem" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="PartiesItem" />
+  <xs:complexType name="PartiesItem">
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
   <xs:complexType name="Filters">
     <xs:sequence>
       <xs:element maxOccurs="unbounded" name="FiltersItem" type="tns:FiltersItem" />

@@ -17,11 +17,6 @@ namespace CongresoVisible.FakeServices
             return string.Empty;
         }
 
-        public void SetSettingsValue(string key, object value)
-        {
-            Callback();
-        }
-
         public object GetStateValue(string key)
         {
             Callback();
@@ -29,6 +24,18 @@ namespace CongresoVisible.FakeServices
         }
 
         public void SetStateValue(string key, object value)
+        {
+            Callback();
+        }
+
+
+        public string GetIsolatedSettingsValue(string key)
+        {
+            Callback();
+            return string.Empty;
+        }
+
+        public void SetIsolatedSettingsValue(string key, object value)
         {
             Callback();
         }

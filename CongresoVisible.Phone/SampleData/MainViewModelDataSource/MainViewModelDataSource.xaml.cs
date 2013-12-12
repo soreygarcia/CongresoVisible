@@ -255,6 +255,25 @@ namespace Expression.Blend.SampleData.MainViewModelDataSource
 				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
 			}
 		}
+
+		private string _Name = string.Empty;
+
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+
+			set
+			{
+				if (this._Name != value)
+				{
+					this._Name = value;
+					this.OnPropertyChanged("Name");
+				}
+			}
+		}
 	}
 
 	public class Filters : System.Collections.ObjectModel.ObservableCollection<FiltersItem>

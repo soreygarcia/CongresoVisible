@@ -17,14 +17,9 @@ namespace Infrastructure.Common
             }
         }
 
-        public T GetContext<T>()
-        {
-            return this.serviceLocator.Resolve<T>();
-        }
-
         public T GetService<T>()
         {
-            return GetContext<T>();
+            return this.serviceLocator.Resolve<T>();
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using CongresoVisible.Contracts.Services;
-using CongresoVisible.Contracts.ViewModels.Common;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;

@@ -22,5 +22,10 @@ namespace CongresoVisible.FakeServices
         {
             get { return isNetworkAvailable; }
         }
+
+        public void Initialize()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -10,7 +10,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Infrastructure.Common;
 using CongresoVisible.Contracts.ViewModels;
-using CongresoVisible.Services.Helpers;
 using System.Collections.ObjectModel;
 
 namespace CongresoVisible.Services
@@ -19,62 +18,51 @@ namespace CongresoVisible.Services
     {
         ISettingsService settingsService;
 
-        public void GetPeople(string filter)
+        public async Task<PeopleContainer> GetPeople(string filter)
         {
             var client = new HttpClient();
             settingsService = GetService<ISettingsService>();
 
-            var serviceUrl = settingsService.GetSettingsValue("PeopleServiceUrl");
-            var response = client.GetAsync(serviceUrl).Result;
-            var json = response.Content.ReadAsStringAsync().Result;
+            var serviceUrl = "http://congresovisible.org/api/apis/partidos/?format=json";
+            var json = await client.GetStringAsync(serviceUrl);
 
             using (MemoryStream stream = new MemoryStream(Encoding.Unicode.GetBytes(json)))
             {
                 DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(PeopleContainer));
-                PeopleContainer result = serializer.ReadObject(stream) as PeopleContainer;
-
-                IMainViewModel context = GetContext<IMainViewModel>();
-                ViewModelHelper.SetPeople(context, result);
+                return serializer.ReadObject(stream) as PeopleContainer;
             }
         }
 
-        public void GetPerson(int id)
+        public async Task<Person> GetPerson(int id)
         {
             var client = new HttpClient();
             settingsService = GetService<ISettingsService>();
 
             var serviceUrl = settingsService.GetSettingsValue("PersonServiceUrl");
-            var response = client.GetAsync(serviceUrl).Result;
-            var json = response.Content.ReadAsStringAsync().Result;
+            var json = await client.GetStringAsync(serviceUrl);
+
             using (MemoryStream stream = new MemoryStream(Encoding.Unicode.GetBytes(json)))
             {
                 DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(Person));
-                var result = serializer.ReadObject(stream) as Person;
-
-                IMainViewModel context = GetContext<IMainViewModel>();
-                ViewModelHelper.SetSelectedPerson(context, result);
+                return serializer.ReadObject(stream) as Person;
             }
         }
 
-        public void GetParties()
+        public async Task<PartiesContainer> GetParties()
         {
             var client = new HttpClient();
             settingsService = GetService<ISettingsService>();
 
             var serviceUrl = settingsService.GetSettingsValue("PartiesServiceUrl");
-            var response = client.GetAsync(serviceUrl).Result;
-            var json = response.Content.ReadAsStringAsync().Result;
+            var json = await client.GetStringAsync(serviceUrl);
             using (MemoryStream stream = new MemoryStream(Encoding.Unicode.GetBytes(json)))
             {
                 DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(PartiesContainer));
-                var result = serializer.ReadObject(stream) as PartiesContainer;
-
-                IMainViewModel context = GetContext<IMainViewModel>();
-                ViewModelHelper.SetParties(context, result);
+                return serializer.ReadObject(stream) as PartiesContainer;
             }
         }
 
-        public void GetFilters()
+        public Task<FiltersContainer> GetFilters()
         {
             throw new NotImplementedException();
         }

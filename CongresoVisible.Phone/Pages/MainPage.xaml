@@ -13,6 +13,13 @@
     DataContext="{Binding Main, Source={StaticResource Locator}}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False">
+	<phone:PhoneApplicationPage.Resources>
+		<DataTemplate x:Key="PartiesItemTemplate">
+			<StackPanel>
+				<TextBlock Text="{Binding Name}" Foreground="{StaticResource DarkColor}" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+			</StackPanel>
+		</DataTemplate>
+	</phone:PhoneApplicationPage.Resources>
 
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar BackgroundColor="{StaticResource AppBarDarkColor}" ForegroundColor="{StaticResource AppBarLightColor}">
@@ -23,7 +30,7 @@
     </phone:PhoneApplicationPage.ApplicationBar>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent" DataContext="{Binding Source={StaticResource MainViewModelDataSource}}">
+    <Grid x:Name="LayoutRoot" Background="Transparent" d:DataContext="{Binding Source={StaticResource MainViewModelDataSource}}">
 
         <!-- LOCALIZATION NOTE:
             To localize the displayed strings copy their values to appropriately named
@@ -54,8 +61,10 @@
                     <ListBox HorizontalAlignment="Left" ItemTemplate="{StaticResource PersonItemTemplate}" ItemsSource="{Binding Following}" Margin="0" VerticalAlignment="Top"/>
                 </Grid>
             </phone:PanoramaItem>
-            <phone:PanoramaItem Header="item2" Margin="0,100,0,0">
-                <Grid/>
+            <phone:PanoramaItem Header="partidos" Margin="0,100,0,0">
+                <Grid>
+                	<ListBox ItemTemplate="{StaticResource PartiesItemTemplate}" ItemsSource="{Binding Parties}" Margin="14,0,0,0"/>
+                </Grid>
             </phone:PanoramaItem>
             <phone:PanoramaItem Header="item3" Margin="0,100,0,0">
                 <Grid/>

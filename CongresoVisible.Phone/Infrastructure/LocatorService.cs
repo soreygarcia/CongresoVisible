@@ -3,6 +3,7 @@ using CongresoVisible.Contracts.ViewModels;
 using CongresoVisible.Services;
 using CongresoVisible.ViewModels;
 using Infrastructure.Common;
+using Infrastructure.Common.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;

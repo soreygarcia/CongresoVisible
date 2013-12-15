@@ -1,4 +1,4 @@
-﻿using CongresoVisible.Contracts.Services;
+﻿using Infrastructure.Common.Contracts;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;

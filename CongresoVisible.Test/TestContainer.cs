@@ -10,6 +10,7 @@ using CongresoVisible.Contracts.ViewModels;
 using CongresoVisible.Contracts.Services;
 using CongresoVisible.FakeServices;
 using System.Windows.Input;
+using Infrastructure.Common.Contracts;
 
 namespace CongresoVisible.Test
 {

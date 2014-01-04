@@ -70,6 +70,15 @@ namespace CongresoVisible.Phone.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Db.sqlite.
+        /// </summary>
+        public static string DataBasePath {
+            get {
+                return ResourceManager.GetString("DataBasePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to http://congresovisible.org/api/apis/partidos/?format=json.
         /// </summary>
         public static string PartiesServiceUrl {

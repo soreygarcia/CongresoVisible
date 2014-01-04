@@ -94,8 +94,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\DbConnectionService.cs" />
     <Compile Include="Infrastructure\InternetService.cs" />
-    <Compile Include="Infrastructure\LocalDataService.cs" />
+    <Compile Include="Infrastructure\LocalFilesService.cs" />
     <Compile Include="Infrastructure\NavigatorService.cs" />
     <Compile Include="Infrastructure\LocatorService.cs" />
     <Compile Include="Infrastructure\SettingsService.cs" />
@@ -197,6 +198,9 @@
     <Reference Include="Microsoft.Phone.Controls.Toolkit">
       <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
     </Reference>
+    <Reference Include="SQLite.Net">
+      <HintPath>..\packages\SQLite.Net-PCL.2.0.2\lib\portable-net4+sl4+wp7+win8+monotouch+MonoAndroid\SQLite.Net.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CongresoVisible.Contracts\CongresoVisible.Contracts.csproj">
@@ -214,6 +218,14 @@
     <ProjectReference Include="..\Infrastructure.Common\Infrastructure.Common.csproj">
       <Project>{AD36BD6F-07B5-4C3B-A196-1EA714E58F76}</Project>
       <Name>Infrastructure.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLite.Net\SQLite.Net.Platform.WindowsPhone8.CSharpSqlite\SQLite.Net.Platform.WindowsPhone8.CSharpSqlite.csproj">
+      <Project>{BC4BFEB2-05EE-4EAD-BC41-023BFB79F187}</Project>
+      <Name>SQLite.Net.Platform.WindowsPhone8.CSharpSqlite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLite.Net\SQLite.Net.Platform.WindowsPhone8\SQLite.Net.Platform.WindowsPhone8.csproj">
+      <Project>{741521F8-F9D8-40F4-A5D4-AED4E26841ED}</Project>
+      <Name>SQLite.Net.Platform.WindowsPhone8</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

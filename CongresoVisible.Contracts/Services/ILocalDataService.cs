@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CongresoVisible.Contracts.ViewModels;
+using CongresoVisible.Contracts.Common;
+using CongresoVisible.Models;
 
 namespace CongresoVisible.Contracts.Services
 {
-    public interface ILocalDataService
+    public interface ILocalDataService : IServiceLocator
     {
-        void GetFollowing();
-        void SavePerson(IPersonViewModel person);
+        List<Person> GetFollowing();
+        void SavePerson(Person person);
         void RemovePerson(int id);
     }
 }

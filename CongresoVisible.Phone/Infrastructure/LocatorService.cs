@@ -16,9 +16,16 @@ namespace CongresoVisible.Phone.Infrastructure
     {
         public LocatorService()
         {
+            //Keep the order
+            ServiceLocator.Instance.Register<ISettingsService>(new SettingsService());
+           
+            ServiceLocator.Instance.Register<IDbConnectionService>(new DbConnectionService());
+            ServiceLocator.Instance.Register<ILocalFilesService>(new LocalFilesService());
+            ServiceLocator.Instance.Register<ILocalDataService>(new LocalDataService());
+
             ServiceLocator.Instance.Register<ISocialService>(new SocialService());
             ServiceLocator.Instance.Register<IJsonService>(new JsonService());
-            ServiceLocator.Instance.Register<ISettingsService>(new SettingsService());
+            ServiceLocator.Instance.Register<IStoreService>(new StoreService());
 
             INavigationService navigator = new NavigatorService();
             ServiceLocator.Instance.Register<INavigationService>(navigator);

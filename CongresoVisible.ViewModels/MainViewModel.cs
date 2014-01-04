@@ -28,6 +28,19 @@ namespace CongresoVisible.ViewModels
             }
         }
 
+        private IPartyViewModel selectedParty;
+        public IPartyViewModel SelectedParty
+        {
+            get
+            {
+                return this.selectedParty;
+            }
+            set
+            {
+                SetProperty(ref selectedParty, value);
+            }
+        }
+
         private ObservableCollection<IFilterViewModel> filters;
         public ObservableCollection<IFilterViewModel> Filters
         {
@@ -87,6 +100,7 @@ namespace CongresoVisible.ViewModels
             this.getFollowingPeopleCommand = new DelegateCommand(GetFollowingPeople, null);
             this.getRandomPeopleCommand = new DelegateCommand(GetRandomPeople, null);
             this.getPartiesCommand = new DelegateCommand(GetParties, null);
+            this.getPeopleByPartyCommand = new DelegateCommand(GetPeopleByParty, null);
 
             jsonService = GetService<IJsonService>();
         }
@@ -111,11 +125,12 @@ namespace CongresoVisible.ViewModels
             get { return this.getFiltersCommand; }
         }
 
-        public void GetFilters()
+        public async void GetFilters()
         {
             if (NetworkMonitor.IsNetworkAvailable)
             {
-                jsonService.GetFilters();
+                var result = await jsonService.GetFilters();
+                ViewModelHelper.SetFilters(this, result);
             }
         }
         #endregion GetFilters
@@ -127,11 +142,30 @@ namespace CongresoVisible.ViewModels
         {
             get { return this.getFollowingPeopleCommand; }
         }
-        public void GetFollowingPeople()
+        public async void GetFollowingPeople()
         {
             if (NetworkMonitor.IsNetworkAvailable)
             {
-                jsonService.GetPeople(string.Empty);
+                var result = await jsonService.GetPeople(string.Empty);
+                ViewModelHelper.SetPeople(this, result);
+            }
+        }
+
+        #endregion GetFollowingPeopleCommand
+
+        #region GetPeopleByParty
+
+        private ICommand getPeopleByPartyCommand;
+        public ICommand GetPeopleByPartyCommand
+        {
+            get { return this.getPeopleByPartyCommand; }
+        }
+        public async void GetPeopleByParty()
+        {
+            if (NetworkMonitor.IsNetworkAvailable)
+            {
+                var result = await jsonService.GetPeopleByParty(this.SelectedParty.Id);
+                ViewModelHelper.SetPeople(this, result);
             }
         }
 
@@ -143,11 +177,12 @@ namespace CongresoVisible.ViewModels
         {
             get { return this.getRandomPeopleCommand; }
         }
-        public void GetRandomPeople()
+        public async void GetRandomPeople()
         {
             if (NetworkMonitor.IsNetworkAvailable)
             {
-
+                var result = await jsonService.GetPeople(string.Empty);
+                ViewModelHelper.SetRandomPeople(this, result);
             }
         }
         #endregion GetRandomPeople

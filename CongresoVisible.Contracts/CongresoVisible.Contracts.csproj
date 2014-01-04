@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Services\IJsonService.cs" />
     <Compile Include="Services\ILocalDataService.cs" />
+    <Compile Include="Services\ILocalFilesService.cs" />
     <Compile Include="Services\IRoamingService.cs" />
     <Compile Include="Services\ISettingsService.cs" />
     <Compile Include="Services\ISocialService.cs" />
@@ -70,6 +71,9 @@
     <Compile Include="ViewModels\ITopicViewModel.cs">
       <SubType>Code</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -66,5 +66,10 @@ namespace CongresoVisible.Services
         {
             throw new NotImplementedException();
         }
+
+        public Task<PeopleContainer> GetPeopleByParty(int party)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

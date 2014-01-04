@@ -9,7 +9,7 @@ namespace CongresoVisible.Models
     public class Container
     {
         public int count { get; set; }
-        public int next { get; set; }
-        public int previous { get; set; }
+        public string next { get; set; }
+        public string previous { get; set; }
     }
 }

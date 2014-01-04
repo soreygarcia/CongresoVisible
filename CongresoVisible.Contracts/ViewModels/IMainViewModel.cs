@@ -23,5 +23,6 @@ namespace CongresoVisible.Contracts.ViewModels
         ICommand GetFollowingPeopleCommand { get; }
         ICommand GetRandomPeopleCommand { get; }
         ICommand GetPartiesCommand { get; }
+        ICommand GetPeopleByPartyCommand { get; }
     }
 }

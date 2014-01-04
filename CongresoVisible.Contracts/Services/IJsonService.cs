@@ -16,6 +16,7 @@ namespace CongresoVisible.Contracts.Services
         Task<Person> GetPerson(int id);
         Task<PartiesContainer> GetParties();
         Task<FiltersContainer> GetFilters();
+        Task<PeopleContainer> GetPeopleByParty(int party);
     }
 }
 

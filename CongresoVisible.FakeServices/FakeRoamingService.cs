@@ -1,4 +1,5 @@
 ﻿using CongresoVisible.Contracts.Services;
+using CongresoVisible.FakeServices.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CongresoVisible.FakeServices
 {
-    public class FakeRoamingService : IRoamingService
+    public class FakeRoamingService : IRoamingService, IFakeService
     {
         public Action Callback { get; set; }
 

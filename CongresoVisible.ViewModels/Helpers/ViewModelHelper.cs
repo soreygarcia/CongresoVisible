@@ -34,5 +34,15 @@ namespace CongresoVisible.ViewModels.Helpers
 
             context.Parties = parties;
         }
+
+        internal static void SetRandomPeople(MainViewModel mainViewModel, PeopleContainer result)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static void SetFilters(MainViewModel mainViewModel, FiltersContainer result)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

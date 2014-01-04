@@ -229,8 +229,8 @@ namespace CongresoVisible.ViewModels
             }
         }
 
-        private List<string> supportedTopics;
-        public List<string> SupportedTopics
+        private List<ITopicViewModel> supportedTopics;
+        public List<ITopicViewModel> SupportedTopics
         {
             get
             {

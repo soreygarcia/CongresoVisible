@@ -1,94 +1,64 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph DataVirtualized="True" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="@10" Category="CodeSchema_Assembly" AssemblyTimestamp="12/14/2013 23:43:42" Bounds="1096.47041143654,228.447387238494,202.716666666667,25" CodeSchemaProperty_StrongName="CongresoVisible.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(c243c284-b80d-42da-bd48-ac88f060b3b5.OutputPath)" Group="Collapsed" Label="CongresoVisible.Models.dll" UseManualLocation="True">
+    <Node Id="@10" Category="CodeSchema_Assembly" AssemblyTimestamp="12/15/2013 07:07:06" Bounds="754.006576120613,234.592909308523,228.026666666667,25" CodeSchemaProperty_StrongName="CongresoVisible.ViewModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(cf477caf-84f8-40fb-b971-c413e0b0f57b.OutputPath)" Group="Collapsed" Label="CongresoVisible.ViewModels.dll" UseManualLocation="True">
       <Category Ref="FileSystem.Category.FileOfType.dll" />
     </Node>
-    <Node Id="@12" Category="CodeSchema_Assembly" AssemblyTimestamp="12/14/2013 23:43:44" Bounds="834.751813110181,-40.8598326359833,228.026666666667,25" CodeSchemaProperty_StrongName="CongresoVisible.ViewModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(cf477caf-84f8-40fb-b971-c413e0b0f57b.OutputPath)" Group="Collapsed" Label="CongresoVisible.ViewModels.dll" UseManualLocation="True">
+    <Node Id="@12" Category="CodeSchema_Assembly" AssemblyTimestamp="12/15/2013 07:07:06" Bounds="757.126756904821,-17.5949773361226,213.866666666667,25" CodeSchemaProperty_StrongName="CongresoVisible.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(14c9fba9-7f22-494c-b327-cb3831155232.OutputPath)" Group="Collapsed" Label="CongresoVisible.Contracts.dll" UseManualLocation="True">
       <Category Ref="FileSystem.Category.FileOfType.dll" />
     </Node>
-    <Node Id="@14" Category="CodeSchema_Assembly" AssemblyTimestamp="12/14/2013 23:43:42" Bounds="837.970320781032,125.05840306834,213.866666666667,25" CodeSchemaProperty_StrongName="CongresoVisible.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(14c9fba9-7f22-494c-b327-cb3831155232.OutputPath)" Group="Collapsed" Label="CongresoVisible.Contracts.dll" UseManualLocation="True">
-      <Category Ref="Category1" />
+    <Node Id="@2" Category="CodeSchema_Assembly" AssemblyTimestamp="12/15/2013 07:07:07" Bounds="429.466898535565,-147.224973849372,197.173333333333,25" CodeSchemaProperty_StrongName="CongresoVisible.Phone, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(2b84bbc1-8e46-41b8-b182-f0d5c637d768.OutputPath)" Group="Collapsed" Label="CongresoVisible.Phone.dll" UseManualLocation="True">
       <Category Ref="FileSystem.Category.FileOfType.dll" />
     </Node>
-    <Node Id="@16" Category="CodeSchema_Assembly" AssemblyTimestamp="12/14/2013 23:43:45" Bounds="1205.38880055788,-52.7229079497908,185.29,25" CodeSchemaProperty_StrongName="CongresoVisible.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(9dc63d9c-f913-43e6-82c2-5e5618e22416.OutputPath)" Group="Collapsed" Label="CongresoVisible.Test.dll" UseManualLocation="True">
+    <Node Id="@4" Category="CodeSchema_Assembly" AssemblyTimestamp="12/15/2013 07:07:05" Bounds="424.322144323732,82.0566036104634,198.026666666667,25" CodeSchemaProperty_StrongName="Infrastructure.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(ad36bd6f-07b5-4c3b-a196-1ea714e58f76.OutputPath)" Group="Collapsed" Label="Infrastructure.Common.dll" UseManualLocation="True">
       <Category Ref="FileSystem.Category.FileOfType.dll" />
     </Node>
-    <Node Id="@18" Category="CodeSchema_Assembly" AssemblyTimestamp="12/14/2013 23:43:45" Bounds="995.527064156206,-164.559379358438,218.896666666667,25" CodeSchemaProperty_StrongName="CongresoVisible.PhoneTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(d81a35e6-7813-4855-823f-abc69153f776.OutputPath)" Group="Collapsed" Label="CongresoVisible.PhoneTest.dll" UseManualLocation="True">
+    <Node Id="@6" Category="CodeSchema_Assembly" AssemblyTimestamp="12/15/2013 07:07:06" Bounds="119.16095382904,-5.37257529279162,205.956666666667,25" CodeSchemaProperty_StrongName="CongresoVisible.Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(b4844109-bddf-43ca-a7c0-9f6073ce7960.OutputPath)" Group="Collapsed" Label="CongresoVisible.Services.dll" UseManualLocation="True">
       <Category Ref="FileSystem.Category.FileOfType.dll" />
     </Node>
-    <Node Id="@2" Category="CodeSchema_Assembly" AssemblyTimestamp="12/14/2013 23:43:46" Bounds="636.022046722454,-154.973396094839,197.173333333333,25" CodeSchemaProperty_StrongName="CongresoVisible.Phone, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(2b84bbc1-8e46-41b8-b182-f0d5c637d768.OutputPath)" Group="Collapsed" Label="CongresoVisible.Phone.dll" UseManualLocation="True">
-      <Category Ref="FileSystem.Category.FileOfType.dll" />
-    </Node>
-    <Node Id="@4" Category="CodeSchema_Assembly" AssemblyTimestamp="12/14/2013 23:43:43" Bounds="465.948430962343,25.3238145048815,198.026666666667,25" CodeSchemaProperty_StrongName="Infrastructure.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(ad36bd6f-07b5-4c3b-a196-1ea714e58f76.OutputPath)" Group="Collapsed" Label="Infrastructure.Common.dll" UseManualLocation="True">
-      <Category Ref="FileSystem.Category.FileOfType.dll" />
-    </Node>
-    <Node Id="@6" Category="CodeSchema_Assembly" AssemblyTimestamp="12/14/2013 23:43:44" Bounds="617.912057182706,232.340690376569,205.956666666667,25" CodeSchemaProperty_StrongName="CongresoVisible.Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(b4844109-bddf-43ca-a7c0-9f6073ce7960.OutputPath)" Group="Collapsed" Label="CongresoVisible.Services.dll" UseManualLocation="True">
-      <Category Ref="FileSystem.Category.FileOfType.dll" />
-    </Node>
-    <Node Id="@8" Category="CodeSchema_Assembly" AssemblyTimestamp="12/14/2013 23:43:43" Bounds="1150.53653417015,43.8163528591353,230.163333333333,25" CodeSchemaProperty_StrongName="CongresoVisible.FakeServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(73b42119-b167-4c28-be5b-f9ffad45e14a.OutputPath)" Group="Collapsed" Label="CongresoVisible.FakeServices.dll" UseManualLocation="True">
+    <Node Id="@8" Category="CodeSchema_Assembly" AssemblyTimestamp="12/15/2013 07:07:05" Bounds="119.890154536193,239.28674384708,202.716666666667,24.9999999999999" CodeSchemaProperty_StrongName="CongresoVisible.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" FilePath="$(c243c284-b80d-42da-bd48-ac88f060b3b5.OutputPath)" Group="Collapsed" Label="CongresoVisible.Models.dll" UseManualLocation="True">
       <Category Ref="FileSystem.Category.FileOfType.dll" />
     </Node>
   </Nodes>
   <Links>
-    <Link Source="@12" Target="@10" Category="References" Bounds="960.325530827307,-15.8598326359833,219.832054407328,237.699767487326" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="14">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@12" Target="@14" Category="References" Bounds="945.403976917193,-15.8598326359833,3.07025120797402,131.920672158459" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="96">
+    <Link Source="@10" Target="@12" Category="References" Bounds="864.397662838455,16.4039134009722,3.42597334933248,218.188995907551" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="66">
       <Category Ref="CodeSchema_Calls" />
       <Category Ref="CodeSchema_ReturnTypeLink" />
       <Category Ref="Implements" />
     </Link>
-    <Link Source="@12" Target="@4" Category="References" Bounds="646.319197485156,-15.8598326359833,229.957615599562,39.6542458876342" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="94">
+    <Link Source="@10" Target="@4" Category="References" Bounds="559.811689010342,110.698749911313,279.962122717928,123.89415939721" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="124">
       <Category Ref="CodeSchema_Calls" />
+      <Category Ref="CodeSchema_ReturnTypeLink" />
+      <Category Ref="Implements" />
       <Category Ref="InheritsFrom" />
     </Link>
-    <Link Source="@14" Target="@10" Category="References" Bounds="975.482962524928,150.05840306834,183.43562382336,74.9835564299419" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4" />
-    <Link Source="@16" Target="@12" Category="CodeSchema_Calls" Bounds="1071.77329282404,-37.0761766313604,133.615507733845,4.53831402465395" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
-    <Link Source="@16" Target="@14" Category="References" Bounds="977.771363628141,-27.7229079497908,295.433466970721,148.734254511142" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="28">
+    <Link Source="@10" Target="@8" Category="References" Bounds="331.606584202357,247.920341851143,422.399991918256,3.06549671952902" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="14">
       <Category Ref="CodeSchema_Calls" />
     </Link>
-    <Link Source="@16" Target="@4" Category="CodeSchema_Calls" Bounds="671.969004260813,-30.419294924607,533.982075369586,56.8505532479942" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="12" />
-    <Link Source="@16" Target="@8" Category="References" Bounds="1272.68020721139,-27.7229079497908,21.1563890886828,63.0073847648284" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="14">
-      <Category Ref="CodeSchema_Calls" />
-      <Category Ref="CodeSchema_FieldRead" />
-    </Link>
-    <Link Source="@18" Target="@12" Category="CodeSchema_Calls" Bounds="971.606080199014,-139.559379358438,117.584068356215,93.1123012737523" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
-    <Link Source="@18" Target="@4" Category="CodeSchema_Calls" Bounds="609.001241425704,-139.559379358438,460.42508888424,161.897739312734" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
-    <Link Source="@18" Target="@8" Category="CodeSchema_Calls" Bounds="1114.61200449973,-139.559379358438,135.874592821619,176.247968654792" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
-    <Link Source="@2" Target="@12" Category="CodeSchema_Calls" Bounds="758.067409551432,-129.973396094839,159.296275513398,84.881249586094" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4" />
-    <Link Source="@2" Target="@14" Category="References" Bounds="743.995814307377,-129.973396094839,186.116281114448,247.835144651118" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="19">
-      <Category Ref="CodeSchema_Calls" />
+    <Link Source="@12" Target="@4" Category="Implements" Bounds="574.71310010307,7.4050226638774,246.607501039106,72.1251897996808" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="5" />
+    <Link Source="@12" Target="@8" Category="References" Bounds="268.214721679688,7.40502262115479,572.342163085938,229.096442222595" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4" />
+    <Link Source="@2" Target="@10" Category="CodeSchema_Calls" Bounds="539.183424463928,-122.224973849372,311.72172152945,350.096207642792" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4" />
+    <Link Source="@2" Target="@12" Category="References" Bounds="560.454102700662,-122.224973849372,262.808665707845,101.390550126125" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="14">
       <Category Ref="CodeSchema_ReturnTypeLink" />
       <Category Ref="Implements" />
     </Link>
-    <Link Source="@2" Target="@4" Category="CodeSchema_Calls" Bounds="582.89080553625,-129.973396094839,139.956290151664,148.742602534697" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="21" />
-    <Link Source="@2" Target="@6" Category="CodeSchema_Calls" Bounds="721.651701763537,-129.973396094839,12.5142726653886,353.319726477626" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
-    <Link Source="@4" Target="@14" Category="References" Bounds="612.580887120972,50.3238145048815,275.998564593418,72.449508784003" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="8">
-      <Category Ref="CodeSchema_ReturnTypeLink" />
-    </Link>
-    <Link Source="@6" Target="@10" Category="References" Bounds="823.868723849372,241.84825267371,263.60198743627,2.15181361644554" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="28" />
-    <Link Source="@6" Target="@14" Category="References" Bounds="746.991304890972,153.945793040681,163.694280223657,78.3948973358885" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="9">
+    <Link Source="@2" Target="@4" Category="References" Bounds="523.777859011645,-122.224973849372,4.01848493902367,195.283482342743" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="26">
       <Category Ref="CodeSchema_Calls" />
       <Category Ref="Implements" />
     </Link>
-    <Link Source="@6" Target="@4" Category="InheritsFrom" Bounds="579.791766107273,57.5126985707843,131.683412148667,174.827991805785" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="6">
+    <Link Source="@2" Target="@6" Category="CodeSchema_Calls" Bounds="257.261288300145,-122.224973849372,243.835182666045,113.066332618688" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@6" Target="@12" Category="References" Bounds="325.117620495707,-2.88759619327374,423.010767374252,8.05427654429156" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="9">
       <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@8" Target="@10" Category="References" Bounds="1205.52024547745,68.8163528591353,55.5084333232428,151.182500286283" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4" />
-    <Link Source="@8" Target="@14" Category="References" Bounds="1002.97361517956,68.8163528591353,213.299058018467,54.0320136963065" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="10">
       <Category Ref="Implements" />
     </Link>
-    <Link Source="@8" Target="@4" Category="InheritsFrom" Bounds="672.971964570441,40.674545144126,477.564569599713,12.6044387225676" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3">
+    <Link Source="@6" Target="@4" Category="InheritsFrom" Bounds="265.202168781675,19.6274247072084,206.427196920387,59.9202808654649" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="6">
       <Category Ref="CodeSchema_Calls" />
     </Link>
+    <Link Source="@6" Target="@8" Category="References" Bounds="221.326768687618,19.6274247072084,0.767006244934493,210.659378794535" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="28" />
   </Links>
   <Categories>
-    <Category Id="Category1" Label="Category 1" Background="#FFE51400" IsTag="True" />
     <Category Id="CodeSchema_Assembly" Label="Assembly" BasedOn="File" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="CodeSchema_Assembly" NavigationActionLabel="Assemblies" />
     <Category Id="CodeSchema_Calls" Label="Calls" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Called By" OutgoingActionLabel="Calls" />
-    <Category Id="CodeSchema_FieldRead" Label="Field Read" BasedOn="CodeSchema_FieldReference" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Read By" OutgoingActionLabel="Reads Fields" />
-    <Category Id="CodeSchema_FieldReference" Label="Field Reference" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Referenced By" OutgoingActionLabel="References Fields" />
     <Category Id="CodeSchema_ReturnTypeLink" Label="Return" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Return types" OutgoingActionLabel="Return types" />
     <Category Id="File" Label="File" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="File" NavigationActionLabel="Files" />
     <Category Id="FileSystem.Category.FileOfType.dll" BasedOn="CodeSchema_Assembly" CanBeDataDriven="True" IsProviderRoot="False" />
@@ -98,7 +68,6 @@
   </Categories>
   <Properties>
     <Property Id="AssemblyTimestamp" DataType="System.DateTime" />
-    <Property Id="Background" Label="Background" Description="The background color" DataType="System.Windows.Media.Brush" />
     <Property Id="Bounds" DataType="System.Windows.Rect" />
     <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
     <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
@@ -116,7 +85,6 @@
     <Property Id="IsEnabled" DataType="System.Boolean" />
     <Property Id="IsProviderRoot" Label="IsProviderRoot" Description="IsProviderRoot" DataType="System.Boolean" />
     <Property Id="IsSourceVirtualized" Label="Link Source Virtualized" Description="If true, the link source end contains data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
-    <Property Id="IsTag" DataType="System.Boolean" />
     <Property Id="IsTargetVirtualized" Label="Link Target Virtualized" Description="If true, the link target end contains data for virtualized nodes/links (i.e. not actually created in the graph)." DataType="System.Boolean" />
     <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
     <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
@@ -138,24 +106,14 @@
     <Alias n="4" Id="(@3)" />
     <Alias n="5" Uri="Assembly=$(b4844109-bddf-43ca-a7c0-9f6073ce7960.OutputPathUri)" />
     <Alias n="6" Id="(@5)" />
-    <Alias n="7" Uri="Assembly=$(73b42119-b167-4c28-be5b-f9ffad45e14a.OutputPathUri)" />
+    <Alias n="7" Uri="Assembly=$(c243c284-b80d-42da-bd48-ac88f060b3b5.OutputPathUri)" />
     <Alias n="8" Id="(@7)" />
-    <Alias n="9" Uri="Assembly=$(c243c284-b80d-42da-bd48-ac88f060b3b5.OutputPathUri)" />
+    <Alias n="9" Uri="Assembly=$(cf477caf-84f8-40fb-b971-c413e0b0f57b.OutputPathUri)" />
     <Alias n="10" Id="(@9)" />
-    <Alias n="11" Uri="Assembly=$(cf477caf-84f8-40fb-b971-c413e0b0f57b.OutputPathUri)" />
+    <Alias n="11" Uri="Assembly=$(14c9fba9-7f22-494c-b327-cb3831155232.OutputPathUri)" />
     <Alias n="12" Id="(@11)" />
-    <Alias n="13" Uri="Assembly=$(14c9fba9-7f22-494c-b327-cb3831155232.OutputPathUri)" />
-    <Alias n="14" Id="(@13)" />
-    <Alias n="15" Uri="Assembly=$(9dc63d9c-f913-43e6-82c2-5e5618e22416.OutputPathUri)" />
-    <Alias n="16" Id="(@15)" />
-    <Alias n="17" Uri="Assembly=$(d81a35e6-7813-4855-823f-abc69153f776.OutputPathUri)" />
-    <Alias n="18" Id="(@17)" />
   </IdentifierAliases>
   <Styles>
-    <Style TargetType="Node" GroupLabel="Category 1" ValueLabel="Has category">
-      <Condition Expression="HasCategory('Category1')" />
-      <Setter Property="Background" Value="#FFE51400" />
-    </Style>
     <Style TargetType="Node" GroupLabel="Results" ValueLabel="True">
       <Condition Expression="HasCategory('QueryResult')" />
       <Setter Property="Background" Value="#FFBCFFBE" />
@@ -287,10 +245,6 @@
     <Path Id="14c9fba9-7f22-494c-b327-cb3831155232.OutputPathUri" Value="file:///E:/Dropbox/GitHub/CongresoVisible/CongresoVisible.Contracts/bin/Debug/CongresoVisible.Contracts.dll" />
     <Path Id="2b84bbc1-8e46-41b8-b182-f0d5c637d768.OutputPath" Value="E:\Dropbox\GitHub\CongresoVisible\CongresoVisible.Phone\Bin\x86\Debug\CongresoVisible.Phone.dll" />
     <Path Id="2b84bbc1-8e46-41b8-b182-f0d5c637d768.OutputPathUri" Value="file:///E:/Dropbox/GitHub/CongresoVisible/CongresoVisible.Phone/Bin/x86/Debug/CongresoVisible.Phone.dll" />
-    <Path Id="73b42119-b167-4c28-be5b-f9ffad45e14a.OutputPath" Value="E:\Dropbox\GitHub\CongresoVisible\CongresoVisible.FakeServices\bin\Debug\CongresoVisible.FakeServices.dll" />
-    <Path Id="73b42119-b167-4c28-be5b-f9ffad45e14a.OutputPathUri" Value="file:///E:/Dropbox/GitHub/CongresoVisible/CongresoVisible.FakeServices/bin/Debug/CongresoVisible.FakeServices.dll" />
-    <Path Id="9dc63d9c-f913-43e6-82c2-5e5618e22416.OutputPath" Value="E:\Dropbox\GitHub\CongresoVisible\CongresoVisible.Test\bin\Debug\CongresoVisible.Test.dll" />
-    <Path Id="9dc63d9c-f913-43e6-82c2-5e5618e22416.OutputPathUri" Value="file:///E:/Dropbox/GitHub/CongresoVisible/CongresoVisible.Test/bin/Debug/CongresoVisible.Test.dll" />
     <Path Id="ad36bd6f-07b5-4c3b-a196-1ea714e58f76.OutputPath" Value="E:\Dropbox\GitHub\CongresoVisible\Infrastructure.Common\bin\Debug\Infrastructure.Common.dll" />
     <Path Id="ad36bd6f-07b5-4c3b-a196-1ea714e58f76.OutputPathUri" Value="file:///E:/Dropbox/GitHub/CongresoVisible/Infrastructure.Common/bin/Debug/Infrastructure.Common.dll" />
     <Path Id="b4844109-bddf-43ca-a7c0-9f6073ce7960.OutputPath" Value="E:\Dropbox\GitHub\CongresoVisible\CongresoVisible.Services\bin\Debug\CongresoVisible.Services.dll" />
@@ -299,7 +253,5 @@
     <Path Id="c243c284-b80d-42da-bd48-ac88f060b3b5.OutputPathUri" Value="file:///E:/Dropbox/GitHub/CongresoVisible/CongresoVisible.Models/bin/Debug/CongresoVisible.Models.dll" />
     <Path Id="cf477caf-84f8-40fb-b971-c413e0b0f57b.OutputPath" Value="E:\Dropbox\GitHub\CongresoVisible\CongresoVisible.ViewModels\bin\Debug\CongresoVisible.ViewModels.dll" />
     <Path Id="cf477caf-84f8-40fb-b971-c413e0b0f57b.OutputPathUri" Value="file:///E:/Dropbox/GitHub/CongresoVisible/CongresoVisible.ViewModels/bin/Debug/CongresoVisible.ViewModels.dll" />
-    <Path Id="d81a35e6-7813-4855-823f-abc69153f776.OutputPath" Value="E:\Dropbox\GitHub\CongresoVisible\CongresoVisible.PhoneTest\Bin\x86\Debug\CongresoVisible.PhoneTest.dll" />
-    <Path Id="d81a35e6-7813-4855-823f-abc69153f776.OutputPathUri" Value="file:///E:/Dropbox/GitHub/CongresoVisible/CongresoVisible.PhoneTest/Bin/x86/Debug/CongresoVisible.PhoneTest.dll" />
   </Paths>
 </DirectedGraph>

@@ -26,7 +26,7 @@ namespace CongresoVisible.Contracts.ViewModels
         //Biografy
         string ProfessionalExperience { get; set; }
         string BornDate { get; set; }
-        List<string> SupportedTopics { get; set; }
+        List<ITopicViewModel> SupportedTopics { get; set; }
         //Trayectory
         int YearsInCongress { get; set; }
         int PoliticControlSummonses { get; set; }

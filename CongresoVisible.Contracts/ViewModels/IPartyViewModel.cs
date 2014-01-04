@@ -14,9 +14,7 @@ namespace CongresoVisible.Contracts.ViewModels
         int Id { get; set; }
         string Name { get; set; }
         string Logo { get; set; }
-
         ObservableCollection<IPersonViewModel> People { get; set; }
-
         ICommand ShowPartyDetailsCommand { get; }
     }
 }

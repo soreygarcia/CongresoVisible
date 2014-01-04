@@ -9,8 +9,8 @@ namespace CongresoVisible.Contracts.ViewModels
 {
     public interface ITopicViewModel : IServiceLocator
     {
-        bool Position { get; set; }
         string Name { get; set; }
+        bool Position { get; set; }
         string Url { get; set; }
         int PresentedProjects { get; set; }
     }

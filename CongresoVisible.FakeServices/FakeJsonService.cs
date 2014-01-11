@@ -14,27 +14,27 @@ namespace CongresoVisible.FakeServices
     {
         public Action Callback { get; set; }
 
-        public Task<PeopleContainer> GetPeople(string filter)
+        public Task<PeopleContainer> GetPeopleAsync(string filter)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Person> GetPerson(int id)
+        public Task<Person> GetPersonAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<PartiesContainer> GetParties()
+        public Task<PartiesContainer> GetPartiesAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<FiltersContainer> GetFilters()
+        public FiltersContainer GetFilters()
         {
             throw new NotImplementedException();
         }
 
-        public Task<PeopleContainer> GetPeopleByParty(int party)
+        public Task<PeopleContainer> GetPeopleByPartyAsync(int party)
         {
             throw new NotImplementedException();
         }

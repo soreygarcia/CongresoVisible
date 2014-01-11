@@ -97,10 +97,10 @@ namespace CongresoVisible.ViewModels
         {
             this.showAboutInfoCommand = new DelegateCommand(ShowAboutInfo, null);
             this.getFiltersCommand = new DelegateCommand(GetFilters, null);
-            this.getFollowingPeopleCommand = new DelegateCommand(GetFollowingPeople, null);
-            this.getRandomPeopleCommand = new DelegateCommand(GetRandomPeople, null);
-            this.getPartiesCommand = new DelegateCommand(GetParties, null);
-            this.getPeopleByPartyCommand = new DelegateCommand(GetPeopleByParty, null);
+            this.getFollowingPeopleCommand = new DelegateCommand(GetFollowingPeopleAsync, null);
+            this.getRandomPeopleCommand = new DelegateCommand(GetRandomPeopleAsync, null);
+            this.getPartiesCommand = new DelegateCommand(GetPartiesAsync, null);
+            this.getPeopleByPartyCommand = new DelegateCommand(GetPeopleByPartyAsync, null);
 
             jsonService = GetService<IJsonService>();
         }
@@ -125,11 +125,11 @@ namespace CongresoVisible.ViewModels
             get { return this.getFiltersCommand; }
         }
 
-        public async void GetFilters()
+        public void GetFilters()
         {
             if (NetworkMonitor.IsNetworkAvailable)
             {
-                var result = await jsonService.GetFilters();
+                var result = jsonService.GetFilters();
                 ViewModelHelper.SetFilters(this, result);
             }
         }
@@ -142,11 +142,11 @@ namespace CongresoVisible.ViewModels
         {
             get { return this.getFollowingPeopleCommand; }
         }
-        public async void GetFollowingPeople()
+        public async void GetFollowingPeopleAsync()
         {
             if (NetworkMonitor.IsNetworkAvailable)
             {
-                var result = await jsonService.GetPeople(string.Empty);
+                var result = await jsonService.GetPeopleAsync(string.Empty);
                 ViewModelHelper.SetPeople(this, result);
             }
         }
@@ -160,11 +160,11 @@ namespace CongresoVisible.ViewModels
         {
             get { return this.getPeopleByPartyCommand; }
         }
-        public async void GetPeopleByParty()
+        public async void GetPeopleByPartyAsync()
         {
             if (NetworkMonitor.IsNetworkAvailable)
             {
-                var result = await jsonService.GetPeopleByParty(this.SelectedParty.Id);
+                var result = await jsonService.GetPeopleByPartyAsync(this.SelectedParty.Id);
                 ViewModelHelper.SetPeople(this, result);
             }
         }
@@ -177,11 +177,11 @@ namespace CongresoVisible.ViewModels
         {
             get { return this.getRandomPeopleCommand; }
         }
-        public async void GetRandomPeople()
+        public async void GetRandomPeopleAsync()
         {
             if (NetworkMonitor.IsNetworkAvailable)
             {
-                var result = await jsonService.GetPeople(string.Empty);
+                var result = await jsonService.GetPeopleAsync(string.Empty);
                 ViewModelHelper.SetRandomPeople(this, result);
             }
         }
@@ -193,11 +193,11 @@ namespace CongresoVisible.ViewModels
         {
             get { return this.getPartiesCommand; }
         }
-        public async void GetParties()
+        public async void GetPartiesAsync()
         {
             if (NetworkMonitor.IsNetworkAvailable)
             {
-                var result = await jsonService.GetParties();
+                var result = await jsonService.GetPartiesAsync();
                 ViewModelHelper.SetParties(this, result);
             }
         }
@@ -205,7 +205,9 @@ namespace CongresoVisible.ViewModels
 
         public void Initialize()
         {
-            this.GetParties();
+            this.GetFollowingPeopleAsync();
+            this.GetRandomPeopleAsync();
+            this.GetPartiesAsync();
         }
     }
 }

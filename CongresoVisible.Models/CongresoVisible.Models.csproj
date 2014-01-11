@@ -39,6 +39,7 @@
   <ItemGroup>
     <Compile Include="Biography.cs" />
     <Compile Include="Container.cs" />
+    <Compile Include="Filter.cs" />
     <Compile Include="FiltersContainer.cs" />
     <Compile Include="Image.cs" />
     <Compile Include="Investigation.cs" />

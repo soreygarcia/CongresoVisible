@@ -61,20 +61,47 @@ namespace CongresoVisible.Phone.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to my application.
-        /// </summary>
-        public static string ApplicationTitle {
-            get {
-                return ResourceManager.GetString("ApplicationTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Db.sqlite.
         /// </summary>
         public static string DataBasePath {
             get {
                 return ResourceManager.GetString("DataBasePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cámara.
+        /// </summary>
+        public static string DisplayNameCamaraFilter {
+            get {
+                return ResourceManager.GetString("DisplayNameCamaraFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Género.
+        /// </summary>
+        public static string DisplayNameGenderFilter {
+            get {
+                return ResourceManager.GetString("DisplayNameGenderFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Partido político.
+        /// </summary>
+        public static string DisplayNamePartyFilter {
+            get {
+                return ResourceManager.GetString("DisplayNamePartyFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ha sido congresista.
+        /// </summary>
+        public static string DisplayNameWasCongressmanFilter {
+            get {
+                return ResourceManager.GetString("DisplayNameWasCongressmanFilter", resourceCulture);
             }
         }
         
@@ -106,29 +133,11 @@ namespace CongresoVisible.Phone.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to LeftToRight.
-        /// </summary>
-        public static string ResourceFlowDirection {
-            get {
-                return ResourceManager.GetString("ResourceFlowDirection", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to en-US.
         /// </summary>
         public static string ResourceLanguage {
             get {
                 return ResourceManager.GetString("ResourceLanguage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sample Runtime Property Value.
-        /// </summary>
-        public static string SampleProperty {
-            get {
-                return ResourceManager.GetString("SampleProperty", resourceCulture);
             }
         }
     }

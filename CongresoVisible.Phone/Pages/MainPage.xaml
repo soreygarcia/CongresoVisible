@@ -24,7 +24,7 @@
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar BackgroundColor="{StaticResource AppBarDarkColor}" ForegroundColor="{StaticResource AppBarLightColor}">
         	<shell:ApplicationBar.MenuItems>
-        		<shell:ApplicationBarMenuItem x:Name="btnAbout" Text="about" Click="btnAbout_Click"/>
+        		<shell:ApplicationBarMenuItem x:Name="btnAbout" Text="about" Click="About_Click"/>
         	</shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>

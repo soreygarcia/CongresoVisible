@@ -19,12 +19,12 @@ namespace CongresoVisible.Phone.Pages
             this.Loaded += MainPage_Loaded;
         }
 
-        void MainPage_Loaded(object sender, RoutedEventArgs e)
+        private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
             (this.DataContext as MainViewModel).Initialize();
         }
 
-        private void btnAbout_Click(object sender, System.EventArgs e)
+        private void About_Click(object sender, System.EventArgs e)
         {
             (this.DataContext as MainViewModel).ShowAboutInfo();
         }

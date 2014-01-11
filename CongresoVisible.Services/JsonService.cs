@@ -18,12 +18,12 @@ namespace CongresoVisible.Services
     {
         ISettingsService settingsService;
 
-        public async Task<PeopleContainer> GetPeople(string filter)
+        public async Task<PeopleContainer> GetPeopleAsync(string filter)
         {
             var client = new HttpClient();
             settingsService = GetService<ISettingsService>();
 
-            var serviceUrl = "http://congresovisible.org/api/apis/partidos/?format=json";
+            var serviceUrl = settingsService.GetSettingsValue("PeopleServiceUrl");
             var json = await client.GetStringAsync(serviceUrl);
 
             using (MemoryStream stream = new MemoryStream(Encoding.Unicode.GetBytes(json)))
@@ -33,7 +33,7 @@ namespace CongresoVisible.Services
             }
         }
 
-        public async Task<Person> GetPerson(int id)
+        public async Task<Person> GetPersonAsync(int id)
         {
             var client = new HttpClient();
             settingsService = GetService<ISettingsService>();
@@ -48,7 +48,7 @@ namespace CongresoVisible.Services
             }
         }
 
-        public async Task<PartiesContainer> GetParties()
+        public async Task<PartiesContainer> GetPartiesAsync()
         {
             var client = new HttpClient();
             settingsService = GetService<ISettingsService>();
@@ -62,14 +62,33 @@ namespace CongresoVisible.Services
             }
         }
 
-        public Task<FiltersContainer> GetFilters()
+        public FiltersContainer GetFilters()
         {
-            throw new NotImplementedException();
+            return new FiltersContainer()
+            {
+                filters = 
+                {
+                    new Filter() { key = "partido_politico", name = settingsService.GetSettingsValue("DisplayNamePartyFilter") },
+                    new Filter() { key = "genero", name = settingsService.GetSettingsValue("DisplayNameGenderFilter") },
+                    new Filter() { key = "ha_sido_congresista", name = settingsService.GetSettingsValue("DisplayNameWasCongressmanFilter") },
+                    new Filter() { key = "camara", name = settingsService.GetSettingsValue("DisplayNameCamaraFilter") },
+                }
+            };
         }
 
-        public Task<PeopleContainer> GetPeopleByParty(int party)
+        public async Task<PeopleContainer> GetPeopleByPartyAsync(int party)
         {
-            throw new NotImplementedException();
+            var client = new HttpClient();
+            settingsService = GetService<ISettingsService>();
+
+            var serviceUrl = settingsService.GetSettingsValue("PeopleServiceUrl") + "&partido_politico=" + party;
+            var json = await client.GetStringAsync(serviceUrl);
+
+            using (MemoryStream stream = new MemoryStream(Encoding.Unicode.GetBytes(json)))
+            {
+                DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(PeopleContainer));
+                return serializer.ReadObject(stream) as PeopleContainer;
+            }
         }
     }
 }

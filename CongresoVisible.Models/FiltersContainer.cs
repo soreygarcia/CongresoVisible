@@ -8,5 +8,6 @@ namespace CongresoVisible.Models
 {
     public class FiltersContainer
     {
+        public List<Filter> filters { get; set; }
     }
 }

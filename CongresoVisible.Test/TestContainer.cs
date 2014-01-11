@@ -28,6 +28,8 @@ namespace CongresoVisible.Test
             ServiceLocator.Instance.Register<INavigationService>(new FakeNavigationService());
             ServiceLocator.Instance.Register<IInternetService>(new FakeInternetService());
             ServiceLocator.Instance.Register<IRoamingService>(new FakeRoamingService());
+            ServiceLocator.Instance.Register<ISettingsService>(new FakeSettingsService());
+            ServiceLocator.Instance.Register<IDbConnectionService>(new FakeDbConnectionService());
             ServiceLocator.Instance.Register<ILocalDataService>(new FakeLocalDataService());
         }
 

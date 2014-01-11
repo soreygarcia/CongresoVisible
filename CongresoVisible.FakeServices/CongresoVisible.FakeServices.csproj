@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Contracts\IFakeService.cs" />
+    <Compile Include="FakeDbConnectionService.cs" />
     <Compile Include="FakeInternetService.cs" />
     <Compile Include="FakeJsonService.cs" />
     <Compile Include="FakeLocalDataService.cs" />
@@ -57,6 +58,14 @@
       <Project>{ad36bd6f-07b5-4c3b-a196-1ea714e58f76}</Project>
       <Name>Infrastructure.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SQLite.Net">
+      <HintPath>..\packages\SQLite.Net-PCL.2.0.2\lib\portable-net4+sl4+wp7+win8+monotouch+MonoAndroid\SQLite.Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -117,19 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ResourceFlowDirection" xml:space="preserve">
-    <value>LeftToRight</value>
-    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
-  </data>
   <data name="ResourceLanguage" xml:space="preserve">
     <value>en-US</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
-  </data>
-  <data name="ApplicationTitle" xml:space="preserve">
-    <value>my application</value>
-  </data>
-  <data name="SampleProperty" xml:space="preserve">
-    <value>Sample Runtime Property Value</value>
   </data>
   <data name="PartiesServiceUrl" xml:space="preserve">
     <value>http://congresovisible.org/api/apis/partidos/?format=json</value>
@@ -142,5 +132,21 @@
   </data>
   <data name="DataBasePath" xml:space="preserve">
     <value>Db.sqlite</value>
+  </data>
+  <data name="DisplayNameCamaraFilter" xml:space="preserve">
+    <value>Cámara</value>
+    <comment>0 Senado 1 Camara de representantes</comment>
+  </data>
+  <data name="DisplayNameGenderFilter" xml:space="preserve">
+    <value>Género</value>
+    <comment>1 Hombre  o 2 Mujer</comment>
+  </data>
+  <data name="DisplayNamePartyFilter" xml:space="preserve">
+    <value>Partido político</value>
+    <comment>Identificador</comment>
+  </data>
+  <data name="DisplayNameWasCongressmanFilter" xml:space="preserve">
+    <value>Ha sido congresista</value>
+    <comment>True o False</comment>
   </data>
 </root>

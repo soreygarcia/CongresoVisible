@@ -12,11 +12,11 @@ namespace CongresoVisible.Contracts.Services
 {
     public interface IJsonService : IServiceLocator
     {
-        Task<PeopleContainer> GetPeople(string filter);
-        Task<Person> GetPerson(int id);
-        Task<PartiesContainer> GetParties();
-        Task<FiltersContainer> GetFilters();
-        Task<PeopleContainer> GetPeopleByParty(int party);
+        Task<PeopleContainer> GetPeopleAsync(string filter);
+        Task<Person> GetPersonAsync(int id);
+        Task<PartiesContainer> GetPartiesAsync();
+        FiltersContainer GetFilters();
+        Task<PeopleContainer> GetPeopleByPartyAsync(int party);
     }
 }
 

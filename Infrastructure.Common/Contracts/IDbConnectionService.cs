@@ -1,6 +1,6 @@
 ﻿using SQLite.Net;
 using System;
-namespace CongresoVisible.Phone.Infrastructure
+namespace Infrastructure.Common.Contracts
 {
     public interface IDbConnectionService
     {

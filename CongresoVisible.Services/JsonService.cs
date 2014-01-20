@@ -11,12 +11,25 @@ using System.Threading.Tasks;
 using Infrastructure.Common;
 using CongresoVisible.Contracts.ViewModels;
 using System.Collections.ObjectModel;
+using System.Collections.Generic;
 
 namespace CongresoVisible.Services
 {
     public class JsonService : ServiceBase, IJsonService
     {
         ISettingsService settingsService;
+
+        public async Task<TData> GetDataAsync<TData>(string serviceUrl)
+        {
+            var client = new HttpClient();
+            var json = await client.GetStringAsync(serviceUrl);
+
+            using (MemoryStream stream = new MemoryStream(Encoding.Unicode.GetBytes(json)))
+            {
+                DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(TData));
+                return serializer.ReadObject(stream) as TData;
+            }
+        }
 
         public async Task<PeopleContainer> GetPeopleAsync(string filter)
         {

@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 using CongresoVisible.Models;
 using SQLite.Net;
 using Infrastructure.Common;
+using Infrastructure.Common.Contracts;
 
-namespace CongresoVisible.Phone.Infrastructure
+namespace CongresoVisible.Services
 {
     public class LocalDataService : ServiceBase, ILocalDataService
     {

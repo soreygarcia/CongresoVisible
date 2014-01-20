@@ -5,8 +5,8 @@ namespace Infrastructure.Common
 {
     public class DelegateCommand: ICommand
     {
-        private readonly Action _execute;
-        private readonly Func<bool> _canExecute;
+        private readonly Action execute;
+        private readonly Func<bool> canExecute;
 
         /// <summary>
         /// Raised when RaiseCanExecuteChanged is called.
@@ -31,8 +31,9 @@ namespace Infrastructure.Common
         {
             if (execute == null)
                 throw new ArgumentNullException("execute");
-            _execute = execute;
-            _canExecute = canExecute;
+
+            this.execute = execute;
+            this.canExecute = canExecute;
         }
 
         /// <summary>
@@ -44,7 +45,7 @@ namespace Infrastructure.Common
         /// <returns>true if this command can be executed; otherwise, false.</returns>
         public bool CanExecute(object parameter)
         {
-            return _canExecute == null ? true : _canExecute();
+            return canExecute == null ? true : canExecute();
         }
 
         /// <summary>
@@ -55,7 +56,7 @@ namespace Infrastructure.Common
         /// </param>
         public void Execute(object parameter)
         {
-            _execute();
+            execute();
         }
 
         /// <summary>

@@ -27,7 +27,7 @@ namespace CongresoVisible.Services
             using (MemoryStream stream = new MemoryStream(Encoding.Unicode.GetBytes(json)))
             {
                 DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(TData));
-                return serializer.ReadObject(stream) as TData;
+                return (TData)serializer.ReadObject(stream);
             }
         }
 

@@ -1,5 +1,6 @@
 ﻿using CongresoVisible.Contracts.Services;
 using Infrastructure.Common;
+using Infrastructure.Common.Contracts;
 using SQLite.Net;
 using SQLite.Net.Platform.WindowsPhone8.CSharpSqlite;
 using System;

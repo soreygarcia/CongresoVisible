@@ -97,7 +97,7 @@
     <Compile Include="Infrastructure\DbConnectionService.cs" />
     <Compile Include="Infrastructure\InternetService.cs" />
     <Compile Include="Infrastructure\LocalFilesService.cs" />
-    <Compile Include="Infrastructure\NavigatorService.cs" />
+    <Compile Include="Infrastructure\NavigationService.cs" />
     <Compile Include="Infrastructure\LocatorService.cs" />
     <Compile Include="Infrastructure\SettingsService.cs" />
     <Compile Include="Infrastructure\SocialService.cs" />
@@ -229,7 +229,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="SQLite.WP80, Version=3.8.2">
+    <SDKReference Include="SQLite.WP80, Version=3.8.3">
       <Name>SQLite for Windows Phone</Name>
     </SDKReference>
   </ItemGroup>

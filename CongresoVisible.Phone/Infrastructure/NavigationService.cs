@@ -10,12 +10,22 @@ using System.Windows.Controls;
 
 namespace CongresoVisible.Phone.Infrastructure
 {
-    public class NavigatorService : INavigationService
+    public class NavigationService : INavigationService
     {
         public void Navigate<T>()
         {
             (Application.Current.RootVisual as Frame)
                 .Navigate(new Uri("/" + typeof(T).Name, UriKind.Relative));
+        }
+
+        public void Navigate<T>(object parameter)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void GoBack()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -27,7 +27,7 @@ namespace CongresoVisible.Phone.Infrastructure
             ServiceLocator.Instance.Register<IJsonService>(new JsonService());
             ServiceLocator.Instance.Register<IStoreService>(new StoreService());
 
-            INavigationService navigator = new NavigatorService();
+            INavigationService navigator = new NavigationService();
             ServiceLocator.Instance.Register<INavigationService>(navigator);
 
             IInternetService internetService = new InternetService();

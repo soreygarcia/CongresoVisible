@@ -17,5 +17,15 @@ namespace CongresoVisible.FakeServices
         {
             Callback(typeof(T));
         }
+
+        public void Navigate<T>(object parameter)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void GoBack()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

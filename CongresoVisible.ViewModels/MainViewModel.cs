@@ -12,15 +12,6 @@ namespace CongresoVisible.ViewModels
     {
         IJsonService jsonService;
 
-        public MainViewModel(IJsonService jsonService, INetworkService networkService, INavigationService navigationService)
-        {
-            this.jsonService = jsonService;
-            this.Navigator = navigationService;
-
-            this.NetworkMonitor = networkService;
-            this.NetworkMonitor.Initialize();
-        }
-
         private IPersonViewModel selectedPerson;
         public IPersonViewModel SelectedPerson
         {
@@ -99,9 +90,13 @@ namespace CongresoVisible.ViewModels
             }
         }
 
-        public MainViewModel(IJsonService jsonService)
+        public MainViewModel(IJsonService jsonService, INetworkService networkService, INavigationService navigationService)
         {
             this.jsonService = jsonService;
+            this.Navigator = navigationService;
+
+            this.NetworkMonitor = networkService;
+            this.NetworkMonitor.Initialize();
 
             this.showAboutInfoCommand = new DelegateCommand(ShowAboutInfo, null);
             this.getFiltersCommand = new DelegateCommand(GetFilters, null);

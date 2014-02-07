@@ -1,20 +1,21 @@
-﻿using CongresoVisible.Contracts.Services;
+﻿using System;
+using CongresoVisible.Contracts.Services;
 using CongresoVisible.Contracts.ViewModels;
 using CongresoVisible.ViewModels;
 using Infrastructure.Common.Contracts;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using System.Threading.Tasks;
+using CongresoVisible.Models;
 
 namespace CongresoVisible.Test
 {
     [TestClass]
     public class TestContainer
     {
-        IPersonViewModel personViewModel;
-        IMainViewModel mainViewModel;
-
         private static Mock<IDbConnectionService> dbConnectionService;
         private static Mock<ISettingsService> settingsService;
+
         private static Mock<IJsonService> jsonService;
         private static Mock<ISocialService> socialService;
         private static Mock<INavigationService> navigationService;
@@ -35,33 +36,35 @@ namespace CongresoVisible.Test
             localDataService = new Mock<ILocalDataService>();
         }
 
-        [TestInitialize]
-        public void Initialize()
-        {
-            personViewModel = new PersonViewModel(socialService.Object, roamingService.Object, localDataService.Object);
-            mainViewModel = new MainViewModel(jsonService.Object);
-        }
-
+        #region PersonViewModel Test
         [TestMethod]
-        public void CreateInstance()
+        public void ShareProfileTest()
         {
-            Assert.IsInstanceOfType(personViewModel, typeof(PersonViewModel));
-            Assert.IsInstanceOfType(mainViewModel, typeof(MainViewModel));
+            PersonViewModel personViewModel = new PersonViewModel(socialService.Object, roamingService.Object, localDataService.Object);
+            bool shared = false;
+            personViewModel.WebUrl = "htt://blog.soreygarcia.me";
+            socialService.Setup(p => p.ShareLink("Title", "Message", new Uri(personViewModel.WebUrl))).Callback(() =>
+            {
+                shared = true;
+            });
+
+            personViewModel.ShareProfileCommand.Execute(null);
+            Assert.IsTrue(shared);
         }
+        #endregion PersonViewModel Test
 
         #region MainViewModel Test
         [TestMethod]
         public void NavigationTest()
         {
             bool navigated = false;
+            MainViewModel mainViewModel = new MainViewModel(jsonService.Object, networkService.Object, navigationService.Object);
+            navigationService.Setup(p => p.Navigate<AboutViewModel>()).Callback(() =>
+            {
+                navigated = true;
+                //Assert.AreEqual(type, typeof(AboutViewModel));
+            });
 
-            //navigator.Callback = (type) =>
-            //{
-            //    navigated = true;
-            //    Assert.AreEqual(type, typeof(AboutViewModel));
-            //};
-
-            //mainViewModel.Navigator = navigator;
             mainViewModel.ShowAboutInfoCommand.Execute(null);
             Assert.IsTrue(navigated);
         }
@@ -69,54 +72,29 @@ namespace CongresoVisible.Test
         [TestMethod]
         public void GetDataNetworkUnavailableTest()
         {
-            bool dataLoaded = false;
-            //networkService.SetNetworkAvailability(false);
-            //jsonService.Callback = () =>
-            //{
-            //    dataLoaded = true;
-            //};
-            
-            mainViewModel.GetFiltersCommand.Execute(null);
-            Assert.IsFalse(dataLoaded);
+            MainViewModel mainViewModel = new MainViewModel(jsonService.Object, networkService.Object, navigationService.Object);
+            networkService.SetupGet(p => p.IsNetworkAvailable).Returns(false);
+
+            jsonService.Setup<Task<PartiesContainer>>(p => p.GetPartiesAsync())
+                .ReturnsAsync(DataTestHelper.GetPartiesCollection());
+
+            mainViewModel.GetPartiesCommand.Execute(null);
+            Assert.IsNull(mainViewModel.Parties);
         }
 
         [TestMethod]
         public void GetDataNetworkAvailableTest()
         {
-            bool dataLoaded = false;
+            MainViewModel mainViewModel = new MainViewModel(jsonService.Object, networkService.Object, navigationService.Object);
+            networkService.SetupGet(p => p.IsNetworkAvailable).Returns(true);
 
-            //networkService.SetNetworkAvailability(true);
-            //mainViewModel.NetworkMonitor = networkService;
+            jsonService.Setup<Task<PartiesContainer>>(p => p.GetPartiesAsync())
+                .ReturnsAsync(DataTestHelper.GetPartiesCollection());
 
-            //jsonService.Callback = () =>
-            //{
-            //    dataLoaded = true;
-            //    Assert.AreEqual(true, networkService.isNetworkAvailable);
-            //};
-
-            mainViewModel.GetFiltersCommand.Execute(null);
-            Assert.IsTrue(dataLoaded);
+            mainViewModel.GetPartiesCommand.Execute(null);
+            Assert.IsNotNull(mainViewModel.Parties);
         }
 
         #endregion MainViewModel Test
-
-        #region PersonViewModel Test
-        [TestMethod]
-        public void ShareProfileTest()
-        {
-            personViewModel.WebUrl = "htt://blog.soreygarcia.me";
-
-            //var socialService = personViewModel.GetService<ISocialService>() as FakeSocialService;
-            bool shared = false;
-
-            //socialService.Callback = () =>
-            //{
-            //    shared = true;
-            //};
-
-            personViewModel.ShareProfileCommand.Execute(null);
-            Assert.IsTrue(shared);
-        }
-        #endregion PersonViewModel Test
     }
 }

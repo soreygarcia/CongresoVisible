@@ -15,9 +15,14 @@ using System.Collections.Generic;
 
 namespace CongresoVisible.Services
 {
-    public class JsonService : ServiceBase, IJsonService
+    public class JsonService : IJsonService
     {
         ISettingsService settingsService;
+
+        public JsonService(ISettingsService settingsService)
+        {
+            this.settingsService = settingsService;
+        }
 
         public async Task<TData> GetDataAsync<TData>(string serviceUrlKey)
         {
@@ -35,7 +40,6 @@ namespace CongresoVisible.Services
         public async Task<PeopleContainer> GetPeopleAsync(string filter)
         {
             var client = new HttpClient();
-            settingsService = GetService<ISettingsService>();
 
             var serviceUrl = settingsService.GetSettingsValue("PeopleServiceUrl");
             var json = await client.GetStringAsync(serviceUrl);
@@ -50,8 +54,6 @@ namespace CongresoVisible.Services
         public async Task<Person> GetPersonAsync(int id)
         {
             var client = new HttpClient();
-            settingsService = GetService<ISettingsService>();
-
             var serviceUrl = settingsService.GetSettingsValue("PersonServiceUrl");
             var json = await client.GetStringAsync(serviceUrl);
 
@@ -65,8 +67,6 @@ namespace CongresoVisible.Services
         public async Task<PartiesContainer> GetPartiesAsync()
         {
             var client = new HttpClient();
-            settingsService = GetService<ISettingsService>();
-
             var serviceUrl = settingsService.GetSettingsValue("PartiesServiceUrl");
             var json = await client.GetStringAsync(serviceUrl);
             using (MemoryStream stream = new MemoryStream(Encoding.Unicode.GetBytes(json)))
@@ -93,8 +93,6 @@ namespace CongresoVisible.Services
         public async Task<PeopleContainer> GetPeopleByPartyAsync(int party)
         {
             var client = new HttpClient();
-            settingsService = GetService<ISettingsService>();
-
             var serviceUrl = settingsService.GetSettingsValue("PeopleServiceUrl") + "&partido_politico=" + party;
             var json = await client.GetStringAsync(serviceUrl);
 

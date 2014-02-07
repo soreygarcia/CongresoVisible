@@ -9,9 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CongresoVisible.Phone.Infrastructure
+namespace CongresoVisible.Phone.Services
 {
-    public class DbConnectionService : ServiceBase, IDbConnectionService
+    public class DbConnectionService : IDbConnectionService
     {
         string connectionString = string.Empty;
 
@@ -19,9 +19,9 @@ namespace CongresoVisible.Phone.Infrastructure
 
         ISettingsService settingsService;
 
-        public DbConnectionService()
+        public DbConnectionService(ISettingsService settingsService)
         {
-            settingsService = GetService<ISettingsService>();
+            this.settingsService = settingsService;
             connectionString = settingsService.GetSettingsValue("DataBasePath");
 
             InitializeConnection(connectionString);

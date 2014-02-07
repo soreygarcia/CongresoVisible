@@ -2,11 +2,8 @@
 using CongresoVisible.Contracts.ViewModels;
 using CongresoVisible.ViewModels.Helpers;
 using Infrastructure.Common;
-using System;
-using System.Collections.Generic;
+using Infrastructure.Common.Contracts;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using System.Windows.Input;
 
 namespace CongresoVisible.ViewModels
@@ -14,6 +11,15 @@ namespace CongresoVisible.ViewModels
     public class MainViewModel : BindableBase, IMainViewModel
     {
         IJsonService jsonService;
+
+        public MainViewModel(IJsonService jsonService, INetworkService networkService, INavigationService navigationService)
+        {
+            this.jsonService = jsonService;
+            this.Navigator = navigationService;
+
+            this.NetworkMonitor = networkService;
+            this.NetworkMonitor.Initialize();
+        }
 
         private IPersonViewModel selectedPerson;
         public IPersonViewModel SelectedPerson
@@ -93,16 +99,16 @@ namespace CongresoVisible.ViewModels
             }
         }
 
-        public MainViewModel()
+        public MainViewModel(IJsonService jsonService)
         {
+            this.jsonService = jsonService;
+
             this.showAboutInfoCommand = new DelegateCommand(ShowAboutInfo, null);
             this.getFiltersCommand = new DelegateCommand(GetFilters, null);
             this.getFollowingPeopleCommand = new DelegateCommand(GetFollowingPeopleAsync, null);
             this.getRandomPeopleCommand = new DelegateCommand(GetRandomPeopleAsync, null);
             this.getPartiesCommand = new DelegateCommand(GetPartiesAsync, null);
             this.getPeopleByPartyCommand = new DelegateCommand(GetPeopleByPartyAsync, null);
-
-            jsonService = GetService<IJsonService>();
         }
 
         #region ShowAbout

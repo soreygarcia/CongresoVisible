@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Infrastructure.Common;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CongresoVisible.ViewModels;
+﻿using CongresoVisible.Contracts.Services;
 using CongresoVisible.Contracts.ViewModels;
-using CongresoVisible.Contracts.Services;
-using CongresoVisible.FakeServices;
-using System.Windows.Input;
+using CongresoVisible.ViewModels;
 using Infrastructure.Common.Contracts;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 
 namespace CongresoVisible.Test
 {
@@ -20,24 +13,33 @@ namespace CongresoVisible.Test
         IPersonViewModel personViewModel;
         IMainViewModel mainViewModel;
 
+        private static Mock<IDbConnectionService> dbConnectionService;
+        private static Mock<ISettingsService> settingsService;
+        private static Mock<IJsonService> jsonService;
+        private static Mock<ISocialService> socialService;
+        private static Mock<INavigationService> navigationService;
+        private static Mock<INetworkService> networkService;
+        private static Mock<IRoamingService> roamingService;
+        private static Mock<ILocalDataService> localDataService;
+        
         [AssemblyInitialize]
         public static void RegisterServices(TestContext context)
         {
-            ServiceLocator.Instance.Register<ISocialService>(new FakeSocialService());
-            ServiceLocator.Instance.Register<IJsonService>(new FakeJsonService());
-            ServiceLocator.Instance.Register<INavigationService>(new FakeNavigationService());
-            ServiceLocator.Instance.Register<IInternetService>(new FakeInternetService());
-            ServiceLocator.Instance.Register<IRoamingService>(new FakeRoamingService());
-            ServiceLocator.Instance.Register<ISettingsService>(new FakeSettingsService());
-            ServiceLocator.Instance.Register<IDbConnectionService>(new FakeDbConnectionService());
-            ServiceLocator.Instance.Register<ILocalDataService>(new FakeLocalDataService());
+            dbConnectionService = new Mock<IDbConnectionService>();
+            settingsService = new Mock<ISettingsService>();
+            jsonService = new Mock<IJsonService>();
+            socialService = new Mock<ISocialService>();
+            navigationService = new Mock<INavigationService>();
+            networkService = new Mock<INetworkService>();
+            roamingService = new Mock<IRoamingService>();
+            localDataService = new Mock<ILocalDataService>();
         }
 
         [TestInitialize]
         public void Initialize()
         {
-            personViewModel = new PersonViewModel();
-            mainViewModel = new MainViewModel();
+            personViewModel = new PersonViewModel(socialService.Object, roamingService.Object, localDataService.Object);
+            mainViewModel = new MainViewModel(jsonService.Object);
         }
 
         [TestMethod]
@@ -51,16 +53,15 @@ namespace CongresoVisible.Test
         [TestMethod]
         public void NavigationTest()
         {
-            var navigator = mainViewModel.GetService<INavigationService>() as FakeNavigationService;
             bool navigated = false;
 
-            navigator.Callback = (type) =>
-            {
-                navigated = true;
-                Assert.AreEqual(type, typeof(AboutViewModel));
-            };
+            //navigator.Callback = (type) =>
+            //{
+            //    navigated = true;
+            //    Assert.AreEqual(type, typeof(AboutViewModel));
+            //};
 
-            mainViewModel.Navigator = navigator;
+            //mainViewModel.Navigator = navigator;
             mainViewModel.ShowAboutInfoCommand.Execute(null);
             Assert.IsTrue(navigated);
         }
@@ -68,17 +69,12 @@ namespace CongresoVisible.Test
         [TestMethod]
         public void GetDataNetworkUnavailableTest()
         {
-            var internetService = mainViewModel.GetService<IInternetService>() as FakeInternetService;
-            var jsonService = mainViewModel.GetService<IJsonService>() as FakeJsonService;
             bool dataLoaded = false;
-
-            internetService.SetNetworkAvailability(false);
-            mainViewModel.NetworkMonitor = internetService;
-
-            jsonService.Callback = () =>
-            {
-                dataLoaded = true;
-            };
+            //networkService.SetNetworkAvailability(false);
+            //jsonService.Callback = () =>
+            //{
+            //    dataLoaded = true;
+            //};
             
             mainViewModel.GetFiltersCommand.Execute(null);
             Assert.IsFalse(dataLoaded);
@@ -87,18 +83,16 @@ namespace CongresoVisible.Test
         [TestMethod]
         public void GetDataNetworkAvailableTest()
         {
-            var internetService = mainViewModel.GetService<IInternetService>() as FakeInternetService;
-            var jsonService = mainViewModel.GetService<IJsonService>() as FakeJsonService;
             bool dataLoaded = false;
 
-            internetService.SetNetworkAvailability(true);
-            mainViewModel.NetworkMonitor = internetService;
+            //networkService.SetNetworkAvailability(true);
+            //mainViewModel.NetworkMonitor = networkService;
 
-            jsonService.Callback = () =>
-            {
-                dataLoaded = true;
-                Assert.AreEqual(true, internetService.isNetworkAvailable);
-            };
+            //jsonService.Callback = () =>
+            //{
+            //    dataLoaded = true;
+            //    Assert.AreEqual(true, networkService.isNetworkAvailable);
+            //};
 
             mainViewModel.GetFiltersCommand.Execute(null);
             Assert.IsTrue(dataLoaded);
@@ -112,13 +106,13 @@ namespace CongresoVisible.Test
         {
             personViewModel.WebUrl = "htt://blog.soreygarcia.me";
 
-            var socialService = personViewModel.GetService<ISocialService>() as FakeSocialService;
+            //var socialService = personViewModel.GetService<ISocialService>() as FakeSocialService;
             bool shared = false;
 
-            socialService.Callback = () =>
-            {
-                shared = true;
-            };
+            //socialService.Callback = () =>
+            //{
+            //    shared = true;
+            //};
 
             personViewModel.ShareProfileCommand.Execute(null);
             Assert.IsTrue(shared);

@@ -7,24 +7,9 @@ namespace Infrastructure.Common
 {
     public abstract class BindableBase : INotifyPropertyChanged
     {
-        private ServiceLocator serviceLocator = ServiceLocator.Instance;
-
-        public ServiceLocator ServiceLocator
-        {
-            get
-            {
-                return this.serviceLocator;
-            }
-        }
-
-        public T GetService<T>()
-        {
-            return this.serviceLocator.Resolve<T>();
-        }
-
         public INavigationService Navigator { get; set; }
 
-        public IInternetService NetworkMonitor { get; set; }
+        public INetworkService NetworkMonitor { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

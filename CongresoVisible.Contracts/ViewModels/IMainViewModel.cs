@@ -1,5 +1,4 @@
-﻿using CongresoVisible.Contracts.Common;
-using Infrastructure.Common.Contracts;
+﻿using Infrastructure.Common.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,7 +8,7 @@ using System.Windows.Input;
 
 namespace CongresoVisible.Contracts.ViewModels
 {
-    public interface IMainViewModel : IServiceLocator, INavigateViewModel
+    public interface IMainViewModel : INavigateViewModel
     {
         IPersonViewModel SelectedPerson { get; set; }
 

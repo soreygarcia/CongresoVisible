@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CongresoVisible.Phone.Infrastructure
+namespace CongresoVisible.Phone.Services
 {
     public class SettingsService : ISettingsService
     {

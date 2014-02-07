@@ -12,16 +12,16 @@ using Infrastructure.Common.Contracts;
 
 namespace CongresoVisible.Services
 {
-    public class LocalDataService : ServiceBase, ILocalDataService
+    public class LocalDataService : ILocalDataService
     {
         IDbConnectionService dbConnectionService;
 
         SQLiteConnection connection;
         string connectionString = string.Empty;
 
-        public LocalDataService()
+        public LocalDataService(IDbConnectionService dbConnectionService)
         {
-            dbConnectionService = GetService<IDbConnectionService>();
+            this.dbConnectionService = dbConnectionService;
 
             connection = dbConnectionService.Connection;
             connection.CreateTable<Person>();  

@@ -1,12 +1,8 @@
 ﻿using CongresoVisible.Contracts.Services;
 using CongresoVisible.Contracts.ViewModels;
-using CongresoVisible.Services;
 using Infrastructure.Common;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace CongresoVisible.ViewModels
@@ -17,11 +13,11 @@ namespace CongresoVisible.ViewModels
         IRoamingService roamingService;
         ILocalDataService localDataService;
 
-        public PersonViewModel()
+        public PersonViewModel(ISocialService socialService, IRoamingService roamingService, ILocalDataService localDataService)
         {
-            this.socialService = GetService<ISocialService>();
-            this.roamingService = GetService<IRoamingService>();
-            this.localDataService = GetService<ILocalDataService>();
+            this.socialService = socialService;
+            this.roamingService = roamingService;
+            this.localDataService = localDataService;
 
             this.shareProfileCommand = new DelegateCommand(ShareProfile, null);
             this.followPersonCommand = new DelegateCommand(FollowPerson, null);

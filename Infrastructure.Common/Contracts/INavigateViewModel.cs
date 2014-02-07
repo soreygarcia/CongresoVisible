@@ -9,6 +9,6 @@ namespace Infrastructure.Common.Contracts
     public interface INavigateViewModel
     {
         INavigationService Navigator { get; set; }
-        IInternetService NetworkMonitor { get; set; }
+        INetworkService NetworkMonitor { get; set; }
     }
 }

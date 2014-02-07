@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CongresoVisible.Services
+namespace CongresoVisible.Phone.Services
 {
-    public class LocalFilesService : ServiceBase, ILocalFilesService
+    public class LocalFilesService : ILocalFilesService
     {
         public async Task<bool> DoesFileExistAsync(string fileName)
         {

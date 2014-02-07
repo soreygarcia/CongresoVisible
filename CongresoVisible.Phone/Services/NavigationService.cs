@@ -1,21 +1,21 @@
 ﻿using CongresoVisible.Contracts.Services;
-using CongresoVisible.FakeServices.Contracts;
 using Infrastructure.Common.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 
-namespace CongresoVisible.FakeServices
+namespace CongresoVisible.Phone.Services
 {
-    public class FakeNavigationService : INavigationService
+    public class NavigationService : INavigationService
     {
-        public Action<Type> Callback { get; set; }
-
         public void Navigate<T>()
         {
-            Callback(typeof(T));
+            (Application.Current.RootVisual as Frame)
+                .Navigate(new Uri("/" + typeof(T).Name, UriKind.Relative));
         }
 
         public void Navigate<T>(object parameter)

@@ -1,5 +1,6 @@
 ﻿using CongresoVisible.Contracts.ViewModels;
 using Infrastructure.Common;
+using Infrastructure.Common.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,11 @@ namespace CongresoVisible.ViewModels
 {
     public class AboutViewModel : BindableBase, IAboutViewModel
     {
+        public AboutViewModel(INavigationService navigationService)
+        {
+            this.Navigator = navigationService;
+        }
+
         public System.Windows.Input.ICommand SendEmailCommand
         {
             get { throw new NotImplementedException(); }

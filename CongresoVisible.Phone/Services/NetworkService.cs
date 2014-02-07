@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Networking.Connectivity;
 
-namespace CongresoVisible.Phone.Infrastructure
+namespace CongresoVisible.Phone.Services
 {
-    public class InternetService : IInternetService
+    public class NetworkService : INetworkService
     {
-        public InternetService()
+        public NetworkService()
         {
             NetworkInformation.NetworkStatusChanged += NetworkInformation_NetworkStatusChanged;
         }
@@ -23,13 +23,13 @@ namespace CongresoVisible.Phone.Infrastructure
             RaiseInternetAvailabilityChanged();
         }
 
-        public event EventHandler InternetAvailabilityChanged;
+        public event EventHandler NetworkAvailabilityChanged;
 
         public void RaiseInternetAvailabilityChanged()
         {
-            if (this.InternetAvailabilityChanged != null)
+            if (this.NetworkAvailabilityChanged != null)
             {
-                this.InternetAvailabilityChanged(this, new EventArgs());
+                this.NetworkAvailabilityChanged(this, new EventArgs());
             }
         }
 

@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.2.1312.1622\lib\net40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -58,10 +61,6 @@
       <Project>{14c9fba9-7f22-494c-b327-cb3831155232}</Project>
       <Name>CongresoVisible.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CongresoVisible.FakeServices\CongresoVisible.FakeServices.csproj">
-      <Project>{73b42119-b167-4c28-be5b-f9ffad45e14a}</Project>
-      <Name>CongresoVisible.FakeServices</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CongresoVisible.ViewModels\CongresoVisible.ViewModels.csproj">
       <Project>{cf477caf-84f8-40fb-b971-c413e0b0f57b}</Project>
       <Name>CongresoVisible.ViewModels</Name>
@@ -70,6 +69,9 @@
       <Project>{AD36BD6F-07B5-4C3B-A196-1EA714E58F76}</Project>
       <Name>Infrastructure.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

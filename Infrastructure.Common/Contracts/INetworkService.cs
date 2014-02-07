@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Common.Contracts
 {
-    public interface IInternetService
+    public interface INetworkService
     {
-        event EventHandler InternetAvailabilityChanged;
+        event EventHandler NetworkAvailabilityChanged;
         bool IsNetworkAvailable { get; }
 
         void Initialize();

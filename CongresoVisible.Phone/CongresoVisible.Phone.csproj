@@ -94,14 +94,14 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\DbConnectionService.cs" />
-    <Compile Include="Infrastructure\InternetService.cs" />
-    <Compile Include="Infrastructure\LocalFilesService.cs" />
-    <Compile Include="Infrastructure\NavigationService.cs" />
-    <Compile Include="Infrastructure\LocatorService.cs" />
-    <Compile Include="Infrastructure\SettingsService.cs" />
-    <Compile Include="Infrastructure\SocialService.cs" />
-    <Compile Include="Infrastructure\StoreService.cs" />
+    <Compile Include="Services\DbConnectionService.cs" />
+    <Compile Include="Services\NetworkService.cs" />
+    <Compile Include="Services\LocalFilesService.cs" />
+    <Compile Include="Services\NavigationService.cs" />
+    <Compile Include="Infrastructure\ServiceLocator.cs" />
+    <Compile Include="Services\SettingsService.cs" />
+    <Compile Include="Services\SocialService.cs" />
+    <Compile Include="Services\StoreService.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="Pages\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
@@ -194,6 +194,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.3.0\lib\portable-win+net40+sl50+wp8\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit">
       <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>

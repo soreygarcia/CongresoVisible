@@ -1,4 +1,5 @@
-﻿using CongresoVisible.Services.Contracts;
+﻿using Autofac;
+using CongresoVisible.Services.Contracts;
 using Infrastructure.Common;
 using System;
 using System.Collections.Generic;
@@ -12,11 +13,13 @@ namespace CongresoVisible.ViewModels
         IRoamingService roamingService;
         ILocalDataService localDataService;
 
-        public PersonViewModel(ISocialService socialService, IRoamingService roamingService, ILocalDataService localDataService)
+        public PersonViewModel(IContainer container)
         {
-            this.socialService = socialService;
-            this.roamingService = roamingService;
-            this.localDataService = localDataService;
+            this.SetContainer(container);
+
+            this.socialService = GetService<ISocialService>();
+            this.roamingService = GetService<IRoamingService>();
+            this.localDataService = GetService<ILocalDataService>();
 
             this.shareProfileCommand = new DelegateCommand(ShareProfile, null);
             this.followPersonCommand = new DelegateCommand(FollowPerson, null);

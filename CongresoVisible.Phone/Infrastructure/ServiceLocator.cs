@@ -14,7 +14,7 @@ namespace CongresoVisible.Infrastructure.Common
 {
     public class ServiceLocator
     {
-        private static IContainer Container { get; set; }
+        private IContainer container;
 
         public ServiceLocator()
         {
@@ -33,15 +33,18 @@ namespace CongresoVisible.Infrastructure.Common
             builder.RegisterType<NavigationService>().As<INavigationService>();
             builder.RegisterType<NetworkService>().As<INetworkService>();
 
-            builder.RegisterType<MainViewModel>();
-            builder.RegisterType<AboutViewModel>();
+            container = builder.Build(Autofac.Builder.ContainerBuildOptions.None);
+
+            builder.RegisterInstance(new MainViewModel(container)).As<MainViewModel>();
+            builder.RegisterInstance(new PersonViewModel(container)).As<PersonViewModel>();
+            builder.RegisterInstance(new AboutViewModel(container)).As<AboutViewModel>();
         }
 
         public MainViewModel Main
         {
             get
             {
-                return Container.Resolve<MainViewModel>();
+                return container.Resolve<MainViewModel>();
             }
         }
 
@@ -49,7 +52,7 @@ namespace CongresoVisible.Infrastructure.Common
         {
             get
             {
-                return Container.Resolve<AboutViewModel>();
+                return container.Resolve<AboutViewModel>();
             }
         }
     }

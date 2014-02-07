@@ -1,4 +1,5 @@
-﻿using Infrastructure.Common;
+﻿using Autofac;
+using Infrastructure.Common;
 using Infrastructure.Common.Contracts;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,10 @@ namespace CongresoVisible.ViewModels
 {
     public class AboutViewModel : BindableBase
     {
-        public AboutViewModel(INavigationService navigationService)
+        public AboutViewModel(IContainer container)
         {
-            this.Navigator = navigationService;
+            this.SetContainer(container);
+            this.Navigator = GetService<INavigationService>();
         }
 
         public System.Windows.Input.ICommand SendEmailCommand

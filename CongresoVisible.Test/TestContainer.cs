@@ -6,15 +6,17 @@ using Moq;
 using System.Threading.Tasks;
 using CongresoVisible.Models;
 using CongresoVisible.Services.Contracts;
+using Autofac;
 
 namespace CongresoVisible.Test
 {
     [TestClass]
     public class TestContainer
     {
+        private static IContainer container;
+
         private static Mock<IDbConnectionService> dbConnectionService;
         private static Mock<ISettingsService> settingsService;
-
         private static Mock<IJsonService> jsonService;
         private static Mock<ISocialService> socialService;
         private static Mock<INavigationService> navigationService;
@@ -35,20 +37,40 @@ namespace CongresoVisible.Test
             localDataService = new Mock<ILocalDataService>();
         }
 
+        [TestInitialize]
+        public void Initialize()
+        {
+            var builder = new ContainerBuilder();
+
+            builder.RegisterInstance(settingsService.Object).As<ISettingsService>();
+            builder.RegisterInstance(dbConnectionService.Object).As<IDbConnectionService>();
+
+            builder.RegisterInstance(socialService.Object).As<ISocialService>();
+            builder.RegisterInstance(jsonService.Object).As<IJsonService>();
+
+            builder.RegisterInstance(navigationService.Object).As<INavigationService>();
+            builder.RegisterInstance(networkService.Object).As<INetworkService>();
+
+            container = builder.Build(Autofac.Builder.ContainerBuildOptions.None);
+        }
+
         #region PersonViewModel Test
         [TestMethod]
         public void ShareProfileTest()
         {
             PersonViewModel personViewModel = new PersonViewModel(socialService.Object, roamingService.Object, localDataService.Object);
-            bool shared = false;
             personViewModel.WebUrl = "htt://blog.soreygarcia.me";
-            socialService.Setup(p => p.ShareLink("Title", "Message", new Uri(personViewModel.WebUrl))).Callback(() =>
-            {
-                shared = true;
-            });
 
             personViewModel.ShareProfileCommand.Execute(null);
-            Assert.IsTrue(shared);
+            socialService.Verify(p => p.ShareLink(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<Uri>()), Times.Once);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(UriFormatException))]
+        public void ShareProfileTestFail()
+        {
+            PersonViewModel personViewModel = new PersonViewModel(socialService.Object, roamingService.Object, localDataService.Object);
+            personViewModel.ShareProfileCommand.Execute(null);
         }
         #endregion PersonViewModel Test
 
@@ -56,22 +78,16 @@ namespace CongresoVisible.Test
         [TestMethod]
         public void NavigationTest()
         {
-            bool navigated = false;
-            MainViewModel mainViewModel = new MainViewModel(jsonService.Object, networkService.Object, navigationService.Object);
-            navigationService.Setup(p => p.Navigate<AboutViewModel>()).Callback(() =>
-            {
-                navigated = true;
-                //Assert.AreEqual(type, typeof(AboutViewModel));
-            });
+            MainViewModel mainViewModel = new MainViewModel(container);
 
             mainViewModel.ShowAboutInfoCommand.Execute(null);
-            Assert.IsTrue(navigated);
+            navigationService.Verify(p => p.Navigate<AboutViewModel>(), Times.Once);
         }
 
         [TestMethod]
         public void GetDataNetworkUnavailableTest()
         {
-            MainViewModel mainViewModel = new MainViewModel(jsonService.Object, networkService.Object, navigationService.Object);
+            MainViewModel mainViewModel = new MainViewModel(container);
             networkService.SetupGet(p => p.IsNetworkAvailable).Returns(false);
 
             jsonService.Setup<Task<PartiesContainer>>(p => p.GetPartiesAsync())
@@ -84,7 +100,7 @@ namespace CongresoVisible.Test
         [TestMethod]
         public void GetDataNetworkAvailableTest()
         {
-            MainViewModel mainViewModel = new MainViewModel(jsonService.Object, networkService.Object, navigationService.Object);
+            MainViewModel mainViewModel = new MainViewModel(container);
             networkService.SetupGet(p => p.IsNetworkAvailable).Returns(true);
 
             jsonService.Setup<Task<PartiesContainer>>(p => p.GetPartiesAsync())

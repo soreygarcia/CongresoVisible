@@ -1,6 +1,5 @@
 ﻿using Autofac;
 using CongresoVisible.Services.Contracts;
-using CongresoVisible.Phone.Services;
 using CongresoVisible.Services;
 using CongresoVisible.ViewModels;
 using Infrastructure.Common;
@@ -11,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CongresoVisible.Phone.Infrastructure
+namespace CongresoVisible.Infrastructure.Common
 {
     public class ServiceLocator
     {
@@ -42,10 +41,7 @@ namespace CongresoVisible.Phone.Infrastructure
         {
             get
             {
-                using (var scope = Container.BeginLifetimeScope())
-                {
-                    return scope.Resolve<MainViewModel>();
-                }
+                return Container.Resolve<MainViewModel>();
             }
         }
 
@@ -53,10 +49,7 @@ namespace CongresoVisible.Phone.Infrastructure
         {
             get
             {
-                using (var scope = Container.BeginLifetimeScope())
-                {
-                    return scope.Resolve<AboutViewModel>();
-                }
+                return Container.Resolve<AboutViewModel>();
             }
         }
     }

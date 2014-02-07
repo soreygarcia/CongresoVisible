@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace CongresoVisible.Phone.Services
+namespace CongresoVisible.Services
 {
     public class NavigationService : INavigationService
     {

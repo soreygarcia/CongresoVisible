@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CongresoVisible.Phone.Services
+namespace CongresoVisible.Services
 {
     public class LocalFilesService : ILocalFilesService
     {

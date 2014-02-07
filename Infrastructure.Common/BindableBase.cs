@@ -1,4 +1,5 @@
-﻿using Infrastructure.Common.Contracts;
+﻿using Autofac;
+using Infrastructure.Common.Contracts;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -7,6 +8,18 @@ namespace Infrastructure.Common
 {
     public abstract class BindableBase : INotifyPropertyChanged
     {
+        private IContainer container;
+
+        protected T GetService<T>()
+        {
+            return container.Resolve<T>();
+        }
+
+        protected void SetContainer(IContainer container)
+        {
+            this.container = container; 
+        }
+
         public INavigationService Navigator { get; set; }
 
         public INetworkService NetworkMonitor { get; set; }

@@ -1,4 +1,5 @@
-﻿using CongresoVisible.Services.Contracts;
+﻿using Autofac;
+using CongresoVisible.Services.Contracts;
 using CongresoVisible.ViewModels.Helpers;
 using Infrastructure.Common;
 using Infrastructure.Common.Contracts;
@@ -89,12 +90,13 @@ namespace CongresoVisible.ViewModels
             }
         }
 
-        public MainViewModel(IJsonService jsonService, INetworkService networkService, INavigationService navigationService)
+        public MainViewModel(IContainer container)
         {
-            this.jsonService = jsonService;
-            this.Navigator = navigationService;
+            this.SetContainer(container);
 
-            this.NetworkMonitor = networkService;
+            this.jsonService = GetService<IJsonService>(); 
+            this.Navigator = GetService<INavigationService>();
+            this.NetworkMonitor = GetService<INetworkService>(); 
             this.NetworkMonitor.Initialize();
 
             this.showAboutInfoCommand = new DelegateCommand(ShowAboutInfo, null);

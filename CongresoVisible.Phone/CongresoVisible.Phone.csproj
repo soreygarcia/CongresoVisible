@@ -94,11 +94,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\ServiceLocator.cs" />
     <Compile Include="Services\DbConnectionService.cs" />
     <Compile Include="Services\NetworkService.cs" />
     <Compile Include="Services\LocalFilesService.cs" />
     <Compile Include="Services\NavigationService.cs" />
-    <Compile Include="Infrastructure\ServiceLocator.cs" />
     <Compile Include="Services\SettingsService.cs" />
     <Compile Include="Services\SocialService.cs" />
     <Compile Include="Services\StoreService.cs" />

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using CongresoVisible.Services.Contracts;
 using Microsoft.Phone.Tasks;
 
-namespace CongresoVisible.Phone.Services
+namespace CongresoVisible.Services
 {
     public class StoreService : IStoreService
     {

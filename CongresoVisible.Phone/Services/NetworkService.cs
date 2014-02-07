@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Networking.Connectivity;
 
-namespace CongresoVisible.Phone.Services
+namespace CongresoVisible.Services
 {
     public class NetworkService : INetworkService
     {

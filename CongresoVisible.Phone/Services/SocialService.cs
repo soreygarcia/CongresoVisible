@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Phone.Tasks;
 
-namespace CongresoVisible.Phone.Services
+namespace CongresoVisible.Services
 {
     public class SocialService : ISocialService
     {

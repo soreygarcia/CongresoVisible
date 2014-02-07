@@ -58,7 +58,7 @@ namespace CongresoVisible.Test
         [TestMethod]
         public void ShareProfileTest()
         {
-            PersonViewModel personViewModel = new PersonViewModel(socialService.Object, roamingService.Object, localDataService.Object);
+            PersonViewModel personViewModel = new PersonViewModel(container);
             personViewModel.WebUrl = "htt://blog.soreygarcia.me";
 
             personViewModel.ShareProfileCommand.Execute(null);
@@ -69,7 +69,7 @@ namespace CongresoVisible.Test
         [ExpectedException(typeof(UriFormatException))]
         public void ShareProfileTestFail()
         {
-            PersonViewModel personViewModel = new PersonViewModel(socialService.Object, roamingService.Object, localDataService.Object);
+            PersonViewModel personViewModel = new PersonViewModel(container);
             personViewModel.ShareProfileCommand.Execute(null);
         }
         #endregion PersonViewModel Test

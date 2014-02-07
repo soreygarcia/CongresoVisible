@@ -1,5 +1,4 @@
-﻿using CongresoVisible.Contracts.ViewModels;
-using Infrastructure.Common;
+﻿using Infrastructure.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CongresoVisible.ViewModels
 {
-    public class FilterViewModel : BindableBase, IFilterViewModel
+    public class FilterViewModel : BindableBase
     {
         private string name = string.Empty;
         public string Name

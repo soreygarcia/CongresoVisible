@@ -9,7 +9,6 @@ using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 using Infrastructure.Common;
-using CongresoVisible.Contracts.ViewModels;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
 

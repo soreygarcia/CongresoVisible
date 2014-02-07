@@ -1,5 +1,4 @@
-﻿using CongresoVisible.Contracts.ViewModels;
-using CongresoVisible.Models;
+﻿using CongresoVisible.Models;
 using CongresoVisible.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -12,19 +11,19 @@ namespace CongresoVisible.ViewModels.Helpers
 {
     class ViewModelHelper
     {
-        internal static void SetPeople(IMainViewModel context, PeopleContainer result)
+        internal static void SetPeople(MainViewModel context, PeopleContainer result)
         {
             throw new NotImplementedException();
         }
 
-        internal static void SetSelectedPerson(IMainViewModel context, Person result)
+        internal static void SetSelectedPerson(MainViewModel context, Person result)
         {
             throw new NotImplementedException();
         }
 
-        internal static void SetParties(IMainViewModel context, PartiesContainer result)
+        internal static void SetParties(MainViewModel context, PartiesContainer result)
         {
-            ObservableCollection<IPartyViewModel> parties = new ObservableCollection<IPartyViewModel>();
+            ObservableCollection<PartyViewModel> parties = new ObservableCollection<PartyViewModel>();
             foreach(var item in result.results)
             {
                 parties.Add(new PartyViewModel() { 

@@ -53,22 +53,6 @@
     <Compile Include="Services\ISocialService.cs" />
     <Compile Include="Services\IStoreService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\IAboutViewModel.cs" />
-    <Compile Include="ViewModels\IFilterViewModel.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ViewModels\IMainViewModel.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ViewModels\IPartyViewModel.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ViewModels\IPersonViewModel.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ViewModels\ITopicViewModel.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

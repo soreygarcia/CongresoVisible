@@ -1,5 +1,4 @@
-﻿using CongresoVisible.Contracts.ViewModels;
-using Infrastructure.Common;
+﻿using Infrastructure.Common;
 using Infrastructure.Common.Contracts;
 using System;
 using System.Collections.Generic;
@@ -9,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CongresoVisible.ViewModels
 {
-    public class AboutViewModel : BindableBase, IAboutViewModel
+    public class AboutViewModel : BindableBase
     {
         public AboutViewModel(INavigationService navigationService)
         {

@@ -1,6 +1,5 @@
 ﻿using System;
 using CongresoVisible.Contracts.Services;
-using CongresoVisible.Contracts.ViewModels;
 using CongresoVisible.ViewModels;
 using Infrastructure.Common.Contracts;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

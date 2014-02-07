@@ -1,5 +1,4 @@
-﻿using CongresoVisible.Contracts.ViewModels;
-using Infrastructure.Common;
+﻿using Infrastructure.Common;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,7 +7,7 @@ using System.Text;
 
 namespace CongresoVisible.ViewModels
 {
-    public class PartyViewModel : BindableBase, IPartyViewModel
+    public class PartyViewModel : BindableBase
     {
         private int id = 0;
         public int Id
@@ -49,7 +48,7 @@ namespace CongresoVisible.ViewModels
             }
         }
 
-        public ObservableCollection<IPersonViewModel> People { get; set; }
+        public ObservableCollection<PersonViewModel> People { get; set; }
 
 
         public System.Windows.Input.ICommand ShowPartyDetailsCommand

@@ -1,5 +1,4 @@
 ﻿using CongresoVisible.Contracts.Services;
-using CongresoVisible.Contracts.ViewModels;
 using CongresoVisible.ViewModels.Helpers;
 using Infrastructure.Common;
 using Infrastructure.Common.Contracts;
@@ -8,12 +7,12 @@ using System.Windows.Input;
 
 namespace CongresoVisible.ViewModels
 {
-    public class MainViewModel : BindableBase, IMainViewModel
+    public class MainViewModel : BindableBase
     {
         IJsonService jsonService;
 
-        private IPersonViewModel selectedPerson;
-        public IPersonViewModel SelectedPerson
+        private PersonViewModel selectedPerson;
+        public PersonViewModel SelectedPerson
         {
             get
             {
@@ -25,8 +24,8 @@ namespace CongresoVisible.ViewModels
             }
         }
 
-        private IPartyViewModel selectedParty;
-        public IPartyViewModel SelectedParty
+        private PartyViewModel selectedParty;
+        public PartyViewModel SelectedParty
         {
             get
             {
@@ -38,8 +37,8 @@ namespace CongresoVisible.ViewModels
             }
         }
 
-        private ObservableCollection<IFilterViewModel> filters;
-        public ObservableCollection<IFilterViewModel> Filters
+        private ObservableCollection<FilterViewModel> filters;
+        public ObservableCollection<FilterViewModel> Filters
         {
             get
             {
@@ -51,8 +50,8 @@ namespace CongresoVisible.ViewModels
             }
         }
 
-        private ObservableCollection<IPartyViewModel> parties;
-        public ObservableCollection<IPartyViewModel> Parties
+        private ObservableCollection<PartyViewModel> parties;
+        public ObservableCollection<PartyViewModel> Parties
         {
             get
             {
@@ -64,8 +63,8 @@ namespace CongresoVisible.ViewModels
             }
         }
 
-        private ObservableCollection<IPersonViewModel> people;
-        public ObservableCollection<IPersonViewModel> People
+        private ObservableCollection<PersonViewModel> people;
+        public ObservableCollection<PersonViewModel> People
         {
             get
             {
@@ -77,8 +76,8 @@ namespace CongresoVisible.ViewModels
             }
         }
 
-        private ObservableCollection<IPersonViewModel> following;
-        public ObservableCollection<IPersonViewModel> Following
+        private ObservableCollection<PersonViewModel> following;
+        public ObservableCollection<PersonViewModel> Following
         {
             get
             {

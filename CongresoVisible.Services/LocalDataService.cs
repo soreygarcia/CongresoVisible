@@ -1,5 +1,4 @@
 ﻿using CongresoVisible.Contracts.Services;
-using CongresoVisible.Contracts.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

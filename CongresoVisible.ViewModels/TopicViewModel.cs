@@ -1,5 +1,4 @@
-﻿using CongresoVisible.Contracts.ViewModels;
-using Infrastructure.Common;
+﻿using Infrastructure.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CongresoVisible.ViewModels
 {
-    public class TopicViewModel : BindableBase, ITopicViewModel
+    public class TopicViewModel : BindableBase
     {
         private bool position;
         public bool Position

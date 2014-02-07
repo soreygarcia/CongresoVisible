@@ -1,5 +1,4 @@
 ﻿using CongresoVisible.Contracts.Services;
-using CongresoVisible.Contracts.ViewModels;
 using Infrastructure.Common;
 using System;
 using System.Collections.Generic;
@@ -7,7 +6,7 @@ using System.Windows.Input;
 
 namespace CongresoVisible.ViewModels
 {
-    public class PersonViewModel : BindableBase, IPersonViewModel
+    public class PersonViewModel : BindableBase
     {
         ISocialService socialService;
         IRoamingService roamingService;
@@ -147,8 +146,8 @@ namespace CongresoVisible.ViewModels
             }
         }
 
-        private IPartyViewModel party;
-        public IPartyViewModel Party
+        private PartyViewModel party;
+        public PartyViewModel Party
         {
             get
             {
@@ -225,8 +224,8 @@ namespace CongresoVisible.ViewModels
             }
         }
 
-        private List<ITopicViewModel> supportedTopics;
-        public List<ITopicViewModel> SupportedTopics
+        private List<TopicViewModel> supportedTopics;
+        public List<TopicViewModel> SupportedTopics
         {
             get
             {
@@ -290,8 +289,8 @@ namespace CongresoVisible.ViewModels
             }
         }
 
-        private List<ITopicViewModel> topicPositions;
-        public List<ITopicViewModel> TopicPositions
+        private List<TopicViewModel> topicPositions;
+        public List<TopicViewModel> TopicPositions
         {
             get
             {
@@ -303,8 +302,8 @@ namespace CongresoVisible.ViewModels
             }
         }
 
-        private List<ITopicViewModel> mainTopics;
-        public List<ITopicViewModel> MainTopics
+        private List<TopicViewModel> mainTopics;
+        public List<TopicViewModel> MainTopics
         {
             get
             {

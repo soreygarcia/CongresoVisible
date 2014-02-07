@@ -1,6 +1,5 @@
 ﻿using Autofac;
 using CongresoVisible.Contracts.Services;
-using CongresoVisible.Contracts.ViewModels;
 using CongresoVisible.Phone.Services;
 using CongresoVisible.Services;
 using CongresoVisible.ViewModels;
@@ -35,28 +34,28 @@ namespace CongresoVisible.Phone.Infrastructure
             builder.RegisterType<NavigationService>().As<INavigationService>();
             builder.RegisterType<NetworkService>().As<INetworkService>();
 
-            builder.RegisterType<MainViewModel>().As<IMainViewModel>();
-            builder.RegisterType<AboutViewModel>().As<IAboutViewModel>();
+            builder.RegisterType<MainViewModel>();
+            builder.RegisterType<AboutViewModel>();
         }
 
-        public IMainViewModel Main
+        public MainViewModel Main
         {
             get
             {
                 using (var scope = Container.BeginLifetimeScope())
                 {
-                    return scope.Resolve<IMainViewModel>();
+                    return scope.Resolve<MainViewModel>();
                 }
             }
         }
 
-        public IAboutViewModel About
+        public AboutViewModel About
         {
             get
             {
                 using (var scope = Container.BeginLifetimeScope())
                 {
-                    return scope.Resolve<IAboutViewModel>();
+                    return scope.Resolve<AboutViewModel>();
                 }
             }
         }

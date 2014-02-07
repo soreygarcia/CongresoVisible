@@ -1,11 +1,11 @@
 ﻿using System;
-using CongresoVisible.Contracts.Services;
 using CongresoVisible.ViewModels;
 using Infrastructure.Common.Contracts;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Threading.Tasks;
 using CongresoVisible.Models;
+using CongresoVisible.Services.Contracts;
 
 namespace CongresoVisible.Test
 {

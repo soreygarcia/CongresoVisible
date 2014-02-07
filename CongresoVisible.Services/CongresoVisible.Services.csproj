@@ -34,10 +34,6 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <ProjectReference Include="..\CongresoVisible.Contracts\CongresoVisible.Contracts.csproj">
-      <Project>{14c9fba9-7f22-494c-b327-cb3831155232}</Project>
-      <Name>CongresoVisible.Contracts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CongresoVisible.Models\CongresoVisible.Models.csproj">
       <Project>{c243c284-b80d-42da-bd48-ac88f060b3b5}</Project>
       <Name>CongresoVisible.Models</Name>
@@ -48,6 +44,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IDialogService.cs" />
+    <Compile Include="Contracts\IJsonService.cs" />
+    <Compile Include="Contracts\ILocalDataService.cs" />
+    <Compile Include="Contracts\ILocalFilesService.cs" />
+    <Compile Include="Contracts\IRoamingService.cs" />
+    <Compile Include="Contracts\ISettingsService.cs" />
+    <Compile Include="Contracts\ISocialService.cs" />
+    <Compile Include="Contracts\IStoreService.cs" />
     <Compile Include="LocalDataService.cs" />
     <Compile Include="RoamingService.cs" />
     <Compile Include="JsonService.cs" />

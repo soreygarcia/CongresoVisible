@@ -34,10 +34,6 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <ProjectReference Include="..\CongresoVisible.Contracts\CongresoVisible.Contracts.csproj">
-      <Project>{14c9fba9-7f22-494c-b327-cb3831155232}</Project>
-      <Name>CongresoVisible.Contracts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CongresoVisible.Models\CongresoVisible.Models.csproj">
       <Project>{c243c284-b80d-42da-bd48-ac88f060b3b5}</Project>
       <Name>CongresoVisible.Models</Name>

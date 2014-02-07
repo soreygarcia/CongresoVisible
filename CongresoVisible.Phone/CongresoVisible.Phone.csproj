@@ -206,10 +206,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CongresoVisible.Contracts\CongresoVisible.Contracts.csproj">
-      <Project>{14C9FBA9-7F22-494C-B327-CB3831155232}</Project>
-      <Name>CongresoVisible.Contracts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CongresoVisible.Services\CongresoVisible.Services.csproj">
       <Project>{B4844109-BDDF-43CA-A7C0-9F6073CE7960}</Project>
       <Name>CongresoVisible.Services</Name>

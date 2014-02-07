@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CongresoVisible.Contracts.Services
+namespace CongresoVisible.Services.Contracts
 {
     public interface IJsonService 
     {

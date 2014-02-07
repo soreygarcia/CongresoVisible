@@ -1,4 +1,4 @@
-﻿using CongresoVisible.Contracts.Services;
+﻿using CongresoVisible.Services.Contracts;
 using CongresoVisible.Phone.Resources;
 using Microsoft.Phone.Shell;
 using System;

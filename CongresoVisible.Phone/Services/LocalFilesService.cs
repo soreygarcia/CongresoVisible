@@ -1,4 +1,4 @@
-﻿using CongresoVisible.Contracts.Services;
+﻿using CongresoVisible.Services.Contracts;
 using Infrastructure.Common;
 using System;
 using System.Collections.Generic;

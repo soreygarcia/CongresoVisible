@@ -58,13 +58,13 @@
     <Compile Include="TestContainer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CongresoVisible.Contracts\CongresoVisible.Contracts.csproj">
-      <Project>{14c9fba9-7f22-494c-b327-cb3831155232}</Project>
-      <Name>CongresoVisible.Contracts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CongresoVisible.Models\CongresoVisible.Models.csproj">
       <Project>{c243c284-b80d-42da-bd48-ac88f060b3b5}</Project>
       <Name>CongresoVisible.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CongresoVisible.Services\CongresoVisible.Services.csproj">
+      <Project>{b4844109-bddf-43ca-a7c0-9f6073ce7960}</Project>
+      <Name>CongresoVisible.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\CongresoVisible.ViewModels\CongresoVisible.ViewModels.csproj">
       <Project>{cf477caf-84f8-40fb-b971-c413e0b0f57b}</Project>

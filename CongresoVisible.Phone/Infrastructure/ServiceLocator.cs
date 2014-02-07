@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using CongresoVisible.Contracts.Services;
+using CongresoVisible.Services.Contracts;
 using CongresoVisible.Phone.Services;
 using CongresoVisible.Services;
 using CongresoVisible.ViewModels;

@@ -44,6 +44,8 @@ namespace CongresoVisible.Test
 
             builder.RegisterInstance(settingsService.Object).As<ISettingsService>();
             builder.RegisterInstance(dbConnectionService.Object).As<IDbConnectionService>();
+            builder.RegisterInstance(roamingService.Object).As<IRoamingService>();
+            builder.RegisterInstance(localDataService.Object).As<ILocalDataService>();
 
             builder.RegisterInstance(socialService.Object).As<ISocialService>();
             builder.RegisterInstance(jsonService.Object).As<IJsonService>();

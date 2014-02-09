@@ -9,14 +9,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Practices.ServiceLocation;
+using Autofac.Extras.CommonServiceLocator;
 
 namespace CongresoVisible.Infrastructure.Common
 {
-    public class ServiceLocator
+    public class ViewModelLocator
     {
         private IContainer container;
 
-        public ServiceLocator()
+        public ViewModelLocator()
         {
             var builder = new ContainerBuilder();
 
@@ -36,14 +38,29 @@ namespace CongresoVisible.Infrastructure.Common
             builder.RegisterType<AboutViewModel>().As<AboutViewModel>();
 
             container = builder.Build(Autofac.Builder.ContainerBuildOptions.None);
+
+            //ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+
+            ServiceLocator.SetLocatorProvider(() => new AutofacServiceLocator(container));
             BindableBase.Container = container;
+
+            ////if (ViewModelBase.IsInDesignModeStatic)
+            ////{
+            ////    // Create design time view services and models
+            ////    SimpleIoc.Default.Register<IDataService, DesignDataService>();
+            ////}
+            ////else
+            ////{
+            ////    // Create run time view services and models
+            ////    SimpleIoc.Default.Register<IDataService, DataService>();
+            ////}
         }
 
         public MainViewModel Main
         {
             get
             {
-                return container.Resolve<MainViewModel>();
+                return ServiceLocator.Current.GetInstance<MainViewModel>();
             }
         }
 
@@ -51,7 +68,7 @@ namespace CongresoVisible.Infrastructure.Common
         {
             get
             {
-                return container.Resolve<AboutViewModel>();
+                return ServiceLocator.Current.GetInstance<AboutViewModel>();
             }
         }
     }

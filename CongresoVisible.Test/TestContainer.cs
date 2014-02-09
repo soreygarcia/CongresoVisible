@@ -66,14 +66,6 @@ namespace CongresoVisible.Test
             personViewModel.ShareProfileCommand.Execute(null);
             socialService.Verify(p => p.ShareLink(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<Uri>()), Times.Once);
         }
-
-        [TestMethod]
-        [ExpectedException(typeof(UriFormatException))]
-        public void ShareProfileTestFail()
-        {
-            PersonViewModel personViewModel = new PersonViewModel();
-            personViewModel.ShareProfileCommand.Execute(null);
-        }
         #endregion PersonViewModel Test
 
         #region MainViewModel Test

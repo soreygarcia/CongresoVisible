@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using CongresoVisible.Services.Contracts;
+using GalaSoft.MvvmLight.Command;
 using Infrastructure.Common;
 using System;
 using System.Collections.Generic;
@@ -19,13 +20,13 @@ namespace CongresoVisible.ViewModels
             this.roamingService = GetService<IRoamingService>();
             this.localDataService = GetService<ILocalDataService>();
 
-            this.shareProfileCommand = new DelegateCommand(ShareProfile, null);
-            this.followPersonCommand = new DelegateCommand(FollowPerson, null);
-            this.unfollowPersonCommand = new DelegateCommand(UnfollowPerson, null);
+            this.shareProfileCommand = new RelayCommand(ShareProfile, null);
+            this.followPersonCommand = new RelayCommand(FollowPerson, null);
+            this.unfollowPersonCommand = new RelayCommand(UnfollowPerson, null);
         }
 
         #region ShareProfile
-        private DelegateCommand shareProfileCommand;
+        private RelayCommand shareProfileCommand;
 
         public ICommand ShareProfileCommand
         {
@@ -41,7 +42,7 @@ namespace CongresoVisible.ViewModels
         #endregion ShareProfile
 
         #region FollowPerson
-        private DelegateCommand followPersonCommand;
+        private RelayCommand followPersonCommand;
 
         public ICommand FollowPersonCommand
         {
@@ -55,7 +56,7 @@ namespace CongresoVisible.ViewModels
         #endregion FollowPerson
 
         #region UnfollowPerson
-        private DelegateCommand unfollowPersonCommand;
+        private RelayCommand unfollowPersonCommand;
 
         public ICommand UnfollowPersonCommand
         {
@@ -78,7 +79,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                this.SetProperty(ref url, value);
+                this.Set<string>(ref url, value);
             }
         }
 
@@ -91,7 +92,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                this.SetProperty(ref name, value);
+                this.Set<string>(ref name, value);
             }
         }
 
@@ -104,7 +105,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                this.SetProperty(ref webUrl, value);
+                this.Set<string>(ref webUrl, value);
             }
         }
 
@@ -117,7 +118,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                this.SetProperty(ref listNumber, value);
+                this.Set<int>(ref listNumber, value);
             }
         }
 
@@ -130,7 +131,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                this.SetProperty(ref candidateFor, value);
+                this.Set<string>(ref candidateFor, value);
             }
         }
 
@@ -143,7 +144,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                this.SetProperty(ref gender, value);
+                this.Set<string>(ref gender, value);
             }
         }
 
@@ -156,7 +157,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                this.SetProperty(ref party, value);
+                this.Set<PartyViewModel>(ref party, value);
             }
         }
 
@@ -169,7 +170,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                this.SetProperty(ref smallImage, value);
+                this.Set<string>(ref smallImage, value);
             }
         }
 
@@ -182,7 +183,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                this.SetProperty(ref mediumImage, value);
+                this.Set<string>(ref mediumImage, value);
             }
         }
 
@@ -195,7 +196,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                this.SetProperty(ref originalImage, value);
+                this.Set<string>(ref originalImage, value);
             }
         }
 
@@ -208,7 +209,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                this.SetProperty(ref professionalExperience, value);
+                this.Set<string>(ref professionalExperience, value);
             }
         }
 
@@ -221,7 +222,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                this.SetProperty(ref bornDate, value);
+                this.Set<string>(ref bornDate, value);
             }
         }
 
@@ -234,7 +235,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                this.SetProperty(ref supportedTopics, value);
+                this.Set<List<TopicViewModel>>(ref supportedTopics, value);
             }
         }
 
@@ -247,7 +248,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                this.SetProperty(ref yearsInCongress, value);
+                this.Set<int>(ref yearsInCongress, value);
             }
         }
 
@@ -260,7 +261,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                this.SetProperty(ref politicControlSummonses, value);
+                this.Set<int>(ref politicControlSummonses, value);
             }
         }
 
@@ -273,7 +274,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                this.SetProperty(ref presentedProjects, value);
+                this.Set<int>(ref presentedProjects, value);
             }
         }
 
@@ -286,7 +287,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                this.SetProperty(ref sincronizationDate, value);
+                this.Set<DateTime?>(ref sincronizationDate, value);
             }
         }
 
@@ -299,7 +300,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                this.SetProperty(ref topicPositions, value);
+                this.Set<List<TopicViewModel>>(ref topicPositions, value);
             }
         }
 
@@ -312,7 +313,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                this.SetProperty(ref mainTopics, value);
+                this.Set<List<TopicViewModel>>(ref mainTopics, value);
             }
         }
         #endregion properties

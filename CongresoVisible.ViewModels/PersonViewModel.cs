@@ -13,10 +13,8 @@ namespace CongresoVisible.ViewModels
         IRoamingService roamingService;
         ILocalDataService localDataService;
 
-        public PersonViewModel(IContainer container)
+        public PersonViewModel()
         {
-            this.SetContainer(container);
-
             this.socialService = GetService<ISocialService>();
             this.roamingService = GetService<IRoamingService>();
             this.localDataService = GetService<ILocalDataService>();

@@ -90,10 +90,8 @@ namespace CongresoVisible.ViewModels
             }
         }
 
-        public MainViewModel(IContainer container)
+        public MainViewModel()
         {
-            this.SetContainer(container);
-
             this.jsonService = GetService<IJsonService>(); 
             this.Navigator = GetService<INavigationService>();
             this.NetworkMonitor = GetService<INetworkService>(); 

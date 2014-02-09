@@ -11,9 +11,8 @@ namespace CongresoVisible.ViewModels
 {
     public class AboutViewModel : BindableBase
     {
-        public AboutViewModel(IContainer container)
+        public AboutViewModel()
         {
-            this.SetContainer(container);
             this.Navigator = GetService<INavigationService>();
         }
 

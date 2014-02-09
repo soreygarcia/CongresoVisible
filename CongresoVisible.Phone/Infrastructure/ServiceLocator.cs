@@ -21,23 +21,22 @@ namespace CongresoVisible.Infrastructure.Common
             var builder = new ContainerBuilder();
 
             builder.RegisterType<SettingsService>().As<ISettingsService>();
-
             builder.RegisterType<DbConnectionService>().As<IDbConnectionService>();
-            builder.RegisterType<LocalFilesService>().As<ILocalFilesService>();
             builder.RegisterType<LocalDataService>().As<ILocalDataService>();
-
+            builder.RegisterType<LocalFilesService>().As<ILocalFilesService>();
+            builder.RegisterType<RoamingService>().As<IRoamingService>();
             builder.RegisterType<SocialService>().As<ISocialService>();
             builder.RegisterType<JsonService>().As<IJsonService>();
             builder.RegisterType<StoreService>().As<IStoreService>();
-
             builder.RegisterType<NavigationService>().As<INavigationService>();
             builder.RegisterType<NetworkService>().As<INetworkService>();
 
-            container = builder.Build(Autofac.Builder.ContainerBuildOptions.None);
+            builder.RegisterType<MainViewModel>().As<MainViewModel>();
+            builder.RegisterType<PersonViewModel>().As<PersonViewModel>();
+            builder.RegisterType<AboutViewModel>().As<AboutViewModel>();
 
-            builder.RegisterInstance(new MainViewModel(container)).As<MainViewModel>();
-            builder.RegisterInstance(new PersonViewModel(container)).As<PersonViewModel>();
-            builder.RegisterInstance(new AboutViewModel(container)).As<AboutViewModel>();
+            container = builder.Build(Autofac.Builder.ContainerBuildOptions.None);
+            BindableBase.Container = container;
         }
 
         public MainViewModel Main

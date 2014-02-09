@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using CongresoVisible.Models;
 using CongresoVisible.Services.Contracts;
 using Autofac;
+using Infrastructure.Common;
 
 namespace CongresoVisible.Test
 {
@@ -46,21 +47,20 @@ namespace CongresoVisible.Test
             builder.RegisterInstance(dbConnectionService.Object).As<IDbConnectionService>();
             builder.RegisterInstance(roamingService.Object).As<IRoamingService>();
             builder.RegisterInstance(localDataService.Object).As<ILocalDataService>();
-
             builder.RegisterInstance(socialService.Object).As<ISocialService>();
             builder.RegisterInstance(jsonService.Object).As<IJsonService>();
-
             builder.RegisterInstance(navigationService.Object).As<INavigationService>();
             builder.RegisterInstance(networkService.Object).As<INetworkService>();
 
             container = builder.Build(Autofac.Builder.ContainerBuildOptions.None);
+            BindableBase.Container = container;
         }
 
         #region PersonViewModel Test
         [TestMethod]
         public void ShareProfileTest()
         {
-            PersonViewModel personViewModel = new PersonViewModel(container);
+            PersonViewModel personViewModel = new PersonViewModel();
             personViewModel.WebUrl = "htt://blog.soreygarcia.me";
 
             personViewModel.ShareProfileCommand.Execute(null);
@@ -71,7 +71,7 @@ namespace CongresoVisible.Test
         [ExpectedException(typeof(UriFormatException))]
         public void ShareProfileTestFail()
         {
-            PersonViewModel personViewModel = new PersonViewModel(container);
+            PersonViewModel personViewModel = new PersonViewModel();
             personViewModel.ShareProfileCommand.Execute(null);
         }
         #endregion PersonViewModel Test
@@ -80,7 +80,7 @@ namespace CongresoVisible.Test
         [TestMethod]
         public void NavigationTest()
         {
-            MainViewModel mainViewModel = new MainViewModel(container);
+            MainViewModel mainViewModel = new MainViewModel();
 
             mainViewModel.ShowAboutInfoCommand.Execute(null);
             navigationService.Verify(p => p.Navigate<AboutViewModel>(), Times.Once);
@@ -89,7 +89,7 @@ namespace CongresoVisible.Test
         [TestMethod]
         public void GetDataNetworkUnavailableTest()
         {
-            MainViewModel mainViewModel = new MainViewModel(container);
+            MainViewModel mainViewModel = new MainViewModel();
             networkService.SetupGet(p => p.IsNetworkAvailable).Returns(false);
 
             jsonService.Setup<Task<PartiesContainer>>(p => p.GetPartiesAsync())
@@ -102,7 +102,7 @@ namespace CongresoVisible.Test
         [TestMethod]
         public void GetDataNetworkAvailableTest()
         {
-            MainViewModel mainViewModel = new MainViewModel(container);
+            MainViewModel mainViewModel = new MainViewModel();
             networkService.SetupGet(p => p.IsNetworkAvailable).Returns(true);
 
             jsonService.Setup<Task<PartiesContainer>>(p => p.GetPartiesAsync())

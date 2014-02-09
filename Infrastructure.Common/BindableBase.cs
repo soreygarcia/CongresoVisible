@@ -8,16 +8,11 @@ namespace Infrastructure.Common
 {
     public abstract class BindableBase : INotifyPropertyChanged
     {
-        private IContainer container;
+        public static IContainer Container { get; set; }
 
         protected T GetService<T>()
         {
-            return container.Resolve<T>();
-        }
-
-        protected void SetContainer(IContainer container)
-        {
-            this.container = container; 
+            return Container.Resolve<T>();
         }
 
         public INavigationService Navigator { get; set; }

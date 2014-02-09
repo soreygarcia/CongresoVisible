@@ -13,7 +13,7 @@ namespace CongresoVisible.ViewModels.Helpers
     {
         internal static void SetPeople(MainViewModel context, PeopleContainer result)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         internal static void SetSelectedPerson(MainViewModel context, Person result)
@@ -36,7 +36,7 @@ namespace CongresoVisible.ViewModels.Helpers
 
         internal static void SetRandomPeople(MainViewModel mainViewModel, PeopleContainer result)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         internal static void SetFilters(MainViewModel mainViewModel, FiltersContainer result)

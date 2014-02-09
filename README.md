@@ -21,6 +21,8 @@ Esta aplicación está siendo desarrollada a través de un tutorial
 
 [9. Consumiendo servicios Json en clases portables](http://blog.soreygarcia.me/2013/12/consumiendo-servicios-json-en-clases.html)
 
+[10. Refinando la arquitectura de nuestro proyecto - Usando Autofac y Moq (1/2)](http://blog.soreygarcia.me/2014/02/refinando-la-arquitectura-de-nuestro.html)
+
 Autor:
 ---------
 Sorey García ([@soreygarcia](http://twitter.com/soreygarcia))

@@ -36,7 +36,6 @@
     <Compile Include="BindableBase.cs" />
     <Compile Include="Contracts\IDbConnectionService.cs" />
     <Compile Include="Contracts\INetworkService.cs" />
-    <Compile Include="Contracts\INavigatedViewModel.cs" />
     <Compile Include="Contracts\INavigationService.cs" />
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

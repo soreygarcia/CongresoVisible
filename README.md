@@ -23,6 +23,8 @@ Esta aplicación está siendo desarrollada a través de un tutorial
 
 [10. Refinando la arquitectura de nuestro proyecto - Usando Autofac y Moq (1/2)](http://blog.soreygarcia.me/2014/02/refinando-la-arquitectura-de-nuestro.html)
 
+[11. Refinando la arquitectura de nuestro proyecto - Usando MVVM Light (2/2)] (http://blog.soreygarcia.me/2014/02/refinando-la-arquitectura-de-nuestro_9.html)
+
 Autor:
 ---------
 Sorey García ([@soreygarcia](http://twitter.com/soreygarcia))

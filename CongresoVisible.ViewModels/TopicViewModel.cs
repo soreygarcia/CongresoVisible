@@ -18,7 +18,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                SetProperty(ref position, value);
+                Set<bool>(ref position, value);
             }
         }
 
@@ -31,7 +31,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                SetProperty(ref name, value);
+                Set<string>(ref name, value);
             }
         }
 
@@ -44,7 +44,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                SetProperty(ref url, value);
+                Set<string>(ref url, value);
             }
         }
 
@@ -57,7 +57,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                SetProperty(ref presentedProjects, value);
+                Set<int>(ref presentedProjects, value);
             }
         }
     }

@@ -21,7 +21,7 @@ namespace Infrastructure.Common
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public bool SetProperty<T>(ref T storage, T value, [CallerMemberName] String propertyName = null)
+        public bool Set<T>(ref T storage, T value = default(T), [CallerMemberName] String propertyName = null)
         {
             if (object.Equals(storage, value)) return false;
 

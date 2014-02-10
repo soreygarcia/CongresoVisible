@@ -21,7 +21,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                SetProperty(ref selectedPerson, value);
+                Set<PersonViewModel>(ref selectedPerson, value);
             }
         }
 
@@ -34,7 +34,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                SetProperty(ref selectedParty, value);
+                Set<PartyViewModel>(ref selectedParty, value);
             }
         }
 
@@ -47,7 +47,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                SetProperty(ref filters, value);
+                Set<ObservableCollection<FilterViewModel>>(ref filters, value);
             }
         }
 
@@ -60,7 +60,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                SetProperty(ref parties, value);
+                Set<ObservableCollection<PartyViewModel>>(ref parties, value);
             }
         }
 
@@ -73,7 +73,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                SetProperty(ref people, value);
+                Set<ObservableCollection<PersonViewModel>>(ref people, value);
             }
         }
 
@@ -86,7 +86,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                SetProperty(ref following, value);
+                Set<ObservableCollection<PersonViewModel>>(ref following, value);
             }
         }
 
@@ -97,16 +97,16 @@ namespace CongresoVisible.ViewModels
             this.NetworkMonitor = GetService<INetworkService>(); 
             this.NetworkMonitor.Initialize();
 
-            this.showAboutInfoCommand = new DelegateCommand(ShowAboutInfo, null);
-            this.getFiltersCommand = new DelegateCommand(GetFilters, null);
-            this.getFollowingPeopleCommand = new DelegateCommand(GetFollowingPeopleAsync, null);
-            this.getRandomPeopleCommand = new DelegateCommand(GetRandomPeopleAsync, null);
-            this.getPartiesCommand = new DelegateCommand(GetPartiesAsync, null);
-            this.getPeopleByPartyCommand = new DelegateCommand(GetPeopleByPartyAsync, null);
+            this.showAboutInfoCommand = new RelayCommand(ShowAboutInfo, null);
+            this.getFiltersCommand = new RelayCommand(GetFilters, null);
+            this.getFollowingPeopleCommand = new RelayCommand(GetFollowingPeopleAsync, null);
+            this.getRandomPeopleCommand = new RelayCommand(GetRandomPeopleAsync, null);
+            this.getPartiesCommand = new RelayCommand(GetPartiesAsync, null);
+            this.getPeopleByPartyCommand = new RelayCommand(GetPeopleByPartyAsync, null);
         }
 
         #region ShowAbout
-        private DelegateCommand showAboutInfoCommand;
+        private RelayCommand showAboutInfoCommand;
         public ICommand ShowAboutInfoCommand
         {
             get { return this.showAboutInfoCommand; }

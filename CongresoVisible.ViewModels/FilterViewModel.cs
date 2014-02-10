@@ -18,7 +18,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                SetProperty(ref name, value);
+                Set<string>(ref name, value);
             }
         }
 
@@ -31,7 +31,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                SetProperty(ref field, value);
+                Set<string>(ref field, value);
             }
         }
 
@@ -44,7 +44,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                SetProperty(ref this.value, value);
+                Set<string>(ref this.value, value);
             }
         }
 
@@ -57,7 +57,7 @@ namespace CongresoVisible.ViewModels
             }
             set
             {
-                SetProperty(ref isSelected, value);
+                Set<bool>(ref isSelected, value);
             }
         }
 

@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace Infrastructure.Common
 {
-    public class DelegateCommand: ICommand
+    public class RelayCommand: ICommand
     {
         private readonly Action execute;
         private readonly Func<bool> canExecute;
@@ -17,7 +17,7 @@ namespace Infrastructure.Common
         /// Creates a new command that can always execute.
         /// </summary>
         /// <param name="execute">The execution logic.</param>
-        public DelegateCommand(Action execute)
+        public RelayCommand(Action execute)
             : this(execute, null)
         {
         }
@@ -27,7 +27,7 @@ namespace Infrastructure.Common
         /// </summary>
         /// <param name="execute">The execution logic.</param>
         /// <param name="canExecute">The execution status logic.</param>
-        public DelegateCommand(Action execute, Func<bool> canExecute)
+        public RelayCommand(Action execute, Func<bool> canExecute)
         {
             if (execute == null)
                 throw new ArgumentNullException("execute");

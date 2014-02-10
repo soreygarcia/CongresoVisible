@@ -93,7 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SQLite.Net">
-      <HintPath>..\..\packages\SQLite.Net-PCL.2.0.2\lib\portable-net4+sl4+wp7+win8+monotouch+MonoAndroid\SQLite.Net.dll</HintPath>
+      <HintPath>..\..\packages\SQLite.Net-PCL.2.1.0\lib\portable-net4+sl4+wp7+win8+monotouch+MonoAndroid\SQLite.Net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

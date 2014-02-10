@@ -5,12 +5,13 @@ using Infrastructure.Common;
 using Infrastructure.Common.Contracts;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using Contracts = CongresoVisible.Services.Contracts;
 
 namespace CongresoVisible.ViewModels
 {
     public class MainViewModel : BindableBase
     {
-        IJsonService jsonService;
+        Contracts.IJsonService jsonService;
 
         private PersonViewModel selectedPerson;
         public PersonViewModel SelectedPerson
@@ -92,7 +93,7 @@ namespace CongresoVisible.ViewModels
 
         public MainViewModel()
         {
-            this.jsonService = GetService<IJsonService>(); 
+            this.jsonService = GetService<Contracts.IJsonService>(); 
             this.Navigator = GetService<INavigationService>();
             this.NetworkMonitor = GetService<INetworkService>(); 
 

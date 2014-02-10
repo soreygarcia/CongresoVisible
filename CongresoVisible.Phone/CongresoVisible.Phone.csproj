@@ -102,7 +102,7 @@
     <Compile Include="Services\SettingsService.cs" />
     <Compile Include="Services\SocialService.cs" />
     <Compile Include="Services\StoreService.cs" />
-    <Compile Include="LocalizedStrings.cs" />
+    <Compile Include="Resources\LocalizedStrings.cs" />
     <Compile Include="Pages\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -150,7 +150,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="README_FIRST.txt" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />

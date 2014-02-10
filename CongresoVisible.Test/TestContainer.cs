@@ -8,6 +8,7 @@ using CongresoVisible.Models;
 using CongresoVisible.Services.Contracts;
 using Autofac;
 using Infrastructure.Common;
+using Contracts = CongresoVisible.Services.Contracts;
 
 namespace CongresoVisible.Test
 {
@@ -18,7 +19,7 @@ namespace CongresoVisible.Test
 
         private static Mock<IDbConnectionService> dbConnectionService;
         private static Mock<ISettingsService> settingsService;
-        private static Mock<IJsonService> jsonService;
+        private static Mock<Contracts.IJsonService> jsonService;
         private static Mock<ISocialService> socialService;
         private static Mock<INavigationService> navigationService;
         private static Mock<INetworkService> networkService;
@@ -30,7 +31,7 @@ namespace CongresoVisible.Test
         {
             dbConnectionService = new Mock<IDbConnectionService>();
             settingsService = new Mock<ISettingsService>();
-            jsonService = new Mock<IJsonService>();
+            jsonService = new Mock<Contracts.IJsonService>();
             socialService = new Mock<ISocialService>();
             navigationService = new Mock<INavigationService>();
             networkService = new Mock<INetworkService>();
@@ -48,7 +49,7 @@ namespace CongresoVisible.Test
             builder.RegisterInstance(roamingService.Object).As<IRoamingService>();
             builder.RegisterInstance(localDataService.Object).As<ILocalDataService>();
             builder.RegisterInstance(socialService.Object).As<ISocialService>();
-            builder.RegisterInstance(jsonService.Object).As<IJsonService>();
+            builder.RegisterInstance(jsonService.Object).As<Contracts.IJsonService>();
             builder.RegisterInstance(navigationService.Object).As<INavigationService>();
             builder.RegisterInstance(networkService.Object).As<INetworkService>();
 

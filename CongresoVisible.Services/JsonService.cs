@@ -23,19 +23,6 @@ namespace CongresoVisible.Services
             this.settingsService = settingsService;
         }
 
-        public async Task<TData> GetDataAsync<TData>(string serviceUrlKey)
-        {
-            var client = new HttpClient();
-            var serviceUrl = settingsService.GetSettingsValue(serviceUrlKey);
-            var json = await client.GetStringAsync(serviceUrl);
-
-            using (MemoryStream stream = new MemoryStream(Encoding.Unicode.GetBytes(json)))
-            {
-                DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(TData));
-                return (TData)serializer.ReadObject(stream);
-            }
-        }
-
         public async Task<PeopleContainer> GetPeopleAsync(string filter)
         {
             var client = new HttpClient();

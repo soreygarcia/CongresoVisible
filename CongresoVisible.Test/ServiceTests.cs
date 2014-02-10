@@ -11,13 +11,14 @@ using CongresoVisible.Test.Helpers;
 namespace CongresoVisible.Test
 {
     [TestClass]
-    public class ServicesTest
+    public class ServiceTests
     {
         [TestMethod]
         public async Task GetPerson_WithResult()
         {
             Services.JsonService jsonService = 
-                new Services.JsonService(MocksContainer.settingsService.Object, MocksContainer.httpClientService.Object);
+                new Services.JsonService(MocksContainer.settingsService.Object, 
+                    MocksContainer.httpClientService.Object);
 
             MocksContainer.settingsService
                 .Setup(p => p.GetSettingsValue("PersonServiceUrl"))
@@ -36,7 +37,8 @@ namespace CongresoVisible.Test
         public async Task GetPerson_WithoutResult()
         {
             Services.JsonService jsonService =
-                new Services.JsonService(MocksContainer.settingsService.Object, MocksContainer.httpClientService.Object);
+                new Services.JsonService(MocksContainer.settingsService.Object, 
+                    MocksContainer.httpClientService.Object);
 
             MocksContainer.settingsService
                 .Setup(p => p.GetSettingsValue("PersonServiceUrl"))

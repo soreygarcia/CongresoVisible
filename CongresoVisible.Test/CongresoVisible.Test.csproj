@@ -73,11 +73,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Helpers\DataTestHelper.cs" />
+    <Compile Include="Helpers\TestDataHelper.cs" />
     <Compile Include="MocksContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceTests.cs" />
-    <Compile Include="ViewModelTests.cs" />
+    <Compile Include="ServicesTests.cs" />
+    <Compile Include="ViewModelsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CongresoVisible.Models\CongresoVisible.Models.csproj">

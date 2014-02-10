@@ -14,7 +14,7 @@ using CongresoVisible.Test.Helpers;
 namespace CongresoVisible.Test
 {
     [TestClass]
-    public class ViewModelTests
+    public class ViewModelsTests
     {        
         #region PersonViewModel Test
         [TestMethod]
@@ -24,7 +24,8 @@ namespace CongresoVisible.Test
             personViewModel.WebUrl = "htt://blog.soreygarcia.me";
 
             personViewModel.ShareProfileCommand.Execute(null);
-            MocksContainer.socialService.Verify(p => p.ShareLink(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<Uri>()), Times.Once);
+            MocksContainer.socialService
+                .Verify(p => p.ShareLink(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<Uri>()), Times.Once);
         }
 
         [TestMethod]
@@ -53,7 +54,7 @@ namespace CongresoVisible.Test
             MocksContainer.networkService.SetupGet(p => p.IsNetworkAvailable).Returns(false);
 
             MocksContainer.jsonService.Setup<Task<PartiesContainer>>(p => p.GetPartiesAsync())
-                .ReturnsAsync(DataTestHelper.GetPartiesCollection());
+                .ReturnsAsync(TestDataHelper.GetObject<PartiesContainer>());
 
             mainViewModel.GetPartiesCommand.Execute(null);
             Assert.IsNull(mainViewModel.Parties);
@@ -66,7 +67,7 @@ namespace CongresoVisible.Test
             MocksContainer.networkService.SetupGet(p => p.IsNetworkAvailable).Returns(true);
 
             MocksContainer.jsonService.Setup<Task<PartiesContainer>>(p => p.GetPartiesAsync())
-                .ReturnsAsync(DataTestHelper.GetPartiesCollection());
+                .ReturnsAsync(TestDataHelper.GetObject<PartiesContainer>());
 
             mainViewModel.GetPartiesCommand.Execute(null);
             Assert.IsNotNull(mainViewModel.Parties);

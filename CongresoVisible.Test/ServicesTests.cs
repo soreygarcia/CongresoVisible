@@ -11,22 +11,22 @@ using CongresoVisible.Test.Helpers;
 namespace CongresoVisible.Test
 {
     [TestClass]
-    public class ServiceTests
+    public class ServicesTests
     {
         [TestMethod]
         public async Task GetPerson_WithResult()
         {
             Services.JsonService jsonService = 
-                new Services.JsonService(MocksContainer.settingsService.Object, 
+                new Services.JsonService(MocksContainer.SettingsService.Object, 
                     MocksContainer.httpClientService.Object);
 
-            MocksContainer.settingsService
+            MocksContainer.SettingsService
                 .Setup(p => p.GetSettingsValue("PersonServiceUrl"))
-                .Returns(DataTestHelper.GetAnyString());
+                .Returns(TestDataHelper.GetAnyString());
 
             MocksContainer.httpClientService
                 .Setup<Task<string>>(p => p.GetStringAsync(It.IsAny<string>()))
-                .ReturnsAsync(DataTestHelper.GetSerializedPerson());
+                .ReturnsAsync(TestDataHelper.GetSerializedPerson());
 
             var person = await jsonService.GetPersonAsync(It.IsAny<int>());
 
@@ -37,16 +37,16 @@ namespace CongresoVisible.Test
         public async Task GetPerson_WithoutResult()
         {
             Services.JsonService jsonService =
-                new Services.JsonService(MocksContainer.settingsService.Object, 
+                new Services.JsonService(MocksContainer.SettingsService.Object, 
                     MocksContainer.httpClientService.Object);
 
-            MocksContainer.settingsService
+            MocksContainer.SettingsService
                 .Setup(p => p.GetSettingsValue("PersonServiceUrl"))
-                .Returns(DataTestHelper.GetAnyString());
+                .Returns(TestDataHelper.GetAnyString());
 
             MocksContainer.httpClientService
                 .Setup<Task<string>>(p => p.GetStringAsync(It.IsAny<string>()))
-                .ReturnsAsync(DataTestHelper.GetNotFound());
+                .ReturnsAsync(TestDataHelper.GetNotFound());
 
             var person = await jsonService.GetPersonAsync(It.IsAny<int>());
 

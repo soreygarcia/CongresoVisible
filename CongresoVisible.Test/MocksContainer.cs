@@ -17,8 +17,8 @@ namespace CongresoVisible.Test
     {
         public static IContainer container;
 
-        public static Mock<IDbConnectionService> dbConnectionService;
-        public static Mock<ISettingsService> settingsService;
+        public static Mock<IDbConnectionService> DbConnectionService;
+        public static Mock<ISettingsService> SettingsService;
         public static Mock<Contracts.IJsonService> jsonService;
         public static Mock<ISocialService> socialService;
         public static Mock<INavigationService> navigationService;
@@ -30,8 +30,8 @@ namespace CongresoVisible.Test
         [AssemblyInitialize]
         public static void RegisterServices(TestContext context)
         {
-            dbConnectionService = new Mock<IDbConnectionService>();
-            settingsService = new Mock<ISettingsService>();
+            DbConnectionService = new Mock<IDbConnectionService>();
+            SettingsService = new Mock<ISettingsService>();
             jsonService = new Mock<Contracts.IJsonService>();
             socialService = new Mock<ISocialService>();
             navigationService = new Mock<INavigationService>();
@@ -42,8 +42,8 @@ namespace CongresoVisible.Test
 
             var builder = new ContainerBuilder();
 
-            builder.RegisterInstance(settingsService.Object).As<ISettingsService>();
-            builder.RegisterInstance(dbConnectionService.Object).As<IDbConnectionService>();
+            builder.RegisterInstance(SettingsService.Object).As<ISettingsService>();
+            builder.RegisterInstance(DbConnectionService.Object).As<IDbConnectionService>();
             builder.RegisterInstance(roamingService.Object).As<IRoamingService>();
             builder.RegisterInstance(localDataService.Object).As<ILocalDataService>();
             builder.RegisterInstance(socialService.Object).As<ISocialService>();

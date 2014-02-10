@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CongresoVisible.Test.Helpers
 {
-    internal class DataTestHelper
+    internal class TestDataHelper
     {
         private static Fixture fixture = new Fixture();
 
@@ -35,20 +35,20 @@ namespace CongresoVisible.Test.Helpers
             return "{ \"detail\": \"Not found\" }";
         }
 
-        internal static PartiesContainer GetPartiesCollection()
+        static TestDataHelper()
         {
-            return new PartiesContainer()
-            {
-                results = fixture.CreateMany<Party>(10).ToList()
-            };
+            fixture.Behaviors.Clear();
+            fixture.Behaviors.Add(new OmitOnRecursionBehavior());
         }
 
-        internal static PeopleContainer GetPeopleCollection()
+        internal static T GetObject<T>()
         {
-            return new PeopleContainer()
-            {
-                results = fixture.CreateMany<Person>(10).ToList()
-            };
+            return fixture.Create<T>();
+        }
+
+        internal static IEnumerable<T> GetCollection<T>(int count)
+        {
+            return fixture.CreateMany<T>(count);
         }
     }
 }

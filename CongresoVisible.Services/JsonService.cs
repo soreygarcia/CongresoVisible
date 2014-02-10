@@ -4,31 +4,31 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net.Http;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 using Infrastructure.Common;
 using System.Collections.ObjectModel;
-using System.Collections.Generic;
+using Infrastructure.Common.Contracts;
+using Contracts = CongresoVisible.Services.Contracts;
 
 namespace CongresoVisible.Services
 {
-    public class JsonService : IJsonService
+    public class JsonService : Contracts.IJsonService
     {
         ISettingsService settingsService;
+        IHttpClientService httpClientService;
 
-        public JsonService(ISettingsService settingsService)
+        public JsonService(ISettingsService settingsService, IHttpClientService httpClientService)
         {
             this.settingsService = settingsService;
+            this.httpClientService = httpClientService;
         }
 
         public async Task<PeopleContainer> GetPeopleAsync(string filter)
         {
-            var client = new HttpClient();
-
             var serviceUrl = settingsService.GetSettingsValue("PeopleServiceUrl");
-            var json = await client.GetStringAsync(serviceUrl);
+            var json = await httpClientService.GetStringAsync(serviceUrl);
 
             using (MemoryStream stream = new MemoryStream(Encoding.Unicode.GetBytes(json)))
             {
@@ -39,22 +39,27 @@ namespace CongresoVisible.Services
 
         public async Task<Person> GetPersonAsync(int id)
         {
-            var client = new HttpClient();
             var serviceUrl = settingsService.GetSettingsValue("PersonServiceUrl");
-            var json = await client.GetStringAsync(serviceUrl);
+            var json = await httpClientService.GetStringAsync(serviceUrl);
 
-            using (MemoryStream stream = new MemoryStream(Encoding.Unicode.GetBytes(json)))
+            if (json.Contains("Not found"))
             {
-                DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(Person));
-                return serializer.ReadObject(stream) as Person;
+                return null;
+            }
+            else
+            {
+                using (MemoryStream stream = new MemoryStream(Encoding.Unicode.GetBytes(json)))
+                {
+                    DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(Person));
+                    return serializer.ReadObject(stream) as Person;
+                }
             }
         }
 
         public async Task<PartiesContainer> GetPartiesAsync()
         {
-            var client = new HttpClient();
             var serviceUrl = settingsService.GetSettingsValue("PartiesServiceUrl");
-            var json = await client.GetStringAsync(serviceUrl);
+            var json = await httpClientService.GetStringAsync(serviceUrl);
             using (MemoryStream stream = new MemoryStream(Encoding.Unicode.GetBytes(json)))
             {
                 DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(PartiesContainer));
@@ -78,9 +83,8 @@ namespace CongresoVisible.Services
 
         public async Task<PeopleContainer> GetPeopleByPartyAsync(int party)
         {
-            var client = new HttpClient();
             var serviceUrl = settingsService.GetSettingsValue("PeopleServiceUrl") + "&partido_politico=" + party;
-            var json = await client.GetStringAsync(serviceUrl);
+            var json = await httpClientService.GetStringAsync(serviceUrl);
 
             using (MemoryStream stream = new MemoryStream(Encoding.Unicode.GetBytes(json)))
             {

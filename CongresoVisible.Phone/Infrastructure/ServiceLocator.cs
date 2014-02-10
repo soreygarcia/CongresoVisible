@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Contracts = CongresoVisible.Services.Contracts;
+using Infrastructure.Common.Services;
 
 namespace CongresoVisible.Infrastructure.Common
 {
@@ -27,10 +28,11 @@ namespace CongresoVisible.Infrastructure.Common
             builder.RegisterType<LocalFilesService>().As<ILocalFilesService>();
             builder.RegisterType<RoamingService>().As<IRoamingService>();
             builder.RegisterType<SocialService>().As<ISocialService>();
-            builder.RegisterType<JsonService>().As<Contracts.IJsonService>();
+            builder.RegisterType<Services.JsonService>().As<Contracts.IJsonService>();
             builder.RegisterType<StoreService>().As<IStoreService>();
             builder.RegisterType<NavigationService>().As<INavigationService>();
             builder.RegisterType<NetworkService>().As<INetworkService>();
+            builder.RegisterType<HttpClientService>().As<IHttpClientService>();
 
             builder.RegisterType<MainViewModel>().As<MainViewModel>();
             builder.RegisterType<PersonViewModel>().As<PersonViewModel>();

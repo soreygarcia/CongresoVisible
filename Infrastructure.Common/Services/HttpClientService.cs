@@ -12,8 +12,10 @@ namespace Infrastructure.Common.Services
     {
         public async Task<string> GetStringAsync(string serviceUrl)
         {
-            var client = new HttpClient();
-            return await client.GetStringAsync(new Uri(serviceUrl));
+            using (var client = new HttpClient())
+            {
+                return await client.GetStringAsync(new Uri(serviceUrl));
+            }
         }
     }
 }

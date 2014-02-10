@@ -25,18 +25,6 @@ namespace CongresoVisible.Services
             this.httpClientService = httpClientService;
         }
 
-        public async Task<PeopleContainer> GetPeopleAsync(string filter)
-        {
-            var serviceUrl = settingsService.GetSettingsValue("PeopleServiceUrl");
-            var json = await httpClientService.GetStringAsync(serviceUrl);
-
-            using (MemoryStream stream = new MemoryStream(Encoding.Unicode.GetBytes(json)))
-            {
-                DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(PeopleContainer));
-                return serializer.ReadObject(stream) as PeopleContainer;
-            }
-        }
-
         public async Task<Person> GetPersonAsync(int id)
         {
             var serviceUrl = settingsService.GetSettingsValue("PersonServiceUrl");
@@ -53,6 +41,18 @@ namespace CongresoVisible.Services
                     DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(Person));
                     return serializer.ReadObject(stream) as Person;
                 }
+            }
+        }
+
+        public async Task<PeopleContainer> GetPeopleAsync(string filter)
+        {
+            var serviceUrl = settingsService.GetSettingsValue("PeopleServiceUrl");
+            var json = await httpClientService.GetStringAsync(serviceUrl);
+
+            using (MemoryStream stream = new MemoryStream(Encoding.Unicode.GetBytes(json)))
+            {
+                DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(PeopleContainer));
+                return serializer.ReadObject(stream) as PeopleContainer;
             }
         }
 

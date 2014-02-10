@@ -15,22 +15,6 @@ namespace CongresoVisible.Test.Helpers
     {
         private static Fixture fixture = new Fixture();
 
-        internal static PartiesContainer GetPartiesCollection()
-        {
-            return new PartiesContainer()
-            {
-                results = fixture.CreateMany<Party>(10).ToList()
-            };
-        }
-
-        internal static PeopleContainer GetPeopleCollection()
-        {
-            return new PeopleContainer()
-            {
-                results = fixture.CreateMany<Person>(10).ToList()
-            };
-        }
-
         internal static string GetSerializedPerson()
         {
             MemoryStream stream = new MemoryStream();
@@ -49,6 +33,22 @@ namespace CongresoVisible.Test.Helpers
         internal static string GetNotFound()
         {
             return "{ \"detail\": \"Not found\" }";
+        }
+
+        internal static PartiesContainer GetPartiesCollection()
+        {
+            return new PartiesContainer()
+            {
+                results = fixture.CreateMany<Party>(10).ToList()
+            };
+        }
+
+        internal static PeopleContainer GetPeopleCollection()
+        {
+            return new PeopleContainer()
+            {
+                results = fixture.CreateMany<Person>(10).ToList()
+            };
         }
     }
 }

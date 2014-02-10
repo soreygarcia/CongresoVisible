@@ -17,7 +17,20 @@ namespace Infrastructure.Common
 
         public INavigationService Navigator { get; set; }
 
-        public INetworkService NetworkMonitor { get; set; }
+        private INetworkService networkMonitor;
+
+        public INetworkService NetworkMonitor 
+        {
+            get 
+            {
+                return networkMonitor;
+            }
+            set 
+            {
+                networkMonitor = value;
+                networkMonitor.Initialize();
+            } 
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

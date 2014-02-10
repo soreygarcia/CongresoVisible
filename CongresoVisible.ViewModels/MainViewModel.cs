@@ -95,7 +95,6 @@ namespace CongresoVisible.ViewModels
             this.jsonService = GetService<IJsonService>(); 
             this.Navigator = GetService<INavigationService>();
             this.NetworkMonitor = GetService<INetworkService>(); 
-            this.NetworkMonitor.Initialize();
 
             this.showAboutInfoCommand = new RelayCommand(ShowAboutInfo, null);
             this.getFiltersCommand = new RelayCommand(GetFilters, null);

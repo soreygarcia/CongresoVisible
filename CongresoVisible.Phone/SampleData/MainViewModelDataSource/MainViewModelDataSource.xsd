@@ -46,7 +46,7 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="PartiesItem">
-    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute blend:FormatParameters="10,8" name="Name" type="xs:string" />
   </xs:complexType>
   <xs:complexType name="Filters">
     <xs:sequence>

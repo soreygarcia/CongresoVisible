@@ -69,16 +69,16 @@
     <SampleData:PeopleItem />
   </SampleData:MainViewModelDataSource.People>
   <SampleData:MainViewModelDataSource.Parties>
-    <SampleData:PartiesItem Name="Aliquam cras class" />
-    <SampleData:PartiesItem Name="Integer duis" />
-    <SampleData:PartiesItem Name="Quisque nam sed" />
-    <SampleData:PartiesItem Name="Maecenas dis" />
-    <SampleData:PartiesItem Name="Aenean vivamus" />
-    <SampleData:PartiesItem Name="Mauris nunc" />
-    <SampleData:PartiesItem Name="Praesent nullam est" />
-    <SampleData:PartiesItem Name="Accumsan bibendum" />
-    <SampleData:PartiesItem Name="Hac curae dictumst leo" />
-    <SampleData:PartiesItem Name="Amet donec" />
+    <SampleData:PartiesItem Name="Maecenas nam aenean mauris sed aliquam" />
+    <SampleData:PartiesItem Name="Cras dis class curae donec integer est" />
+    <SampleData:PartiesItem Name="Etiam praesent hac leo nullam accumsan aptent fusce auctor quisque" />
+    <SampleData:PartiesItem Name="Bibendum mus vivamus congue duis dictumst nunc lorem amet morbi" />
+    <SampleData:PartiesItem Name="Eleifend nulla facilisi faucibus nec" />
+    <SampleData:PartiesItem Name="Proin augue ante arcu non cursus dictum aliquam per" />
+    <SampleData:PartiesItem Name="Diam lectus aliquet sed dolor libero eget ligula elit" />
+    <SampleData:PartiesItem Name="Fames litora felis enim erat sem eros sit vel nibh" />
+    <SampleData:PartiesItem Name="Ipsum nam habitant sed dis" />
+    <SampleData:PartiesItem Name="Inceptos est justo nisi hac lacus nisl nunc lorem luctus" />
   </SampleData:MainViewModelDataSource.Parties>
   <SampleData:MainViewModelDataSource.Filters>
     <SampleData:FiltersItem />

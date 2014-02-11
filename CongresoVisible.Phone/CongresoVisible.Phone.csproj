@@ -94,6 +94,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\BooleanToNonVisibilityConverter.cs" />
+    <Compile Include="Converters\ListCountToVisibilityConverter.cs" />
+    <Compile Include="Converters\ListCountToNonVisibilityConverter.cs" />
     <Compile Include="Infrastructure\ServiceLocator.cs" />
     <Compile Include="Services\DbConnectionService.cs" />
     <Compile Include="Services\NetworkService.cs" />

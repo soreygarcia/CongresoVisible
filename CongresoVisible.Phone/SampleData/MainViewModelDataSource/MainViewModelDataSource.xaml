@@ -95,4 +95,26 @@
   <SampleData:MainViewModelDataSource.SelectedPerson>
     <SampleData:SelectedPerson />
   </SampleData:MainViewModelDataSource.SelectedPerson>
+  <SampleData:MainViewModelDataSource.RandomPeople>
+    <SampleData:RandomPeopleItem MediumImage="/CongresoVisible.Phone;component/SampleData/MainViewModelDataSource/MainViewModelDataSource_Files/elianaca.jpg" Name="Eliana Caraballo" CandidateFor="Alianza Verde">
+      <SampleData:RandomPeopleItem.Party>
+        <SampleData:Party1 Logo="Maecenas cras aliquam praesent" Name="Maecenas aenean nam sed" />
+      </SampleData:RandomPeopleItem.Party>
+    </SampleData:RandomPeopleItem>
+    <SampleData:RandomPeopleItem MediumImage="/CongresoVisible.Phone;component/SampleData/MainViewModelDataSource/MainViewModelDataSource_Files/hernandgr.jpg" Name="Hernan Guzman" CandidateFor="Cambio Radical">
+      <SampleData:RandomPeopleItem.Party>
+        <SampleData:Party1 Logo="Integer class curae" Name="Class mauris curae aliquam" />
+      </SampleData:RandomPeopleItem.Party>
+    </SampleData:RandomPeopleItem>
+    <SampleData:RandomPeopleItem MediumImage="/CongresoVisible.Phone;component/SampleData/MainViewModelDataSource/MainViewModelDataSource_Files/khriztianmoreno.jpg" Name="Cras mauris" CandidateFor="Bibendum dictumst eleifend facilisi">
+      <SampleData:RandomPeopleItem.Party>
+        <SampleData:Party1 Logo="Nam donec aenean" Name="Donec dis cras est" />
+      </SampleData:RandomPeopleItem.Party>
+    </SampleData:RandomPeopleItem>
+    <SampleData:RandomPeopleItem MediumImage="/CongresoVisible.Phone;component/SampleData/MainViewModelDataSource/MainViewModelDataSource_Files/soreygarcia.jpg" Name="Praesent duis nunc amet" CandidateFor="Integer cras duis nunc">
+      <SampleData:RandomPeopleItem.Party>
+        <SampleData:Party1 Logo="Duis etiam" Name="Nullam praesent integer" />
+      </SampleData:RandomPeopleItem.Party>
+    </SampleData:RandomPeopleItem>
+  </SampleData:MainViewModelDataSource.RandomPeople>
 </SampleData:MainViewModelDataSource>

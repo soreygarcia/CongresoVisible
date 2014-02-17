@@ -44,16 +44,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\IDialogService.cs" />
     <Compile Include="Contracts\IJsonService.cs" />
     <Compile Include="Contracts\ILocalDataService.cs" />
-    <Compile Include="Contracts\ILocalFilesService.cs" />
-    <Compile Include="Contracts\IRoamingService.cs" />
-    <Compile Include="Contracts\ISettingsService.cs" />
-    <Compile Include="Contracts\ISocialService.cs" />
-    <Compile Include="Contracts\IStoreService.cs" />
     <Compile Include="LocalDataService.cs" />
-    <Compile Include="RoamingService.cs" />
     <Compile Include="JsonService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CongresoVisible.Services.Contracts
+namespace Infrastructure.Common.Contracts
 {
     public interface ISocialService
     {

@@ -1,8 +1,10 @@
 ﻿using Autofac;
+using CongresoVisible.Models;
 using CongresoVisible.Services.Contracts;
 using CongresoVisible.ViewModels.Helpers;
 using Infrastructure.Common;
 using Infrastructure.Common.Contracts;
+using System;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Contracts = CongresoVisible.Services.Contracts;
@@ -100,7 +102,7 @@ namespace CongresoVisible.ViewModels
             this.showAboutInfoCommand = new RelayCommand(ShowAboutInfo, null);
             this.getFiltersCommand = new RelayCommand(GetFilters, null);
             this.getFollowingPeopleCommand = new RelayCommand(GetFollowingPeopleAsync, null);
-            this.getRandomPeopleCommand = new RelayCommand(GetRandomPeopleAsync, null);
+            this.getRandomPersonCommand = new RelayCommand(GetRandomPeopleAsync, null);
             this.getPartiesCommand = new RelayCommand(GetPartiesAsync, null);
             this.getPeopleByPartyCommand = new RelayCommand(GetPeopleByPartyAsync, null);
         }
@@ -144,10 +146,17 @@ namespace CongresoVisible.ViewModels
         }
         public async void GetFollowingPeopleAsync()
         {
-            if (NetworkMonitor.IsNetworkAvailable)
+            try
             {
-                var result = await jsonService.GetPeopleAsync(string.Empty);
-                ViewModelHelper.SetPeople(this, result);
+                if (NetworkMonitor.IsNetworkAvailable)
+                {
+                    var result = await jsonService.GetPeopleAsync(string.Empty);
+                    ViewModelHelper.SetPeople(this, result);
+                }
+            }
+            catch (System.Exception)
+            {
+                throw;
             }
         }
 
@@ -162,27 +171,54 @@ namespace CongresoVisible.ViewModels
         }
         public async void GetPeopleByPartyAsync()
         {
-            if (NetworkMonitor.IsNetworkAvailable)
+            try
             {
-                var result = await jsonService.GetPeopleByPartyAsync(this.SelectedParty.Id);
-                ViewModelHelper.SetPeople(this, result);
+                if (NetworkMonitor.IsNetworkAvailable)
+                {
+                    var result = await jsonService.GetPeopleByPartyAsync(this.SelectedParty.Id);
+                    ViewModelHelper.SetPeople(this, result);
+                }
+            }
+            catch (System.Exception)
+            {
+                //throw;
             }
         }
 
         #endregion GetFollowingPeople
 
         #region GetRandomPeople
-        private ICommand getRandomPeopleCommand;
-        public ICommand GetRandomPeopleCommand
+        private ICommand getRandomPersonCommand;
+        public ICommand GetRandomPersonCommand
         {
-            get { return this.getRandomPeopleCommand; }
+            get { return this.getRandomPersonCommand; }
         }
         public async void GetRandomPeopleAsync()
         {
-            if (NetworkMonitor.IsNetworkAvailable)
+            try
             {
-                var result = await jsonService.GetPeopleAsync(string.Empty);
-                ViewModelHelper.SetRandomPeople(this, result);
+                int randomPeopleLoaded = 0;
+
+                while (randomPeopleLoaded < 4) //Change limit for parameter
+                {
+                    if (NetworkMonitor.IsNetworkAvailable)
+                    {
+                        Random rnd = new Random();
+                        int randomId = rnd.Next(1, 2000); //Change limit for parameter
+
+                        var result = await jsonService.GetPersonAsync(randomId);
+
+                        if (result != null)
+                        {
+                            randomPeopleLoaded++;
+                            ViewModelHelper.SetRandomPerson(this, result, randomPeopleLoaded);
+                        }
+                    }
+                }
+            }
+            catch (System.Exception)
+            {
+                //throw;
             }
         }
         #endregion GetRandomPeople
@@ -195,10 +231,17 @@ namespace CongresoVisible.ViewModels
         }
         public async void GetPartiesAsync()
         {
-            if (NetworkMonitor.IsNetworkAvailable)
+            try
             {
-                var result = await jsonService.GetPartiesAsync();
-                ViewModelHelper.SetParties(this, result);
+                if (NetworkMonitor.IsNetworkAvailable)
+                {
+                    var result = await jsonService.GetPartiesAsync();
+                    ViewModelHelper.SetParties(this, result);
+                }
+            }
+            catch (System.Exception)
+            {
+                //throw;
             }
         }
         #endregion GetParties

@@ -34,14 +34,28 @@ namespace CongresoVisible.ViewModels.Helpers
             context.Parties = parties;
         }
 
-        internal static void SetRandomPeople(MainViewModel mainViewModel, PeopleContainer result)
+        internal static void SetRandomPerson(MainViewModel mainViewModel, Person result, int index)
         {
-            //throw new NotImplementedException();
+            PersonViewModel person = new PersonViewModel()
+            {
+                Name = string.Format("{0} {1}", result.first_name, result.last_name),
+                Url = result.url,
+                WebUrl = result.web_url,
+                Gender = result.gender,
+                CandidateFor = result.candidate_for,
+                ListNumber = result.list_number,
+                Party = new PartyViewModel()
+                {
+                    Id = result.party.id,
+                    Name = result.party.name,
+                    Logo = result.party.photo
+                }
+            };
         }
 
         internal static void SetFilters(MainViewModel mainViewModel, FiltersContainer result)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

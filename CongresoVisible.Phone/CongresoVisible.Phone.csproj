@@ -98,7 +98,7 @@
     <Compile Include="Converters\BooleanToNonVisibilityConverter.cs" />
     <Compile Include="Converters\ListCountToVisibilityConverter.cs" />
     <Compile Include="Converters\ListCountToNonVisibilityConverter.cs" />
-    <Compile Include="Infrastructure\ServiceLocator.cs" />
+    <Compile Include="Infrastructure\ViewModelLocator.cs" />
     <Compile Include="Services\DbConnectionService.cs" />
     <Compile Include="Services\NetworkService.cs" />
     <Compile Include="Services\LocalFilesService.cs" />
@@ -245,4 +245,5 @@
   </Target>
   -->
   <ProjectExtensions />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.Telemetry.WindowsPhone.0.6.56.3\build\wp80\Microsoft.ApplicationInsights.Telemetry.WindowsPhone.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.Telemetry.WindowsPhone.0.6.56.3\build\wp80\Microsoft.ApplicationInsights.Telemetry.WindowsPhone.targets')" />
 </Project>

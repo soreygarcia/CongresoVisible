@@ -14,11 +14,11 @@ using Infrastructure.Common.Services;
 
 namespace CongresoVisible.Infrastructure.Common
 {
-    public class ServiceLocator
+    public class ViewModelLocator
     {
         private IContainer container;
 
-        public ServiceLocator()
+        public ViewModelLocator()
         {
             var builder = new ContainerBuilder();
 
@@ -26,7 +26,7 @@ namespace CongresoVisible.Infrastructure.Common
             builder.RegisterType<DbConnectionService>().As<IDbConnectionService>();
             builder.RegisterType<LocalDataService>().As<ILocalDataService>();
             builder.RegisterType<LocalFilesService>().As<ILocalFilesService>();
-            builder.RegisterType<RoamingService>().As<IRoamingService>();
+            
             builder.RegisterType<SocialService>().As<ISocialService>();
             builder.RegisterType<Services.JsonService>().As<Contracts.IJsonService>();
             builder.RegisterType<StoreService>().As<IStoreService>();

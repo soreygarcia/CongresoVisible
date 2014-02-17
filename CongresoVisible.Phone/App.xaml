@@ -14,7 +14,7 @@
     		<ResourceDictionary.MergedDictionaries>
     			<ResourceDictionary Source="Resources/ResourceDictionary.xaml"/>
     		</ResourceDictionary.MergedDictionaries>
-    		<infrastructure:ServiceLocator x:Key="Locator"/>
+            <infrastructure:ViewModelLocator x:Key="Locator"/>
     		<uriMapper:UriMapper x:Key="UriMapper">
     			<uriMapper:UriMapping Uri="/{page}ViewModel" MappedUri="/Pages/{page}Page.xaml" />
     		</uriMapper:UriMapper>

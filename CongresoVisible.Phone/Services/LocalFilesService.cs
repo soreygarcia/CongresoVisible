@@ -1,5 +1,6 @@
 ﻿using CongresoVisible.Services.Contracts;
 using Infrastructure.Common;
+using Infrastructure.Common.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;

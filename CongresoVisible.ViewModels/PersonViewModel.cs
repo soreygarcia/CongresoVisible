@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using CongresoVisible.Services.Contracts;
 using Infrastructure.Common;
+using Infrastructure.Common.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,13 +12,11 @@ namespace CongresoVisible.ViewModels
     public class PersonViewModel : BindableBase
     {
         ISocialService socialService;
-        IRoamingService roamingService;
         ILocalDataService localDataService;
 
         public PersonViewModel()
         {
             this.socialService = GetService<ISocialService>();
-            this.roamingService = GetService<IRoamingService>();
             this.localDataService = GetService<ILocalDataService>();
 
             this.shareProfileCommand = new RelayCommand(ShareProfile, null);
@@ -317,7 +316,6 @@ namespace CongresoVisible.ViewModels
             }
         }
         #endregion properties
-
 
         public ICommand ShowProfileCommand
         {

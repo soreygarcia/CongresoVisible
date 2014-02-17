@@ -12,43 +12,6 @@
     shell:SystemTray.IsVisible="False">
 	<phone:PhoneApplicationPage.Resources>
 		<Convertidores:ListCountToNonVisibilityConverter x:Key="ListCountToNonVisibilityConverter"/>
-		<Style x:Key="PartyButtonStyle" TargetType="Button">
-			<Setter Property="Background" Value="Transparent"/>
-			<Setter Property="BorderBrush" Value="{StaticResource PhoneForegroundBrush}"/>
-			<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
-			<Setter Property="BorderThickness" Value="{StaticResource PhoneBorderThickness}"/>
-			<Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilySemiBold}"/>
-			<Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMedium}"/>
-			<Setter Property="Padding" Value="10,5,10,6"/>
-			<Setter Property="Template">
-				<Setter.Value>
-					<ControlTemplate TargetType="Button">
-						<Border x:Name="border" Width="400" BorderThickness="0,0,0,1" Padding="0,0,0,10" Margin="0,0,0,10" BorderBrush="{StaticResource LightShadowColor}" >
-							<VisualStateManager.VisualStateGroups>
-								<VisualStateGroup x:Name="CommonStates">
-									<VisualState x:Name="Normal"/>
-									<VisualState x:Name="MouseOver"/>
-									<VisualState x:Name="Pressed">
-										<Storyboard>
-											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="border">
-												<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource LightShadowColor}"/>
-											</ObjectAnimationUsingKeyFrames>
-										</Storyboard>
-									</VisualState>
-									<VisualState x:Name="Disabled"/>
-								</VisualStateGroup>
-							</VisualStateManager.VisualStateGroups>
-							<StackPanel Height="68">
-								<TextBlock x:Name="textBlock" Text="{Binding Name}" Foreground="{StaticResource DarkColor}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TextWrapping="Wrap" FontFamily="Segoe WP"/>
-							</StackPanel>
-						</Border>
-					</ControlTemplate>
-				</Setter.Value>
-			</Setter>
-		</Style>
-		<DataTemplate x:Key="PartiesItemTemplate">
-			<Button Content="Button" Style="{StaticResource PartyButtonStyle}"/>
-		</DataTemplate>
 	</phone:PhoneApplicationPage.Resources>
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar BackgroundColor="{StaticResource AppBarDarkColor}" ForegroundColor="{StaticResource AppBarLightColor}" IsMenuEnabled="True" Mode="Minimized">
@@ -104,12 +67,7 @@
 			<phone:PanoramaItem Header="aleatorios" Margin="0,120,0,0">
 				<StackPanel Margin="0" Orientation="Vertical" Width="420">
 					<Grid VerticalAlignment="Top">
-						<toolkit:WrapPanel Margin="0">
-							<Rectangle Fill="{StaticResource MainAccentColor}" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="10,0,0,10"/>
-							<Rectangle Fill="{StaticResource MainAccentColor}" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="10,0,0,10"/>
-							<Rectangle Fill="{StaticResource MainAccentColor}" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="10,0,0,10"/>
-							<Rectangle Fill="{StaticResource MainAccentColor}" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="10,0,0,10"/>
-						</toolkit:WrapPanel>
+						<ListBox HorizontalAlignment="Left" ItemTemplate="{StaticResource RandomPeopleItemTemplate}" ItemsSource="{Binding RandomPeople}" VerticalAlignment="Top" ItemsPanel="{StaticResource RandomPeoplePanelTemplate}" Width="400" Height="400" Margin="16,8,0,0"/>
 					</Grid>
 					<Button Content="Buscar" Foreground="{StaticResource DarkColor}" BorderBrush="{x:Null}" Background="{x:Null}" Style="{StaticResource SearchPeopleStyle}" Margin="10,10,0,0"/>
 				</StackPanel>

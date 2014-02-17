@@ -13,6 +13,7 @@
       <xs:element name="Parties" type="tns:Parties" />
       <xs:element name="Filters" type="tns:Filters" />
       <xs:element name="SelectedPerson" type="tns:SelectedPerson" />
+      <xs:element name="RandomPeople" type="tns:RandomPeople" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="Following">
@@ -55,4 +56,21 @@
   </xs:complexType>
   <xs:complexType name="FiltersItem" />
   <xs:complexType name="SelectedPerson" />
+  <xs:complexType name="RandomPeople">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="RandomPeopleItem" type="tns:RandomPeopleItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RandomPeopleItem">
+    <xs:sequence>
+      <xs:element name="Party" type="tns:Party1" />
+    </xs:sequence>
+    <xs:attribute blend:FormatParameters="Assets\Imagenes" name="MediumImage" type="tns:Basic-Image" />
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="CandidateFor" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="Party1">
+    <xs:attribute name="Logo" type="xs:string" />
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
 </xs:schema>

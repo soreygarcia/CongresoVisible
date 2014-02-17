@@ -4,6 +4,7 @@
 namespace Expression.Blend.SampleData.MainViewModelDataSource
 {
 	using System; 
+	using System.ComponentModel;
 
 // To significantly reduce the sample data footprint in your production application, you can set
 // the DISABLE_SAMPLE_DATA conditional compilation constant and disable sample data at runtime.
@@ -11,15 +12,15 @@ namespace Expression.Blend.SampleData.MainViewModelDataSource
 	internal class MainViewModelDataSource { }
 #else
 
-	public class MainViewModelDataSource : System.ComponentModel.INotifyPropertyChanged
+	public class MainViewModelDataSource : INotifyPropertyChanged
 	{
-		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+		public event PropertyChangedEventHandler PropertyChanged;
 
 		protected virtual void OnPropertyChanged(string propertyName)
 		{
 			if (this.PropertyChanged != null)
 			{
-				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 
@@ -27,13 +28,10 @@ namespace Expression.Blend.SampleData.MainViewModelDataSource
 		{
 			try
 			{
-				System.Uri resourceUri = new System.Uri("/CongresoVisible.Phone;component/SampleData/MainViewModelDataSource/MainViewModelDataSource.xaml", System.UriKind.Relative);
-				if (System.Windows.Application.GetResourceStream(resourceUri) != null)
-				{
-					System.Windows.Application.LoadComponent(this, resourceUri);
-				}
+				Uri resourceUri = new Uri("/CongresoVisible.Phone;component/SampleData/MainViewModelDataSource/MainViewModelDataSource.xaml", UriKind.RelativeOrAbsolute);
+				System.Windows.Application.LoadComponent(this, resourceUri);
 			}
-			catch (System.Exception)
+			catch
 			{
 			}
 		}
@@ -96,21 +94,31 @@ namespace Expression.Blend.SampleData.MainViewModelDataSource
 				}
 			}
 		}
+
+		private RandomPeople _RandomPeople = new RandomPeople();
+
+		public RandomPeople RandomPeople
+		{
+			get
+			{
+				return this._RandomPeople;
+			}
+		}
 	}
 
 	public class Following : System.Collections.ObjectModel.ObservableCollection<FollowingItem>
 	{ 
 	}
 
-	public class FollowingItem : System.ComponentModel.INotifyPropertyChanged
+	public class FollowingItem : INotifyPropertyChanged
 	{
-		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+		public event PropertyChangedEventHandler PropertyChanged;
 
 		protected virtual void OnPropertyChanged(string propertyName)
 		{
 			if (this.PropertyChanged != null)
 			{
-				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 
@@ -191,15 +199,15 @@ namespace Expression.Blend.SampleData.MainViewModelDataSource
 		}
 	}
 
-	public class Party : System.ComponentModel.INotifyPropertyChanged
+	public class Party : INotifyPropertyChanged
 	{
-		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+		public event PropertyChangedEventHandler PropertyChanged;
 
 		protected virtual void OnPropertyChanged(string propertyName)
 		{
 			if (this.PropertyChanged != null)
 			{
-				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 
@@ -227,15 +235,15 @@ namespace Expression.Blend.SampleData.MainViewModelDataSource
 	{ 
 	}
 
-	public class PeopleItem : System.ComponentModel.INotifyPropertyChanged
+	public class PeopleItem : INotifyPropertyChanged
 	{
-		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+		public event PropertyChangedEventHandler PropertyChanged;
 
 		protected virtual void OnPropertyChanged(string propertyName)
 		{
 			if (this.PropertyChanged != null)
 			{
-				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -244,15 +252,15 @@ namespace Expression.Blend.SampleData.MainViewModelDataSource
 	{ 
 	}
 
-	public class PartiesItem : System.ComponentModel.INotifyPropertyChanged
+	public class PartiesItem : INotifyPropertyChanged
 	{
-		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+		public event PropertyChangedEventHandler PropertyChanged;
 
 		protected virtual void OnPropertyChanged(string propertyName)
 		{
 			if (this.PropertyChanged != null)
 			{
-				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 
@@ -280,28 +288,172 @@ namespace Expression.Blend.SampleData.MainViewModelDataSource
 	{ 
 	}
 
-	public class FiltersItem : System.ComponentModel.INotifyPropertyChanged
+	public class FiltersItem : INotifyPropertyChanged
 	{
-		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+		public event PropertyChangedEventHandler PropertyChanged;
 
 		protected virtual void OnPropertyChanged(string propertyName)
 		{
 			if (this.PropertyChanged != null)
 			{
-				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 
-	public class SelectedPerson : System.ComponentModel.INotifyPropertyChanged
+	public class SelectedPerson : INotifyPropertyChanged
 	{
-		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+		public event PropertyChangedEventHandler PropertyChanged;
 
 		protected virtual void OnPropertyChanged(string propertyName)
 		{
 			if (this.PropertyChanged != null)
 			{
-				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+
+	public class RandomPeopleItem : INotifyPropertyChanged
+	{
+		public event PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (this.PropertyChanged != null)
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+
+		private System.Windows.Media.ImageSource _MediumImage = null;
+
+		public System.Windows.Media.ImageSource MediumImage
+		{
+			get
+			{
+				return this._MediumImage;
+			}
+
+			set
+			{
+				if (this._MediumImage != value)
+				{
+					this._MediumImage = value;
+					this.OnPropertyChanged("MediumImage");
+				}
+			}
+		}
+
+		private Party1 _Party = new Party1();
+
+		public Party1 Party
+		{
+			get
+			{
+				return this._Party;
+			}
+
+			set
+			{
+				if (this._Party != value)
+				{
+					this._Party = value;
+					this.OnPropertyChanged("Party");
+				}
+			}
+		}
+
+		private string _Name = string.Empty;
+
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+
+			set
+			{
+				if (this._Name != value)
+				{
+					this._Name = value;
+					this.OnPropertyChanged("Name");
+				}
+			}
+		}
+
+		private string _CandidateFor = string.Empty;
+
+		public string CandidateFor
+		{
+			get
+			{
+				return this._CandidateFor;
+			}
+
+			set
+			{
+				if (this._CandidateFor != value)
+				{
+					this._CandidateFor = value;
+					this.OnPropertyChanged("CandidateFor");
+				}
+			}
+		}
+	}
+
+	public class RandomPeople : System.Collections.ObjectModel.ObservableCollection<RandomPeopleItem>
+	{ 
+	}
+
+	public class Party1 : INotifyPropertyChanged
+	{
+		public event PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (this.PropertyChanged != null)
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+
+		private string _Logo = string.Empty;
+
+		public string Logo
+		{
+			get
+			{
+				return this._Logo;
+			}
+
+			set
+			{
+				if (this._Logo != value)
+				{
+					this._Logo = value;
+					this.OnPropertyChanged("Logo");
+				}
+			}
+		}
+
+		private string _Name = string.Empty;
+
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+
+			set
+			{
+				if (this._Name != value)
+				{
+					this._Name = value;
+					this.OnPropertyChanged("Name");
+				}
 			}
 		}
 	}

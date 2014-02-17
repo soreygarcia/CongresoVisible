@@ -23,7 +23,6 @@ namespace CongresoVisible.Test
         public static Mock<ISocialService> socialService;
         public static Mock<INavigationService> navigationService;
         public static Mock<INetworkService> networkService;
-        public static Mock<IRoamingService> roamingService;
         public static Mock<ILocalDataService> localDataService;
         public static Mock<IHttpClientService> httpClientService;
 
@@ -36,7 +35,6 @@ namespace CongresoVisible.Test
             socialService = new Mock<ISocialService>();
             navigationService = new Mock<INavigationService>();
             networkService = new Mock<INetworkService>();
-            roamingService = new Mock<IRoamingService>();
             localDataService = new Mock<ILocalDataService>();
             httpClientService = new Mock<IHttpClientService>();
 
@@ -44,7 +42,6 @@ namespace CongresoVisible.Test
 
             builder.RegisterInstance(SettingsService.Object).As<ISettingsService>();
             builder.RegisterInstance(DbConnectionService.Object).As<IDbConnectionService>();
-            builder.RegisterInstance(roamingService.Object).As<IRoamingService>();
             builder.RegisterInstance(localDataService.Object).As<ILocalDataService>();
             builder.RegisterInstance(socialService.Object).As<ISocialService>();
             builder.RegisterInstance(jsonService.Object).As<Contracts.IJsonService>();

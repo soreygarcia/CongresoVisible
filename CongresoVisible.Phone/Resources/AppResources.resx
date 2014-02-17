@@ -128,7 +128,7 @@
     <value>http://congresovisible.org/api/apis/candidatos/?format=json</value>
   </data>
   <data name="PersonServiceUrl" xml:space="preserve">
-    <value>http://congresovisible.org/api/apis/candidatos/1406/?format=json</value>
+    <value>http://congresovisible.org/api/apis/candidatos/{0}/?format=json</value>
   </data>
   <data name="DataBasePath" xml:space="preserve">
     <value>Db.sqlite</value>

@@ -28,7 +28,7 @@ namespace CongresoVisible.Services
         public async Task<Person> GetPersonAsync(int id)
         {
             var serviceUrl = settingsService.GetSettingsValue("PersonServiceUrl");
-            var json = await httpClientService.GetStringAsync(serviceUrl);
+            var json = await httpClientService.GetStringAsync(string.Format(serviceUrl,id));
 
             if (json.Contains("Not found"))
             {

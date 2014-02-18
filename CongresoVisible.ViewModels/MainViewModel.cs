@@ -212,11 +212,11 @@ namespace CongresoVisible.ViewModels
         {
             try
             {
-                ViewModelHelper.InitilizeRandomPeople(this, 4);
-                LoadRandomPerson(0);
-                LoadRandomPerson(1);
-                LoadRandomPerson(2);
-                LoadRandomPerson(3);
+                ViewModelHelper.InitilizeRandomPeople(this, 4); //Change limit for parameter
+                for (int i = 0; i < 4; i++)
+                {
+                    LoadRandomPerson(i);
+                }                
             }
             catch (Exception ex)
             {

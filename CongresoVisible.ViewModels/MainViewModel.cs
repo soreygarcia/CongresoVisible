@@ -6,6 +6,7 @@ using Infrastructure.Common;
 using Infrastructure.Common.Contracts;
 using System;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Contracts = CongresoVisible.Services.Contracts;
 
@@ -77,6 +78,19 @@ namespace CongresoVisible.ViewModels
             set
             {
                 Set<ObservableCollection<PersonViewModel>>(ref people, value);
+            }
+        }
+
+        private ObservableCollection<PersonViewModel> randomPeople;
+        public ObservableCollection<PersonViewModel> RandomPeople
+        {
+            get
+            {
+                return this.randomPeople;
+            }
+            set
+            {
+                Set<ObservableCollection<PersonViewModel>>(ref randomPeople, value);
             }
         }
 
@@ -193,33 +207,61 @@ namespace CongresoVisible.ViewModels
         {
             get { return this.getRandomPersonCommand; }
         }
+
         public async void GetRandomPeopleAsync()
         {
             try
             {
-                int randomPeopleLoaded = 0;
+                ViewModelHelper.InitilizeRandomPeople(this, 4);
+                LoadRandomPerson(0);
+                LoadRandomPerson(1);
+                LoadRandomPerson(2);
+                LoadRandomPerson(3);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
 
-                while (randomPeopleLoaded < 4) //Change limit for parameter
+        private void LoadRandomPerson(int index)
+        {
+            Task.Factory.StartNew<Person>(() =>
                 {
-                    if (NetworkMonitor.IsNetworkAvailable)
+                    return GetRandomPerson().Result;
+                })
+                .ContinueWith((antecedant) =>
+                {
+                    ViewModelHelper.SetRandomPerson(this, antecedant.Result, index);
+                }, TaskScheduler.FromCurrentSynchronizationContext());
+        }
+
+        private async Task<Person> GetRandomPerson()
+        {
+            Person person = null;
+
+            if (NetworkMonitor.IsNetworkAvailable)
+            {
+                Random rnd = new Random(DateTime.Now.Second);
+                while (person == null)
+                {
+                    int randomId = rnd.Next(1, 200); //Change limit for parameter
+                    try
                     {
-                        Random rnd = new Random();
-                        int randomId = rnd.Next(1, 2000); //Change limit for parameter
-
                         var result = await jsonService.GetPersonAsync(randomId);
-
                         if (result != null)
                         {
-                            randomPeopleLoaded++;
-                            ViewModelHelper.SetRandomPerson(this, result, randomPeopleLoaded);
+                            person = result;
                         }
                     }
+                    catch (Exception ex)
+                    {
+
+                    } 
                 }
             }
-            catch (System.Exception)
-            {
-                //throw;
-            }
+
+            return person;
         }
         #endregion GetRandomPeople
 

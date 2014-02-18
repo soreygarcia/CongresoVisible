@@ -9,6 +9,6 @@ namespace CongresoVisible.Models
     {
         public int id { get; set; }
         public string name { get; set; }
-        public string photo { get; set; }
+        public string avatar { get; set; }
     }
 }

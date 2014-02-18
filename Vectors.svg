@@ -25,18 +25,18 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.24748737"
-     inkscape:cx="-417.16331"
-     inkscape:cy="1793.025"
+     inkscape:zoom="0.12374369"
+     inkscape:cx="-469.81868"
+     inkscape:cy="446.8935"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      showguides="true"
-     inkscape:window-width="1360"
-     inkscape:window-height="706"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1">
+     inkscape:window-width="708"
+     inkscape:window-height="501"
+     inkscape:window-x="608"
+     inkscape:window-y="68"
+     inkscape:window-maximized="0">
     <inkscape:grid
        type="xygrid"
        id="grid3851" />
@@ -845,6 +845,29 @@
            x="-263.40216"
            id="tspan4389-6-2"
            sodipodi:role="line">.org</tspan></text>
+    </g>
+    <rect
+       style="fill:#c5c7c6;fill-opacity:1;stroke:none"
+       id="rect2985-3-1-6-1"
+       width="500"
+       height="500"
+       x="-892.45703"
+       y="947.82416"
+       inkscape:export-filename="E:\Dropbox\GitHub\CongresoVisible\CongresoVisible.Phone\Assets\IconoGris.png"
+       inkscape:export-xdpi="36"
+       inkscape:export-ydpi="36" />
+    <g
+       transform="matrix(3.3985211,0,0,3.7275017,-816.50348,993.28852)"
+       id="Your_Icon-3-6-6-6-7"
+       style="fill:#ffffff;fill-opacity:0.67836255"
+       inkscape:export-filename="C:\Users\SoreyBibiana\Desktop\DisenoBase.png"
+       inkscape:export-xdpi="28.620001"
+       inkscape:export-ydpi="28.620001">
+      <path
+         style="fill:#ffffff;fill-opacity:0.67836255"
+         inkscape:connector-curvature="0"
+         d="m 54.566,56.172 c 10e-4,0.006 0.002,0.01 0.003,0.014 0.013,0.057 0.02,0.115 0.04,0.172 3.37,9.225 12.224,15.805 22.613,15.807 10.479,-0.002 19.396,-6.695 22.698,-16.047 0.15,-0.422 0.083,-0.895 -0.176,-1.262 -0.082,-0.115 -0.182,-0.186 -0.292,-0.232 L 79.071,19.32 c 0.676,-0.15 1.183,-0.754 1.183,-1.475 0,-0.836 -0.678,-1.514 -1.514,-1.514 H 53.028 V 9.816 c 0,-1.67 -1.354,-3.023 -3.024,-3.023 -1.671,0 -3.025,1.354 -3.025,3.023 v 6.516 H 21.267 c -0.836,0 -1.513,0.678 -1.513,1.514 0,0.723 0.509,1.326 1.187,1.477 L 0.631,54.498 c -0.146,0.096 -0.274,0.215 -0.377,0.361 -0.259,0.365 -0.324,0.836 -0.175,1.258 3.304,9.352 12.22,16.045 22.7,16.047 10.479,-0.002 19.396,-6.695 22.699,-16.047 0.148,-0.422 0.084,-0.893 -0.176,-1.258 -0.099,-0.139 -0.221,-0.256 -0.359,-0.35 L 24.648,19.357 h 22.33 V 79.595 H 18.706 c -2.506,0 -4.537,2.031 -4.537,4.537 H 9.631 c -2.505,0 -4.537,2.031 -4.537,4.539 0,2.504 2.032,4.535 4.537,4.535 h 80.75 c 2.507,0 4.538,-2.031 4.538,-4.535 0,-2.508 -2.031,-4.539 -4.538,-4.539 h -7.394 c 0,-2.506 -2.031,-4.537 -4.538,-4.537 H 53.028 V 19.357 h 22.335 l -20.656,35.78 c -0.155,0.268 -0.212,0.576 -0.173,0.873 0.005,0.054 0.021,0.109 0.032,0.162 z M 41.617,54.275 H 3.951 L 22.784,21.656 41.617,54.275 z M 77.229,21.656 96.16,54.445 H 58.298 L 77.229,21.656 z"
+         id="path6-8-0-7-1-4" />
     </g>
   </g>
 </svg>

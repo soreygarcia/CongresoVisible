@@ -27,20 +27,28 @@ namespace CongresoVisible.Services
 
         public async Task<Person> GetPersonAsync(int id)
         {
-            var serviceUrl = settingsService.GetSettingsValue("PersonServiceUrl");
-            var json = await httpClientService.GetStringAsync(string.Format(serviceUrl,id));
+            try
+            {
+                var serviceUrl = string.Format(settingsService.GetSettingsValue("PersonServiceUrl"), id);
+                var json = await httpClientService.GetStringAsync(serviceUrl);
 
-            if (json.Contains("Not found"))
-            {
-                return null;
-            }
-            else
-            {
-                using (MemoryStream stream = new MemoryStream(Encoding.Unicode.GetBytes(json)))
+                if (json.Contains("Not found"))
                 {
-                    DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(Person));
-                    return serializer.ReadObject(stream) as Person;
+                    return null;
                 }
+                else
+                {
+                    using (MemoryStream stream = new MemoryStream(Encoding.Unicode.GetBytes(json)))
+                    {
+                        DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(Person));
+                        return serializer.ReadObject(stream) as Person;
+                    }
+                }
+            }
+            catch (System.Net.Http.HttpRequestException ex)
+            {
+                
+                throw;
             }
         }
 

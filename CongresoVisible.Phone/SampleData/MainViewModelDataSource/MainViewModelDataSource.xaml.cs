@@ -282,6 +282,25 @@ namespace Expression.Blend.SampleData.MainViewModelDataSource
 				}
 			}
 		}
+
+		private System.Windows.Media.ImageSource _Logo = null;
+
+		public System.Windows.Media.ImageSource Logo
+		{
+			get
+			{
+				return this._Logo;
+			}
+
+			set
+			{
+				if (this._Logo != value)
+				{
+					this._Logo = value;
+					this.OnPropertyChanged("Logo");
+				}
+			}
+		}
 	}
 
 	public class Filters : System.Collections.ObjectModel.ObservableCollection<FiltersItem>
@@ -314,6 +333,10 @@ namespace Expression.Blend.SampleData.MainViewModelDataSource
 		}
 	}
 
+	public class RandomPeople : System.Collections.ObjectModel.ObservableCollection<RandomPeopleItem>
+	{ 
+	}
+
 	public class RandomPeopleItem : INotifyPropertyChanged
 	{
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -323,25 +346,6 @@ namespace Expression.Blend.SampleData.MainViewModelDataSource
 			if (this.PropertyChanged != null)
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-
-		private System.Windows.Media.ImageSource _MediumImage = null;
-
-		public System.Windows.Media.ImageSource MediumImage
-		{
-			get
-			{
-				return this._MediumImage;
-			}
-
-			set
-			{
-				if (this._MediumImage != value)
-				{
-					this._MediumImage = value;
-					this.OnPropertyChanged("MediumImage");
-				}
 			}
 		}
 
@@ -360,6 +364,25 @@ namespace Expression.Blend.SampleData.MainViewModelDataSource
 				{
 					this._Party = value;
 					this.OnPropertyChanged("Party");
+				}
+			}
+		}
+
+		private System.Windows.Media.ImageSource _MediumImage = null;
+
+		public System.Windows.Media.ImageSource MediumImage
+		{
+			get
+			{
+				return this._MediumImage;
+			}
+
+			set
+			{
+				if (this._MediumImage != value)
+				{
+					this._MediumImage = value;
+					this.OnPropertyChanged("MediumImage");
 				}
 			}
 		}
@@ -401,10 +424,6 @@ namespace Expression.Blend.SampleData.MainViewModelDataSource
 				}
 			}
 		}
-	}
-
-	public class RandomPeople : System.Collections.ObjectModel.ObservableCollection<RandomPeopleItem>
-	{ 
 	}
 
 	public class Party1 : INotifyPropertyChanged

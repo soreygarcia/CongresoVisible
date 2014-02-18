@@ -43,19 +43,36 @@ namespace CongresoVisible.ViewModels.Helpers
                 WebUrl = result.web_url,
                 Gender = result.gender,
                 CandidateFor = result.candidate_for,
+                MediumImage = result.images.medium,
                 ListNumber = result.list_number,
                 Party = new PartyViewModel()
                 {
                     Id = result.party.id,
                     Name = result.party.name,
-                    Logo = result.party.photo
+                    Logo = result.party.avatar
                 }
             };
+
+            mainViewModel.RandomPeople[index] = person;
         }
 
         internal static void SetFilters(MainViewModel mainViewModel, FiltersContainer result)
         {
             //throw new NotImplementedException();
+        }
+
+        internal static void InitilizeRandomPeople(MainViewModel mainViewModel, int featuredPeopleCount)
+        {
+            PersonViewModel fakePerson = new PersonViewModel()
+            {
+                MediumImage = "/Assets/IconoGris.png"
+            };
+
+            mainViewModel.RandomPeople = new ObservableCollection<PersonViewModel>();
+            for (int i = 0; i < featuredPeopleCount; i++)
+            {
+                mainViewModel.RandomPeople.Add(fakePerson);
+            }
         }
     }
 }

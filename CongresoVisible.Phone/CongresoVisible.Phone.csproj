@@ -25,7 +25,7 @@
     <ValidateXaml>true</ValidateXaml>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
-    <ExpressionBlendVersion>5.0.40218.0</ExpressionBlendVersion>
+    <ExpressionBlendVersion>12.0.50203.70</ExpressionBlendVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -154,6 +154,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\IconoGris.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
@@ -189,6 +190,9 @@
     <DesignTimeOnly Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\image05.png" />
     <DesignTimeOnly Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\khriztianmoreno.jpg" />
     <DesignTimeOnly Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\soreygarcia.jpg" />
+    <DesignTimeOnly Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\Conservador.jpg" />
+    <DesignTimeOnly Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\Mira.jpg" />
+    <DesignTimeOnly Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\Verde.jpg" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">

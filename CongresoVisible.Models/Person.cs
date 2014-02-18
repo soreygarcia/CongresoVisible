@@ -22,7 +22,7 @@ namespace CongresoVisible.Models
         [Ignore]
         public Party party { get; set; }
         [Ignore]
-        public List<Investigation> investigations { get; set; }
+        public List<string> investigations { get; set; }
         [Ignore]
         public Biography biography { get; set; }
         [Ignore]

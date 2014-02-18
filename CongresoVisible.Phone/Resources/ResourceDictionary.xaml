@@ -54,21 +54,43 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
+	<Style x:Key="PersonButtonStyle" TargetType="Button">
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="BorderBrush" Value="{StaticResource PhoneForegroundBrush}"/>
+		<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
+		<Setter Property="BorderThickness" Value="{StaticResource PhoneBorderThickness}"/>
+		<Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilySemiBold}"/>
+		<Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMedium}"/>
+		<Setter Property="Padding" Value="10,5,10,6"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="Button">
+					<StackPanel Orientation="Horizontal" Margin="0">
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="CommonStates">
+								<VisualState x:Name="Normal"/>
+								<VisualState x:Name="MouseOver"/>
+								<VisualState x:Name="Pressed"/>
+								<VisualState x:Name="Disabled"/>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<StackPanel Orientation="Vertical" Width="70" Margin="0,0,10,0">
+							<Image Source="{Binding SmallImage}" HorizontalAlignment="Left" Height="70" Width="70" VerticalAlignment="Center" Margin="0"/>
+						</StackPanel>
+						<StackPanel Orientation="Vertical" Margin="0" Width="320">
+							<TextBlock Text="{Binding Name}" FontSize="21.333" Foreground="{StaticResource DarkColor}" FontFamily="Segoe WP Semibold"/>
+							<TextBlock Text="{Binding CandidateFor}" Foreground="{StaticResource ShadowColor}" FontSize="16"/>
+							<TextBlock Text="{Binding Party.Name}" Foreground="{StaticResource MainAccentColor}" FontSize="13.333"/>
+						</StackPanel>
+					</StackPanel>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
 	<DataTemplate x:Key="PersonItemTemplate">
 		<Button BorderThickness="0" 
 			BorderBrush="{x:Null}" Foreground="{x:Null}" 
-			Style="{StaticResource EstiloBotonItemPersona}" d:DesignWidth="358" d:DesignHeight="102">
-			<StackPanel Orientation="Horizontal">
-				<StackPanel Orientation="Vertical" Width="70" Margin="0,0,10,0">
-					<Image Source="{Binding SmallImage}" HorizontalAlignment="Left" Height="70" Width="70" VerticalAlignment="Center" Margin="0"/>
-				</StackPanel>
-				<StackPanel Orientation="Vertical" Margin="0">
-					<TextBlock Text="{Binding Name}" FontSize="21.333" Foreground="{StaticResource DarkColor}" FontFamily="Segoe WP Semibold"/>
-					<TextBlock Text="{Binding CandidateFor}" Foreground="{StaticResource ShadowColor}" FontSize="16"/>
-					<TextBlock Text="{Binding Party.Name}" Foreground="{StaticResource MainAccentColor}" FontSize="13.333"/>
-				</StackPanel>
-			</StackPanel>
-		</Button>
+			Style="{StaticResource PersonButtonStyle}" d:DesignWidth="372" d:DesignHeight="72" Margin="0,0,0,20"/>
 	</DataTemplate>
 	<Color x:Key="AppBarDarkColor">Black</Color>
 	<Color x:Key="AppBarLightColor">#FF48C6EE</Color>
@@ -140,31 +162,25 @@
 		<Setter Property="Template">
 			<Setter.Value>
 				<ControlTemplate TargetType="Button">
-					<Border x:Name="border" Width="400" BorderThickness="0,0,0,1" Padding="0,0,0,10" Margin="0,0,0,10" BorderBrush="{StaticResource LightShadowColor}" >
+					<Border Margin="0" BorderThickness="0,0,0,1" Padding="0,0,0,5" BorderBrush="{StaticResource LightShadowColor}" >
 						<VisualStateManager.VisualStateGroups>
 							<VisualStateGroup x:Name="CommonStates">
 								<VisualState x:Name="Normal"/>
 								<VisualState x:Name="MouseOver"/>
-								<VisualState x:Name="Pressed">
-									<Storyboard>
-										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="border">
-											<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource LightShadowColor}"/>
-										</ObjectAnimationUsingKeyFrames>
-									</Storyboard>
-								</VisualState>
+								<VisualState x:Name="Pressed" />
 								<VisualState x:Name="Disabled"/>
 							</VisualStateGroup>
 						</VisualStateManager.VisualStateGroups>
-						<StackPanel Height="68">
-							<TextBlock x:Name="textBlock" Text="{Binding Name}" Foreground="{StaticResource DarkColor}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TextWrapping="Wrap" FontFamily="Segoe WP"/>
-						</StackPanel>
+						<Grid>
+							<TextBlock x:Name="textBlock" Text="{Binding Name}" Foreground="{StaticResource DarkColor}" TextWrapping="Wrap" FontFamily="Segoe WP" Margin="0"/>
+						</Grid>
 					</Border>
 				</ControlTemplate>
 			</Setter.Value>
 		</Setter>
 	</Style>
 	<DataTemplate x:Key="PartiesItemTemplate">
-		<Button Content="Button" Style="{StaticResource PartyButtonStyle}"/>
+		<Button Content="Button" Style="{StaticResource PartyButtonStyle}" Margin="0,0,0,20" d:DesignWidth="534" Width="400"/>
 	</DataTemplate>
 	<DataTemplate x:Key="RandomPeopleItemTemplate">
 		<toolkit:HubTile Background="{StaticResource MainAccentColor}" Message="{Binding Name}" Title="{Binding Party.Name}" GroupTag="{Binding CandidateFor}" Source="{Binding MediumImage}" Margin="0,0,10,10"/>

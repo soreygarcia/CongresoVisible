@@ -67,9 +67,9 @@
 			<phone:PanoramaItem Header="aleatorios" Margin="0,120,0,0">
 				<StackPanel Margin="0" Orientation="Vertical" Width="420">
 					<Grid VerticalAlignment="Top">
-						<ListBox HorizontalAlignment="Left" ItemTemplate="{StaticResource RandomPeopleItemTemplate}" ItemsSource="{Binding RandomPeople}" VerticalAlignment="Top" ItemsPanel="{StaticResource RandomPeoplePanelTemplate}" Width="400" Height="400" Margin="16,8,0,0"/>
+						<ListBox HorizontalAlignment="Left" ItemTemplate="{StaticResource RandomPeopleItemTemplate}" ItemsSource="{Binding RandomPeople}" VerticalAlignment="Top" ItemsPanel="{StaticResource RandomPeoplePanelTemplate}" Width="372" Height="400" Margin="16,8,0,0"/>
 					</Grid>
-					<Button Content="Buscar" Foreground="{StaticResource DarkColor}" BorderBrush="{x:Null}" Background="{x:Null}" Style="{StaticResource SearchPeopleStyle}" Margin="10,10,0,0"/>
+					<Button Content="Buscar" Foreground="{StaticResource DarkColor}" BorderBrush="{x:Null}" Background="{x:Null}" Style="{StaticResource SearchPeopleStyle}" Margin="10,10,48,0"/>
 				</StackPanel>
 			</phone:PanoramaItem>
 			<phone:PanoramaItem Header="partidos" Margin="0,120,0,0">
@@ -78,10 +78,14 @@
 				</Grid>
 			</phone:PanoramaItem>
 			<phone:PanoramaItem Header="siguiendo" Margin="0,120,0,0">
-				<StackPanel>
-					<TextBlock TextWrapping="Wrap" Text="Aún no estás siguiendo a ningún candidato." Foreground="{StaticResource ShadowColor}" TextAlignment="Center" Visibility="{Binding Following.Count, Converter={StaticResource ListCountToNonVisibilityConverter}}" FontSize="16"/>
-					<ListBox HorizontalAlignment="Left" ItemTemplate="{StaticResource PersonItemTemplate}" ItemsSource="{Binding Following}" Margin="0" VerticalAlignment="Top" Width="410"/>
-				</StackPanel>
+				<Grid Height="484">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="*"/>
+					</Grid.RowDefinitions>
+					<TextBlock TextWrapping="Wrap" Text="Aún no estás siguiendo a ningún candidato." Foreground="{StaticResource ShadowColor}" TextAlignment="Center" Visibility="{Binding Following.Count, Converter={StaticResource ListCountToNonVisibilityConverter}}" FontSize="16" Margin="0"/>
+					<ListBox ItemTemplate="{StaticResource PersonItemTemplate}" ItemsSource="{Binding Following}" Margin="17,0,1,0" Width="402" Grid.RowSpan="2" Grid.Row="1"/>
+				</Grid>
 			</phone:PanoramaItem>
 
 		</phone:Panorama>

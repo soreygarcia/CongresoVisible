@@ -48,6 +48,7 @@
   </xs:complexType>
   <xs:complexType name="PartiesItem">
     <xs:attribute blend:FormatParameters="10,8" name="Name" type="xs:string" />
+    <xs:attribute blend:FormatParameters="Assets\Imagenes\Partidos" name="Logo" type="tns:Basic-Image" />
   </xs:complexType>
   <xs:complexType name="Filters">
     <xs:sequence>

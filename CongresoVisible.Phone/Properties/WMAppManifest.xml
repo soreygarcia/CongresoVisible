@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{2b84bbc1-8e46-41b8-b182-f0d5c637d768}" Title="CongresoVisible.Phone" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="CongresoVisible.Phone author" Description="Sample description" Publisher="CongresoVisible.Phone" PublisherID="{120c7828-c6b5-4473-adc0-1280cd9fa680}">
+  <App xmlns="" ProductID="{2b84bbc1-8e46-41b8-b182-f0d5c637d768}" Title="Congreso Visible" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="CongresoVisible.Phone author" Description="" Publisher="CongresoVisible.Phone" PublisherID="{120c7828-c6b5-4473-adc0-1280cd9fa680}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -19,7 +19,7 @@
           <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
           <Count>0</Count>
           <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
-          <Title>CongresoVisible.Phone</Title>
+          <Title>Congreso Visible</Title>
           <BackContent>
           </BackContent>
           <BackBackgroundImageURI>

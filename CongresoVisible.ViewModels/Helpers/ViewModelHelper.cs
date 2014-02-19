@@ -34,7 +34,7 @@ namespace CongresoVisible.ViewModels.Helpers
             context.Parties = parties;
         }
 
-        internal static void SetRandomPerson(MainViewModel mainViewModel, Person result, int index)
+        internal static void SetRandomPerson(MainViewModel context, Person result, int index)
         {
             PersonViewModel person = new PersonViewModel()
             {
@@ -53,25 +53,52 @@ namespace CongresoVisible.ViewModels.Helpers
                 }
             };
 
-            mainViewModel.RandomPeople[index] = person;
+            context.RandomPeople[index] = null;
+            context.RandomPeople[index] = person;
         }
 
-        internal static void SetFilters(MainViewModel mainViewModel, FiltersContainer result)
+        internal static void SetFilters(MainViewModel context, FiltersContainer result)
         {
             //throw new NotImplementedException();
         }
 
-        internal static void InitilizeRandomPeople(MainViewModel mainViewModel, int featuredPeopleCount)
+        internal static void InitilizeRandomPeople(MainViewModel context, int featuredPeopleCount)
         {
-            PersonViewModel fakePerson = new PersonViewModel()
+            if (context.RandomPeople == null)
             {
-                MediumImage = "/Assets/IconoGris.png"
-            };
+                context.RandomPeople = new ObservableCollection<PersonViewModel>();
+                for (int i = 0; i < featuredPeopleCount; i++)
+                {
+                    context.RandomPeople.Add(new PersonViewModel()
+                        {
+                            MediumImage = "/Assets/IconoGris.png"
+                        });
+                }
+            }
+        }
 
-            mainViewModel.RandomPeople = new ObservableCollection<PersonViewModel>();
-            for (int i = 0; i < featuredPeopleCount; i++)
+        internal static void SetPeople(PartyViewModel context, PeopleContainer result)
+        {
+            context.People = new ObservableCollection<PersonViewModel>();
+
+            foreach (var item in result.results)
             {
-                mainViewModel.RandomPeople.Add(fakePerson);
+                context.People.Add(new PersonViewModel()
+                {
+                    Name = string.Format("{0} {1}", item.first_name, item.last_name),
+                    Url = item.url,
+                    WebUrl = item.web_url,
+                    Gender = item.gender,
+                    CandidateFor = item.candidate_for,
+                    MediumImage = item.images.medium,
+                    ListNumber = item.list_number,
+                    Party = new PartyViewModel()
+                    {
+                        Id = item.party.id,
+                        Name = item.party.name,
+                        Logo = item.party.avatar
+                    }
+                });
             }
         }
     }

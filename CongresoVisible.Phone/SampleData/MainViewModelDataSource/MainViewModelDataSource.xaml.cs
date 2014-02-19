@@ -104,6 +104,25 @@ namespace Expression.Blend.SampleData.MainViewModelDataSource
 				return this._RandomPeople;
 			}
 		}
+
+		private SelectedParty _SelectedParty = new SelectedParty();
+
+		public SelectedParty SelectedParty
+		{
+			get
+			{
+				return this._SelectedParty;
+			}
+
+			set
+			{
+				if (this._SelectedParty != value)
+				{
+					this._SelectedParty = value;
+					this.OnPropertyChanged("SelectedParty");
+				}
+			}
+		}
 	}
 
 	public class Following : System.Collections.ObjectModel.ObservableCollection<FollowingItem>
@@ -454,6 +473,173 @@ namespace Expression.Blend.SampleData.MainViewModelDataSource
 					this._Logo = value;
 					this.OnPropertyChanged("Logo");
 				}
+			}
+		}
+
+		private string _Name = string.Empty;
+
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+
+			set
+			{
+				if (this._Name != value)
+				{
+					this._Name = value;
+					this.OnPropertyChanged("Name");
+				}
+			}
+		}
+	}
+
+	public class SelectedParty : INotifyPropertyChanged
+	{
+		public event PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (this.PropertyChanged != null)
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+
+		private People1 _People = new People1();
+
+		public People1 People
+		{
+			get
+			{
+				return this._People;
+			}
+		}
+
+		private string _Name = string.Empty;
+
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+
+			set
+			{
+				if (this._Name != value)
+				{
+					this._Name = value;
+					this.OnPropertyChanged("Name");
+				}
+			}
+		}
+	}
+
+	public class People1 : System.Collections.ObjectModel.ObservableCollection<PeopleItem1>
+	{ 
+	}
+
+	public class PeopleItem1 : INotifyPropertyChanged
+	{
+		public event PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (this.PropertyChanged != null)
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+
+		private string _Name = string.Empty;
+
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+
+			set
+			{
+				if (this._Name != value)
+				{
+					this._Name = value;
+					this.OnPropertyChanged("Name");
+				}
+			}
+		}
+
+		private string _CandidateFor = string.Empty;
+
+		public string CandidateFor
+		{
+			get
+			{
+				return this._CandidateFor;
+			}
+
+			set
+			{
+				if (this._CandidateFor != value)
+				{
+					this._CandidateFor = value;
+					this.OnPropertyChanged("CandidateFor");
+				}
+			}
+		}
+
+		private System.Windows.Media.ImageSource _SmallImage = null;
+
+		public System.Windows.Media.ImageSource SmallImage
+		{
+			get
+			{
+				return this._SmallImage;
+			}
+
+			set
+			{
+				if (this._SmallImage != value)
+				{
+					this._SmallImage = value;
+					this.OnPropertyChanged("SmallImage");
+				}
+			}
+		}
+
+		private Party2 _Party = new Party2();
+
+		public Party2 Party
+		{
+			get
+			{
+				return this._Party;
+			}
+
+			set
+			{
+				if (this._Party != value)
+				{
+					this._Party = value;
+					this.OnPropertyChanged("Party");
+				}
+			}
+		}
+	}
+
+	public class Party2 : INotifyPropertyChanged
+	{
+		public event PropertyChangedEventHandler PropertyChanged;
+
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (this.PropertyChanged != null)
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 

@@ -167,11 +167,20 @@
 							<VisualStateGroup x:Name="CommonStates">
 								<VisualState x:Name="Normal"/>
 								<VisualState x:Name="MouseOver"/>
-								<VisualState x:Name="Pressed" />
+								<VisualState x:Name="Pressed" >
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Foreground)" Storyboard.TargetName="textBlock">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DarkColor}"/>
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background)" Storyboard.TargetName="grid">
+											<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource MainAccentColor}"/>
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
 								<VisualState x:Name="Disabled"/>
 							</VisualStateGroup>
 						</VisualStateManager.VisualStateGroups>
-						<Grid>
+						<Grid x:Name="grid">
 							<TextBlock x:Name="textBlock" Text="{Binding Name}" Foreground="{StaticResource DarkColor}" TextWrapping="Wrap" FontFamily="Segoe WP" Margin="0"/>
 						</Grid>
 					</Border>
@@ -180,10 +189,11 @@
 		</Setter>
 	</Style>
 	<DataTemplate x:Key="PartiesItemTemplate">
-		<Button Content="Button" Style="{StaticResource PartyButtonStyle}" Margin="0,0,0,20" d:DesignWidth="534" Width="400"/>
+		<Button Content="Button" Command="{Binding ShowPartyDetailsCommand}" Style="{StaticResource PartyButtonStyle}" Margin="0,0,0,20" d:DesignWidth="534" Width="400"/>
 	</DataTemplate>
 	<DataTemplate x:Key="RandomPeopleItemTemplate">
-		<toolkit:HubTile Background="{StaticResource MainAccentColor}" Message="{Binding Name}" Title="{Binding Party.Name}" GroupTag="{Binding CandidateFor}" Source="{Binding MediumImage}" Margin="0,0,10,10"/>
+		<toolkit:HubTile toolkit:TiltEffect.IsTiltEnabled="True"
+		 Background="{StaticResource MainAccentColor}" Message="{Binding Name}" Title="{Binding Party.Name}" GroupTag="{Binding CandidateFor}" Source="{Binding MediumImage}" Margin="0,0,10,10"/>
 	</DataTemplate>
 	<ItemsPanelTemplate x:Key="RandomPeoplePanelTemplate">
 		<toolkit:WrapPanel/>

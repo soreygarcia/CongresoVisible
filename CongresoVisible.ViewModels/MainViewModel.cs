@@ -5,6 +5,7 @@ using CongresoVisible.ViewModels.Helpers;
 using Infrastructure.Common;
 using Infrastructure.Common.Contracts;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -15,6 +16,8 @@ namespace CongresoVisible.ViewModels
     public class MainViewModel : BindableBase
     {
         Contracts.IJsonService jsonService;
+        Random randomizer = new Random(DateTime.Now.Millisecond);
+        List<int> loadedRandomPeople = new List<int>();
 
         private PersonViewModel selectedPerson;
         public PersonViewModel SelectedPerson
@@ -208,7 +211,7 @@ namespace CongresoVisible.ViewModels
             get { return this.getRandomPersonCommand; }
         }
 
-        public async void GetRandomPeopleAsync()
+        public void GetRandomPeopleAsync()
         {
             try
             {
@@ -216,7 +219,7 @@ namespace CongresoVisible.ViewModels
                 for (int i = 0; i < 4; i++)
                 {
                     LoadRandomPerson(i);
-                }                
+                }       
             }
             catch (Exception ex)
             {
@@ -239,29 +242,37 @@ namespace CongresoVisible.ViewModels
         private async Task<Person> GetRandomPerson()
         {
             Person person = null;
-
             if (NetworkMonitor.IsNetworkAvailable)
             {
-                Random rnd = new Random(DateTime.Now.Second);
                 while (person == null)
                 {
-                    int randomId = rnd.Next(1, 200); //Change limit for parameter
                     try
                     {
+                        int randomId = GetNewRandomId();
                         var result = await jsonService.GetPersonAsync(randomId);
                         if (result != null)
                         {
                             person = result;
+                            loadedRandomPeople.Add(randomId);
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
 
-                    } 
+                    }
                 }
             }
 
             return person;
+        }
+
+        private int GetNewRandomId()
+        {
+            int randomId = randomizer.Next(1, 200); //Change limit for parameter
+            while(loadedRandomPeople.Exists(p => p == randomId))
+                randomId = randomizer.Next(1, 200);
+
+            return randomId;
         }
         #endregion GetRandomPeople
 

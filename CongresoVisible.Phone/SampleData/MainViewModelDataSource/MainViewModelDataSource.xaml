@@ -96,25 +96,81 @@
     <SampleData:SelectedPerson />
   </SampleData:MainViewModelDataSource.SelectedPerson>
   <SampleData:MainViewModelDataSource.RandomPeople>
-    <SampleData:RandomPeopleItem MediumImage="/CongresoVisible.Phone;component/SampleData/MainViewModelDataSource/MainViewModelDataSource_Files/elianaca.jpg" Name="Eliana Caraballo" CandidateFor="Alianza Verde">
+    <SampleData:RandomPeopleItem MediumImage="/CongresoVisible.Phone;component/SampleData/MainViewModelDataSource/MainViewModelDataSource_Files/elianaca.jpg" Name="Eliana Caraballo" CandidateFor="Senado">
       <SampleData:RandomPeopleItem.Party>
         <SampleData:Party1 Logo="Maecenas cras aliquam praesent" Name="Maecenas aenean nam sed" />
       </SampleData:RandomPeopleItem.Party>
     </SampleData:RandomPeopleItem>
-    <SampleData:RandomPeopleItem MediumImage="/CongresoVisible.Phone;component/SampleData/MainViewModelDataSource/MainViewModelDataSource_Files/hernandgr.jpg" Name="Hernan Guzman" CandidateFor="Cambio Radical">
+    <SampleData:RandomPeopleItem MediumImage="/CongresoVisible.Phone;component/SampleData/MainViewModelDataSource/MainViewModelDataSource_Files/hernandgr.jpg" Name="Hernan Guzman" CandidateFor="Camara">
       <SampleData:RandomPeopleItem.Party>
         <SampleData:Party1 Logo="Integer class curae" Name="Class mauris curae aliquam" />
       </SampleData:RandomPeopleItem.Party>
     </SampleData:RandomPeopleItem>
-    <SampleData:RandomPeopleItem MediumImage="/CongresoVisible.Phone;component/SampleData/MainViewModelDataSource/MainViewModelDataSource_Files/khriztianmoreno.jpg" Name="Cras mauris" CandidateFor="Bibendum dictumst eleifend facilisi">
+    <SampleData:RandomPeopleItem MediumImage="/CongresoVisible.Phone;component/SampleData/MainViewModelDataSource/MainViewModelDataSource_Files/khriztianmoreno.jpg" Name="Cras mauris" CandidateFor="Senado">
       <SampleData:RandomPeopleItem.Party>
         <SampleData:Party1 Logo="Nam donec aenean" Name="Donec dis cras est" />
       </SampleData:RandomPeopleItem.Party>
     </SampleData:RandomPeopleItem>
-    <SampleData:RandomPeopleItem MediumImage="/CongresoVisible.Phone;component/SampleData/MainViewModelDataSource/MainViewModelDataSource_Files/soreygarcia.jpg" Name="Praesent duis nunc amet" CandidateFor="Integer cras duis nunc">
+    <SampleData:RandomPeopleItem MediumImage="/CongresoVisible.Phone;component/SampleData/MainViewModelDataSource/MainViewModelDataSource_Files/soreygarcia.jpg" Name="Praesent duis nunc amet" CandidateFor="Senado">
       <SampleData:RandomPeopleItem.Party>
         <SampleData:Party1 Logo="Duis etiam" Name="Nullam praesent integer" />
       </SampleData:RandomPeopleItem.Party>
     </SampleData:RandomPeopleItem>
   </SampleData:MainViewModelDataSource.RandomPeople>
+  <SampleData:MainViewModelDataSource.SelectedParty>
+    <SampleData:SelectedParty Name="Aenean nam class">
+      <SampleData:SelectedParty.People>
+        <SampleData:PeopleItem1 Name="Aenean cras duis" CandidateFor="Class aliquam aenean" SmallImage="/CongresoVisible.Phone;component/SampleData/MainViewModelDataSource/MainViewModelDataSource_Files/elianaca.jpg">
+          <SampleData:PeopleItem1.Party>
+            <SampleData:Party2 Name="Aenean cras mauris duis" />
+          </SampleData:PeopleItem1.Party>
+        </SampleData:PeopleItem1>
+        <SampleData:PeopleItem1 Name="Maecenas class" CandidateFor="Maecenas curae mauris integer" SmallImage="/CongresoVisible.Phone;component/SampleData/MainViewModelDataSource/MainViewModelDataSource_Files/hernandgr.jpg">
+          <SampleData:PeopleItem1.Party>
+            <SampleData:Party2 Name="Aliquam nam maecenas sed" />
+          </SampleData:PeopleItem1.Party>
+        </SampleData:PeopleItem1>
+        <SampleData:PeopleItem1 Name="Nunc amet" CandidateFor="Cras quisque duis nullam" SmallImage="/CongresoVisible.Phone;component/SampleData/MainViewModelDataSource/MainViewModelDataSource_Files/khriztianmoreno.jpg">
+          <SampleData:PeopleItem1.Party>
+            <SampleData:Party2 Name="Dis nullam aptent" />
+          </SampleData:PeopleItem1.Party>
+        </SampleData:PeopleItem1>
+        <SampleData:PeopleItem1 Name="Praesent mauris nullam aliquam" CandidateFor="Praesent nunc nam" SmallImage="/CongresoVisible.Phone;component/SampleData/MainViewModelDataSource/MainViewModelDataSource_Files/soreygarcia.jpg">
+          <SampleData:PeopleItem1.Party>
+            <SampleData:Party2 Name="Nunc amet class" />
+          </SampleData:PeopleItem1.Party>
+        </SampleData:PeopleItem1>
+        <SampleData:PeopleItem1 Name="Aptent nam integer" CandidateFor="Sed dis est" SmallImage="/CongresoVisible.Phone;component/SampleData/MainViewModelDataSource/MainViewModelDataSource_Files/elianaca.jpg">
+          <SampleData:PeopleItem1.Party>
+            <SampleData:Party2 Name="Praesent accumsan auctor" />
+          </SampleData:PeopleItem1.Party>
+        </SampleData:PeopleItem1>
+        <SampleData:PeopleItem1 Name="Quisque accumsan" CandidateFor="Amet hac aptent" SmallImage="/CongresoVisible.Phone;component/SampleData/MainViewModelDataSource/MainViewModelDataSource_Files/hernandgr.jpg">
+          <SampleData:PeopleItem1.Party>
+            <SampleData:Party2 Name="Est hac bibendum leo" />
+          </SampleData:PeopleItem1.Party>
+        </SampleData:PeopleItem1>
+        <SampleData:PeopleItem1 Name="Bibendum vivamus" CandidateFor="Accumsan leo" SmallImage="/CongresoVisible.Phone;component/SampleData/MainViewModelDataSource/MainViewModelDataSource_Files/khriztianmoreno.jpg">
+          <SampleData:PeopleItem1.Party>
+            <SampleData:Party2 Name="Dictumst ante arcu" />
+          </SampleData:PeopleItem1.Party>
+        </SampleData:PeopleItem1>
+        <SampleData:PeopleItem1 Name="Aliquam auctor dictumst congue" CandidateFor="Mus vivamus donec ante" SmallImage="/CongresoVisible.Phone;component/SampleData/MainViewModelDataSource/MainViewModelDataSource_Files/soreygarcia.jpg">
+          <SampleData:PeopleItem1.Party>
+            <SampleData:Party2 Name="Curae mus congue eleifend" />
+          </SampleData:PeopleItem1.Party>
+        </SampleData:PeopleItem1>
+        <SampleData:PeopleItem1 Name="Cursus ante dictum" CandidateFor="Nec non aliquam" SmallImage="/CongresoVisible.Phone;component/SampleData/MainViewModelDataSource/MainViewModelDataSource_Files/elianaca.jpg">
+          <SampleData:PeopleItem1.Party>
+            <SampleData:Party2 Name="Donec nec" />
+          </SampleData:PeopleItem1.Party>
+        </SampleData:PeopleItem1>
+        <SampleData:PeopleItem1 Name="Arcu eleifend diam" CandidateFor="Per etiam sed fusce" SmallImage="/CongresoVisible.Phone;component/SampleData/MainViewModelDataSource/MainViewModelDataSource_Files/hernandgr.jpg">
+          <SampleData:PeopleItem1.Party>
+            <SampleData:Party2 Name="Diam cursus etiam facilisi" />
+          </SampleData:PeopleItem1.Party>
+        </SampleData:PeopleItem1>
+      </SampleData:SelectedParty.People>
+    </SampleData:SelectedParty>
+  </SampleData:MainViewModelDataSource.SelectedParty>
 </SampleData:MainViewModelDataSource>

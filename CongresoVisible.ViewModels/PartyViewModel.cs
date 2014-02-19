@@ -1,14 +1,20 @@
-﻿using Infrastructure.Common;
+﻿using Autofac;
+using CongresoVisible.Models;
+using CongresoVisible.Services.Contracts;
+using CongresoVisible.ViewModels.Helpers;
+using Infrastructure.Common;
+using Infrastructure.Common.Contracts;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Contracts = CongresoVisible.Services.Contracts;
 namespace CongresoVisible.ViewModels
 {
     public class PartyViewModel : BindableBase
     {
+        Contracts.IJsonService jsonService;
+
         private int id = 0;
         public int Id
         {
@@ -50,10 +56,42 @@ namespace CongresoVisible.ViewModels
 
         public ObservableCollection<PersonViewModel> People { get; set; }
 
-
-        public System.Windows.Input.ICommand ShowPartyDetailsCommand
+        public PartyViewModel()
         {
-            get { throw new NotImplementedException(); }
+            this.jsonService = GetService<Contracts.IJsonService>();
+            this.Navigator = GetService<INavigationService>();
+            this.NetworkMonitor = GetService<INetworkService>();
+
+            this.showPartyDetailsCommand = new RelayCommand(ShowPartyDetailsAsync, null);
         }
+
+        #region ShowPartyDetails
+        private ICommand showPartyDetailsCommand;
+        public ICommand ShowPartyDetailsCommand
+        {
+            get { return this.showPartyDetailsCommand; }
+        }
+        public async void ShowPartyDetailsAsync()
+        {
+            try
+            {
+                MainViewModel main = GetViewModel<MainViewModel>();
+                main.SelectedParty = new PartyViewModel();
+                main.SelectedParty.Name = this.Name;
+
+                Navigator.Navigate<PartyViewModel>();
+
+                if (NetworkMonitor.IsNetworkAvailable)
+                {
+                    var result = await jsonService.GetPeopleByPartyAsync(this.Id);
+                    ViewModelHelper.SetPeople(this, result);
+                }
+            }
+            catch (System.Exception)
+            {
+                //throw;
+            }
+        }
+        #endregion GetParties
     }
 }

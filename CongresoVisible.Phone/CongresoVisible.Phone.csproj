@@ -26,6 +26,8 @@
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <ExpressionBlendVersion>12.0.50203.70</ExpressionBlendVersion>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -99,6 +101,18 @@
     <Compile Include="Converters\ListCountToVisibilityConverter.cs" />
     <Compile Include="Converters\ListCountToNonVisibilityConverter.cs" />
     <Compile Include="Infrastructure\ViewModelLocator.cs" />
+    <Compile Include="Pages\FiltersPage.xaml.cs">
+      <DependentUpon>FiltersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PartyPage.xaml.cs">
+      <DependentUpon>PartyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProfilePage.xaml.cs">
+      <DependentUpon>ProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\PartyViewModelDataSource\PartyViewModelDataSource.xaml.cs">
+      <DependentUpon>PartyViewModelDataSource.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Services\DbConnectionService.cs" />
     <Compile Include="Services\NetworkService.cs" />
     <Compile Include="Services\LocalFilesService.cs" />
@@ -133,7 +147,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\FiltersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PartyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ProfilePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -142,6 +168,10 @@
       <SubType>Designer</SubType>
     </Page>
     <DesignTimeOnly Include="SampleData\MainViewModelDataSource\MainViewModelDataSource.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </DesignTimeOnly>
+    <DesignTimeOnly Include="SampleData\PartyViewModelDataSource\PartyViewModelDataSource.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </DesignTimeOnly>
@@ -193,6 +223,16 @@
     <DesignTimeOnly Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\Conservador.jpg" />
     <DesignTimeOnly Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\Mira.jpg" />
     <DesignTimeOnly Include="SampleData\MainViewModelDataSource\MainViewModelDataSource_Files\Verde.jpg" />
+    <DesignTimeOnly Include="SampleData\PartyViewModelDataSource\PartyViewModelDataSource.xsd" />
+    <DesignTimeOnly Include="SampleData\PartyViewModelDataSource\PartyViewModelDataSource_Files\image01.png" />
+    <DesignTimeOnly Include="SampleData\PartyViewModelDataSource\PartyViewModelDataSource_Files\image02.png" />
+    <DesignTimeOnly Include="SampleData\PartyViewModelDataSource\PartyViewModelDataSource_Files\image03.png" />
+    <DesignTimeOnly Include="SampleData\PartyViewModelDataSource\PartyViewModelDataSource_Files\image04.png" />
+    <DesignTimeOnly Include="SampleData\PartyViewModelDataSource\PartyViewModelDataSource_Files\image05.png" />
+    <DesignTimeOnly Include="SampleData\PartyViewModelDataSource\PartyViewModelDataSource_Files\elianaca.jpg" />
+    <DesignTimeOnly Include="SampleData\PartyViewModelDataSource\PartyViewModelDataSource_Files\hernandgr.jpg" />
+    <DesignTimeOnly Include="SampleData\PartyViewModelDataSource\PartyViewModelDataSource_Files\khriztianmoreno.jpg" />
+    <DesignTimeOnly Include="SampleData\PartyViewModelDataSource\PartyViewModelDataSource_Files\soreygarcia.jpg" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
@@ -235,8 +275,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="SQLite.WP80, Version=3.8.3">
-      <Name>SQLite for Windows Phone</Name>
+    <SDKReference Include="SQLite.WP80, Version=3.8.3.1">
+      <Name>SQLite for Windows Phone %28SQLite.WP80, Version=3.8.3.1%29</Name>
     </SDKReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
@@ -250,4 +290,5 @@
   -->
   <ProjectExtensions />
   <Import Project="..\packages\Microsoft.ApplicationInsights.Telemetry.WindowsPhone.0.6.56.3\build\wp80\Microsoft.ApplicationInsights.Telemetry.WindowsPhone.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.Telemetry.WindowsPhone.0.6.56.3\build\wp80\Microsoft.ApplicationInsights.Telemetry.WindowsPhone.targets')" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
 </Project>

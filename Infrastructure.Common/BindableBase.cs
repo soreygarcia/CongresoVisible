@@ -15,6 +15,11 @@ namespace Infrastructure.Common
             return Container.Resolve<T>();
         }
 
+        protected T GetViewModel<T>()
+        {
+            return Container.Resolve<T>();
+        }
+
         public INavigationService Navigator { get; set; }
 
         private INetworkService networkMonitor;

@@ -11,6 +11,7 @@ using Infrastructure.Common;
 using System.Collections.ObjectModel;
 using Infrastructure.Common.Contracts;
 using Contracts = CongresoVisible.Services.Contracts;
+using System.Net.Http;
 
 namespace CongresoVisible.Services
 {
@@ -45,10 +46,9 @@ namespace CongresoVisible.Services
                     }
                 }
             }
-            catch (System.Net.Http.HttpRequestException ex)
+            catch (HttpRequestException ex)
             {
-                
-                throw;
+                return null;
             }
         }
 

@@ -75,17 +75,17 @@ namespace CongresoVisible.ViewModels
         {
             try
             {
-                MainViewModel main = GetViewModel<MainViewModel>();
-                main.SelectedParty = new PartyViewModel();
-                main.SelectedParty.Name = this.Name;
+                //MainViewModel main = GetViewModel<MainViewModel>();
+                //main.SelectedParty = new PartyViewModel();
+                //main.SelectedParty.Name = this.Name;
 
-                Navigator.Navigate<PartyViewModel>();
+                //Navigator.Navigate<PartyViewModel>();
 
-                if (NetworkMonitor.IsNetworkAvailable)
-                {
-                    var result = await jsonService.GetPeopleByPartyAsync(this.Id);
-                    ViewModelHelper.SetPeople(this, result);
-                }
+                //if (NetworkMonitor.IsNetworkAvailable)
+                //{
+                //    var result = await jsonService.GetPeopleByPartyAsync(this.Id);
+                //    ViewModelHelper.SetPeople(this, result);
+                //}
             }
             catch (System.Exception)
             {

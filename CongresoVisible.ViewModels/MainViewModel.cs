@@ -125,7 +125,7 @@ namespace CongresoVisible.ViewModels
         }
 
         #region ShowAbout
-        private RelayCommand showAboutInfoCommand;
+        private ICommand showAboutInfoCommand;
         public ICommand ShowAboutInfoCommand
         {
             get { return this.showAboutInfoCommand; }

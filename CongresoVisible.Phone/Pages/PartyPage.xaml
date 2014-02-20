@@ -28,7 +28,7 @@
 	</phone:PhoneApplicationPage.DataContext>
 	<!--LayoutRoot is the root grid where all page content is placed-->
 	<Grid x:Name="LayoutRoot" Background="{StaticResource LightColor}" 
-		DataContext="{Binding SelectedParty}" d:DataContext="{Binding Source={StaticResource PartyViewModelDataSource}}" >
+		DataContext="{Binding SelectedParty}" d:DataContext="{Binding Source={StaticResource MainViewModelDataSource}}" >
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="*"/>

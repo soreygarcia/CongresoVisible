@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using Contracts = CongresoVisible.Services.Contracts;
 using Infrastructure.Common.Services;
 
-namespace CongresoVisible.Infrastructure.Common
+namespace CongresoVisible.Infrastructure
 {
     public class ViewModelLocator
     {
@@ -34,9 +34,9 @@ namespace CongresoVisible.Infrastructure.Common
             builder.RegisterType<NetworkService>().As<INetworkService>();
             builder.RegisterType<HttpClientService>().As<IHttpClientService>();
 
-            builder.RegisterType<MainViewModel>().As<MainViewModel>();
-            builder.RegisterType<PersonViewModel>().As<PersonViewModel>();
-            builder.RegisterType<AboutViewModel>().As<AboutViewModel>();
+            builder.RegisterType<MainViewModel>().As<MainViewModel>().SingleInstance();
+            builder.RegisterType<PersonViewModel>().As<PersonViewModel>().SingleInstance();
+            builder.RegisterType<AboutViewModel>().As<AboutViewModel>().SingleInstance();
 
             container = builder.Build(Autofac.Builder.ContainerBuildOptions.None);
             BindableBase.Container = container;

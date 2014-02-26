@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CongresoVisible.Services.Contracts;
 using Microsoft.Phone.Tasks;
+using Infrastructure.Common.Contracts;
 
 namespace CongresoVisible.Services
 {

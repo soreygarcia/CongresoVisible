@@ -2,10 +2,11 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
-    xmlns:infrastructure="clr-namespace:CongresoVisible.Infrastructure.Common"
+    xmlns:infrastructure="clr-namespace:CongresoVisible.Infrastructure"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.MainViewModelDataSource" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:uriMapper="clr-namespace:System.Windows.Navigation;assembly=Microsoft.Phone" xmlns:SampleData1="clr-namespace:Expression.Blend.SampleData.PartyViewModelDataSource" mc:Ignorable="d" 
+    xmlns:uriMapper="clr-namespace:System.Windows.Navigation;assembly=Microsoft.Phone" 
+    mc:Ignorable="d" 
     x:Class="CongresoVisible.Phone.App"
     >
 

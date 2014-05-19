@@ -38,7 +38,8 @@ namespace CongresoVisible.Services
 
         public void RemovePerson(int id)
         {
-            var person = connection.Table<Person>().Where(p => p.list_number == id).FirstOrDefault();
+            var person = connection.Table<Person>()
+                .Where(p => p.list_number == id).FirstOrDefault();
 
             if (person != null)
                 connection.Delete(person);

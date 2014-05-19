@@ -41,8 +41,10 @@
     <Compile Include="Contracts\IDbConnectionService.cs" />
     <Compile Include="Contracts\IJsonService.cs" />
     <Compile Include="Contracts\ILocalFilesService.cs" />
+    <Compile Include="Contracts\ILogService.cs" />
     <Compile Include="Contracts\INetworkService.cs" />
     <Compile Include="Contracts\INavigationService.cs" />
+    <Compile Include="Contracts\IPhoneService.cs" />
     <Compile Include="Contracts\ISettingsService.cs" />
     <Compile Include="Contracts\ISocialService.cs" />
     <Compile Include="Contracts\IStoreService.cs" />
